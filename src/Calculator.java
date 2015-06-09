@@ -6,8 +6,13 @@ public class Calculator extends javax.swing.JFrame {
     private boolean beginning_zero;
     private boolean having_decpoint;
     
-    private double number1;
-    private double number2;
+    public boolean plusButtonClicked = false;
+    public boolean minusButtonClicked = false;
+    public boolean divideButtonClicked = false;
+    public boolean multiplyButtonClicked = false;
+    
+    private double number1 = 0;
+    private double number2 = 0;
     private double result;
 
     public Calculator() {
@@ -610,11 +615,34 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_decimal_pointActionPerformed
 
     private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
-        // TODO add your handling code here:
+        if (plusButtonClicked == true) {
+            result = number1 + Double.parseDouble(String.valueOf(display.getText()));
+            display2.setText(display2.getText() + Double.parseDouble(String.valueOf(display.getText())) + " = " + result);
+            display.setText(String.valueOf(result));
+            number1 = 0;
+        }
     }//GEN-LAST:event_equalActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        // TODO add your handling code here:
+        number1 += Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText(number1 + "+");
+        
+        display.setText(null);
+        plusButtonClicked = true;
+        minusButtonClicked = false;
+        multiplyButtonClicked = false;
+        divideButtonClicked = false;
+        
+        /*if(plusButtonClicked == true && display.getText()!= null) {
+        number1 += Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText(number1 + "+");
+        
+        display.setText(null);
+        plusButtonClicked = true;
+        minusButtonClicked = false;
+        multiplyButtonClicked = false;
+        divideButtonClicked = false;
+        }*/
     }//GEN-LAST:event_addActionPerformed
 
     private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
