@@ -6,13 +6,14 @@ public class Calculator extends javax.swing.JFrame {
     private boolean beginning_zero;
     private boolean having_decpoint;
     
-    public boolean plusButtonClicked = false;
+    /*public boolean plusButtonClicked = false;
     public boolean minusButtonClicked = false;
     public boolean divideButtonClicked = false;
-    public boolean multiplyButtonClicked = false;
+    public boolean multiplyButtonClicked = false;*/
+    private byte operator;
     
-    private double number1 = 0;
-    private double number2 = 0;
+    private double number1;
+    private double number2;
     private double result;
 
     public Calculator() {
@@ -519,8 +520,8 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_number_threeActionPerformed
 
     private void plus_minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plus_minusActionPerformed
-        number1 = Double.parseDouble(String.valueOf(display.getText()));
-        result = number1 * (-1);
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        result = number2 * (-1);
         
         if (result > -100000000 && result < 100000000) {
             display.setText(String.valueOf(result));
@@ -615,46 +616,251 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_decimal_pointActionPerformed
 
     private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
-        if (plusButtonClicked == true) {
-            result = number1 + Double.parseDouble(String.valueOf(display.getText()));
-            display2.setText(display2.getText() + Double.parseDouble(String.valueOf(display.getText())) + " = " + result);
-            display.setText(String.valueOf(result));
-            number1 = 0;
+        /*number2 = Double.parseDouble(String.valueOf(display.getText()));
+        if(plusButtonClicked == false && minusButtonClicked == false) {
+            result = number2;
+            display2.setText(String.valueOf(number2));
         }
+            
+        if (plusButtonClicked == true) {
+            result = number1 + number2;
+            //display2.setText(display2.getText() + Double.parseDouble(String.valueOf(display.getText())) + " = " + result);
+            //display.setText(String.valueOf(result));
+            //number1 = 0;
+            display2.setText(display2.getText() + String.valueOf(number2));
+        }
+        
+        if (minusButtonClicked == true) {
+            //result = number1 - Double.parseDouble(String.valueOf(display.getText()));
+            result = number1 - number2;
+            //display2.setText(display2.getText() + Double.parseDouble(String.valueOf(display.getText())) + " = " + result);
+            //display.setText(String.valueOf(result));
+            //number1 = 0;
+            display2.setText(display2.getText() + String.valueOf(number2));
+        }
+        number1 = 0;
+        number2 = 0;
+        result = 0;
+        plusButtonClicked = false;
+        minusButtonClicked = false;
+        having_decpoint = false;
+        beginning_zero = false;*/
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        if (operator == 0) {
+            result = number2;
+            display2.setText(String.valueOf(number2));
+        }
+        
+        if (operator == 1) {
+            result = number1 + number2;
+            display2.setText(display2.getText() + String.valueOf(number2));
+            display.setText(String.valueOf(result));
+        }
+        
+        if (operator == 2) {
+            result = number1 - number2;
+            display2.setText(display2.getText() + String.valueOf(number2));
+            display.setText(String.valueOf(result));
+        }
+        
+        if (operator == 3) {
+            result = number1 * number2;
+            display2.setText(display2.getText() + String.valueOf(number2));
+            display.setText(String.valueOf(result));
+        }
+        
+        if (operator == 4) {
+            result = number1 / number2;
+            display2.setText(display2.getText() + String.valueOf(number2));
+            display.setText(String.valueOf(result));
+        }
+        
+        if (result > -100000000 && result < 100000000) {
+            display.setText(String.valueOf(result));
+        }
+        else {
+            display.setText("Error");
+        }
+        
+        number1 = 0;
+        number2 = 0;
+        result = 0;
+        operator = 0;
+        having_decpoint = false;
+        beginning_zero = false;
     }//GEN-LAST:event_equalActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        number1 += Double.parseDouble(String.valueOf(display.getText()));
+        /*number2 = Double.parseDouble(String.valueOf(display.getText()));
+        number1 += number2;
         display2.setText(number1 + "+");
+        //display.setText(null);
         
-        display.setText(null);
         plusButtonClicked = true;
         minusButtonClicked = false;
         multiplyButtonClicked = false;
-        divideButtonClicked = false;
-        
-        /*if(plusButtonClicked == true && display.getText()!= null) {
-        number1 += Double.parseDouble(String.valueOf(display.getText()));
-        display2.setText(number1 + "+");
-        
-        display.setText(null);
+        divideButtonClicked = false;*/
+        /*if(plusButtonClicked == false && minusButtonClicked == false) {
+            number1 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        else {
+            number2 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        if(plusButtonClicked == true) {
+            number1 = number1 + number2;
+        }
+        if(minusButtonClicked == true) {
+            number1 = number1 - number2;
+        }
+        //display.setText("0");
+        display2.setText(String.valueOf(number1) + "+");
         plusButtonClicked = true;
-        minusButtonClicked = false;
-        multiplyButtonClicked = false;
-        divideButtonClicked = false;
-        }*/
+        having_decpoint = false;
+        beginning_zero = false;*/
+        if(operator == 0) {
+            number1 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        else {
+            number2 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        
+        if (operator == 1) {
+            number1 = number1 + number2;
+        }
+        
+        if (operator == 2) {
+            number1 = number1 - number2;
+        }
+        
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+        
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
+        
+        display2.setText(String.valueOf(number1) + " + ");
+        operator = 1;
+        having_decpoint = false;
+        beginning_zero = false;
     }//GEN-LAST:event_addActionPerformed
 
     private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
-        // TODO add your handling code here:
+        /*//number1 -= Double.parseDouble(String.valueOf(display.getText()));
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        number1 -= number2;
+        display2.setText(number1 + "-");
+        //display.setText(null);
+        
+        plusButtonClicked = false;
+        minusButtonClicked = true;
+        multiplyButtonClicked = false;
+        divideButtonClicked = false;*/
+        /*if(plusButtonClicked == false && minusButtonClicked == false) {
+            number1 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        else {
+            number2 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        if(plusButtonClicked == true) {
+            number1 = number1 + number2;
+        }
+        if(minusButtonClicked == true) {
+            number1 = number1 - number2;
+        }
+        //display.setText("0");
+        display2.setText(String.valueOf(number1) + "-");
+        minusButtonClicked = true;
+        having_decpoint = false;
+        beginning_zero = false;*/
+        if(operator == 0) {
+            number1 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        else {
+            number2 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        
+        if (operator == 1) {
+            number1 = number1 + number2;
+        }
+        
+        if (operator == 2) {
+            number1 = number1 - number2;
+        }
+        
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+        
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
+        
+        display2.setText(String.valueOf(number1) + " - ");
+        operator = 2;
+        having_decpoint = false;
+        beginning_zero = false;
     }//GEN-LAST:event_substractActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
-        // TODO add your handling code here:
+        if(operator == 0) {
+            number1 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        else {
+            number2 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        
+        if (operator == 1) {
+            number1 = number1 + number2;
+        }
+        
+        if (operator == 2) {
+            number1 = number1 - number2;
+        }
+        
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+        
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
+        
+        display2.setText(String.valueOf(number1) + " * ");
+        operator = 3;
+        having_decpoint = false;
+        beginning_zero = false;
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-        // TODO add your handling code here:
+        if(operator == 0) {
+            number1 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        else {
+            number2 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        
+        if (operator == 1) {
+            number1 = number1 + number2;
+        }
+        
+        if (operator == 2) {
+            number1 = number1 - number2;
+        }
+        
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+        
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
+        
+        display2.setText(String.valueOf(number1) + " / ");
+        operator = 4;
+        having_decpoint = false;
+        beginning_zero = false;
     }//GEN-LAST:event_divideActionPerformed
 
     private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
@@ -672,6 +878,7 @@ public class Calculator extends javax.swing.JFrame {
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         display.setText("0");
+        display2.setText(null);
         having_decpoint = false;
         beginning_zero = false;
     }//GEN-LAST:event_clearActionPerformed
