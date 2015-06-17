@@ -3,6 +3,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
 
     private boolean beginning_zero;
     private boolean having_decpoint;
+    private boolean radians_checked;
     
     private byte operator;
     
@@ -19,6 +20,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         number_one = new javax.swing.JButton();
         mr = new javax.swing.JButton();
@@ -50,6 +52,25 @@ public class ScientificCalculator extends javax.swing.JFrame {
         decimal_point = new javax.swing.JButton();
         number_seven = new javax.swing.JButton();
         number_four = new javax.swing.JButton();
+        sinus = new javax.swing.JButton();
+        cosinus = new javax.swing.JButton();
+        tanh = new javax.swing.JButton();
+        tangens = new javax.swing.JButton();
+        cosh = new javax.swing.JButton();
+        sinh = new javax.swing.JButton();
+        cuberoot = new javax.swing.JButton();
+        cubed = new javax.swing.JButton();
+        squared = new javax.swing.JButton();
+        pi = new javax.swing.JButton();
+        exp = new javax.swing.JButton();
+        percent = new javax.swing.JButton();
+        degrees = new javax.swing.JRadioButton();
+        radians = new javax.swing.JRadioButton();
+        arctan = new javax.swing.JButton();
+        arccos = new javax.swing.JButton();
+        arcsin = new javax.swing.JButton();
+        logarithm = new javax.swing.JButton();
+        nlogarithm = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -304,7 +325,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             }
         });
 
-        equal.setBackground(new java.awt.Color(0, 204, 0));
+        equal.setBackground(new java.awt.Color(0, 153, 204));
         equal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         equal.setForeground(new java.awt.Color(204, 204, 204));
         equal.setText("=");
@@ -364,6 +385,199 @@ public class ScientificCalculator extends javax.swing.JFrame {
             }
         });
 
+        sinus.setBackground(new java.awt.Color(51, 51, 51));
+        sinus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        sinus.setForeground(new java.awt.Color(204, 204, 204));
+        sinus.setText("sin");
+        sinus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sinusActionPerformed(evt);
+            }
+        });
+
+        cosinus.setBackground(new java.awt.Color(51, 51, 51));
+        cosinus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        cosinus.setForeground(new java.awt.Color(204, 204, 204));
+        cosinus.setText("cos");
+        cosinus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cosinusActionPerformed(evt);
+            }
+        });
+
+        tanh.setBackground(new java.awt.Color(51, 51, 51));
+        tanh.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        tanh.setForeground(new java.awt.Color(204, 204, 204));
+        tanh.setText("th");
+        tanh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tanhActionPerformed(evt);
+            }
+        });
+
+        tangens.setBackground(new java.awt.Color(51, 51, 51));
+        tangens.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        tangens.setForeground(new java.awt.Color(204, 204, 204));
+        tangens.setText("tan");
+        tangens.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tangensActionPerformed(evt);
+            }
+        });
+
+        cosh.setBackground(new java.awt.Color(51, 51, 51));
+        cosh.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        cosh.setForeground(new java.awt.Color(204, 204, 204));
+        cosh.setText("ch");
+        cosh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coshActionPerformed(evt);
+            }
+        });
+
+        sinh.setBackground(new java.awt.Color(51, 51, 51));
+        sinh.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        sinh.setForeground(new java.awt.Color(204, 204, 204));
+        sinh.setText("sh");
+        sinh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sinhActionPerformed(evt);
+            }
+        });
+
+        cuberoot.setBackground(new java.awt.Color(51, 51, 51));
+        cuberoot.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cuberoot.setForeground(new java.awt.Color(204, 204, 204));
+        cuberoot.setText("3√"); // NOI18N
+        cuberoot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cuberootActionPerformed(evt);
+            }
+        });
+
+        cubed.setBackground(new java.awt.Color(51, 51, 51));
+        cubed.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cubed.setForeground(new java.awt.Color(204, 204, 204));
+        cubed.setText("x^3");
+        cubed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cubedActionPerformed(evt);
+            }
+        });
+
+        squared.setBackground(new java.awt.Color(51, 51, 51));
+        squared.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        squared.setForeground(new java.awt.Color(204, 204, 204));
+        squared.setText("x^2");
+        squared.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                squaredActionPerformed(evt);
+            }
+        });
+
+        pi.setBackground(new java.awt.Color(51, 51, 51));
+        pi.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        pi.setForeground(new java.awt.Color(204, 204, 204));
+        pi.setText("π");
+        pi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                piActionPerformed(evt);
+            }
+        });
+
+        exp.setBackground(new java.awt.Color(51, 51, 51));
+        exp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        exp.setForeground(new java.awt.Color(204, 204, 204));
+        exp.setText("e^x");
+        exp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                expActionPerformed(evt);
+            }
+        });
+
+        percent.setBackground(new java.awt.Color(51, 51, 51));
+        percent.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        percent.setForeground(new java.awt.Color(204, 204, 204));
+        percent.setText("%");
+        percent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                percentActionPerformed(evt);
+            }
+        });
+
+        degrees.setBackground(new java.awt.Color(51, 51, 51));
+        buttonGroup1.add(degrees);
+        degrees.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        degrees.setForeground(new java.awt.Color(204, 204, 204));
+        degrees.setSelected(true);
+        degrees.setText("Degrees");
+        degrees.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                degreesActionPerformed(evt);
+            }
+        });
+
+        radians.setBackground(new java.awt.Color(51, 51, 51));
+        buttonGroup1.add(radians);
+        radians.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        radians.setForeground(new java.awt.Color(204, 204, 204));
+        radians.setText("Radians");
+        radians.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radiansActionPerformed(evt);
+            }
+        });
+
+        arctan.setBackground(new java.awt.Color(51, 51, 51));
+        arctan.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        arctan.setForeground(new java.awt.Color(204, 204, 204));
+        arctan.setText("atan");
+        arctan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arctanActionPerformed(evt);
+            }
+        });
+
+        arccos.setBackground(new java.awt.Color(51, 51, 51));
+        arccos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        arccos.setForeground(new java.awt.Color(204, 204, 204));
+        arccos.setText("acos");
+        arccos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arccosActionPerformed(evt);
+            }
+        });
+
+        arcsin.setBackground(new java.awt.Color(51, 51, 51));
+        arcsin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        arcsin.setForeground(new java.awt.Color(204, 204, 204));
+        arcsin.setText("asin");
+        arcsin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arcsinActionPerformed(evt);
+            }
+        });
+
+        logarithm.setBackground(new java.awt.Color(51, 51, 51));
+        logarithm.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        logarithm.setForeground(new java.awt.Color(204, 204, 204));
+        logarithm.setText("log");
+        logarithm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logarithmActionPerformed(evt);
+            }
+        });
+
+        nlogarithm.setBackground(new java.awt.Color(51, 51, 51));
+        nlogarithm.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        nlogarithm.setForeground(new java.awt.Color(204, 204, 204));
+        nlogarithm.setText("ln");
+        nlogarithm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nlogarithmActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -377,55 +591,92 @@ public class ScientificCalculator extends javax.swing.JFrame {
                             .addComponent(display, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(one_divide_x, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(mr, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ms, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(plus_minus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(sqrt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(mc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(35, 35, 35)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(sinh, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(cosh, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(tanh, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addComponent(pi, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(exp, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addComponent(squared, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(cubed, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(cuberoot, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(percent, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(sinus, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(cosinus, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(5, 5, 5)
+                                            .addComponent(tangens, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(radians, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(degrees, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(logarithm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(nlogarithm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(arcsin, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(arccos, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(arctan, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(30, 30, 30)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(ms, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(mc, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(number_seven, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                                                    .addComponent(number_four, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(number_one, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(plus_minus, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(sqrt, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(mr, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(reset)))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(number_seven, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                                                .addComponent(number_four, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                                                .addComponent(number_one, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
+                                            .addComponent(reset, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(number_two, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(number_five, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(number_eight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(clear, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(one_divide_x, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(266, 266, 266)
-                                        .addComponent(number_zero, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(number_three, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(number_six, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(number_nine, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(backspace, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(decimal_point, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(number_five, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(number_eight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(number_two, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(number_zero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 19, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(number_nine, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(backspace, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(number_three, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(decimal_point, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(number_six, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
+                                        .addGap(10, 10, 10)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(multiply, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(divide, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(substract, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(substract, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(add, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                                                .addComponent(equal, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                            .addComponent(divide, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(multiply, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(memory_display, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -450,14 +701,28 @@ public class ScientificCalculator extends javax.swing.JFrame {
                 .addComponent(display2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(display, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(divide, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backspace, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mr, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(degrees)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(nlogarithm, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(logarithm, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(divide, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(backspace, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(mr, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(radians))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -477,22 +742,47 @@ public class ScientificCalculator extends javax.swing.JFrame {
                             .addComponent(number_three, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(number_two, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(number_one, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(mc, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ms, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(plus_minus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sqrt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(pi, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(exp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(percent, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cuberoot, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cubed, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(squared, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(tanh, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cosh, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sinh, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(sinus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tangens, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cosinus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(mc, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ms, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(plus_minus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(sqrt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(2, 2, 2)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(decimal_point, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(number_zero, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(one_divide_x, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26))
+                    .addComponent(one_divide_x, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(arctan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(arccos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(arcsin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -515,310 +805,28 @@ public class ScientificCalculator extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void number_oneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_oneActionPerformed
+    private void number_fourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fourActionPerformed
         if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
-        display.setText(display.getText() + "1");
+        display.setText(display.getText() + "4");
         beginning_zero = true;
-    }//GEN-LAST:event_number_oneActionPerformed
+    }//GEN-LAST:event_number_fourActionPerformed
 
-    private void mcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mcActionPerformed
-        memory_display.setText(null);
-    }//GEN-LAST:event_mcActionPerformed
-
-    private void msActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msActionPerformed
-        memory_display.setText(String.valueOf(display.getText()));
-    }//GEN-LAST:event_msActionPerformed
-
-    private void one_divide_xActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_one_divide_xActionPerformed
-        number2 = Double.parseDouble(String.valueOf(display.getText()));
-        result = 1/number2;
-
-        if (result > -100000000 && result < 100000000) {
-            display.setText(String.valueOf(result));
-        }
-        else {
-            display.setText("Error");
-        }
-
-        display2.setText("1/" + String.valueOf(number2));
-        result = 0;
-    }//GEN-LAST:event_one_divide_xActionPerformed
-
-    private void plus_minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plus_minusActionPerformed
-        number2 = Double.parseDouble(String.valueOf(display.getText()));
-        result = number2 * (-1);
-
-        if (result > -100000000 && result < 100000000) {
-            display.setText(String.valueOf(result));
-        }
-        else {
-            display.setText("Error");
-        }
-        having_decpoint = true;
-        result = 0;
-    }//GEN-LAST:event_plus_minusActionPerformed
-
-    private void sqrtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sqrtActionPerformed
-        number2 = Double.parseDouble(String.valueOf(display.getText()));
-        result = Math.sqrt(number2);
-
-        if (result > -100000000 && result < 100000000) {
-            display.setText(String.valueOf(result));
-        }
-        else {
-            display.setText("Error");
-        }
-        display2.setText("√" + String.valueOf(number2));
-        result = 0;
-    }//GEN-LAST:event_sqrtActionPerformed
-
-    private void displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_displayActionPerformed
-
-    private void number_threeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_threeActionPerformed
+    private void number_sevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sevenActionPerformed
         if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
-        display.setText(display.getText() + "3");
+        display.setText(display.getText() + "7");
         beginning_zero = true;
-    }//GEN-LAST:event_number_threeActionPerformed
+    }//GEN-LAST:event_number_sevenActionPerformed
 
-    private void display2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_display2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_display2ActionPerformed
-
-    private void number_sixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sixActionPerformed
-        if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
+    private void decimal_pointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decimal_pointActionPerformed
+        if(!having_decpoint) {
+            display.setText(display.getText() + ".");
+            having_decpoint = true;
         }
-        display.setText(display.getText() + "6");
-        beginning_zero = true;
-    }//GEN-LAST:event_number_sixActionPerformed
-
-    private void memory_displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memory_displayActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_memory_displayActionPerformed
-
-    private void number_nineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_nineActionPerformed
-        if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "9");
-        beginning_zero = true;
-    }//GEN-LAST:event_number_nineActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    Calculator simpleCalculator = new Calculator();
-            simpleCalculator.setVisible(true);
-           
-            ScientificCalculator scientificCalc = new ScientificCalculator();
-            scientificCalc.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
-        /*String s[] = new String[];
-        String display_string = String.valueOf(display.getText());
-        for (int i = 0; i < display_string.length() - 1 ; i++)
-        s += display_string[i];*/
-        /*double value = Double.parseDouble(String.valueOf(display.getText()));
-        double value1 = (int)value/10 + value - (int)value;
-        display.setText(String.valueOf(value1));*/
-        if(display.getText().length() > 0){
-            display.setText(display.getText().substring(0,display.getText().length() - 1));
-        }
-    }//GEN-LAST:event_backspaceActionPerformed
-
-    private void number_zeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_zeroActionPerformed
-        if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "0");
-    }//GEN-LAST:event_number_zeroActionPerformed
-
-    private void number_twoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_twoActionPerformed
-        if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "2");
-        beginning_zero = true;
-    }//GEN-LAST:event_number_twoActionPerformed
-
-    private void number_fiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fiveActionPerformed
-        if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "5");
-        beginning_zero = true;
-    }//GEN-LAST:event_number_fiveActionPerformed
-
-    private void number_eightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_eightActionPerformed
-        if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "8");
-        beginning_zero = true;
-    }//GEN-LAST:event_number_eightActionPerformed
-
-    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
-        display.setText("0");
-        display2.setText(null);
-        having_decpoint = false;
-        beginning_zero = false;
-    }//GEN-LAST:event_clearActionPerformed
-
-    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
-        display.setText("0");
-        display2.setText(null);
-        having_decpoint = false;
-        beginning_zero = false;
-        number1 = 0;
-        number2 = 0;
-        result = 0;
-    }//GEN-LAST:event_resetActionPerformed
-
-    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        if(operator == 0) {
-            number1 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        else {
-            number2 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-
-        display2.setText(String.valueOf(number1) + " + ");
-        operator = 1;
-        having_decpoint = false;
-        beginning_zero = false;
-    }//GEN-LAST:event_addActionPerformed
-
-    private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
-        if(operator == 0) {
-            number1 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        else {
-            number2 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-
-        display2.setText(String.valueOf(number1) + " - ");
-        operator = 2;
-        having_decpoint = false;
-        beginning_zero = false;
-    }//GEN-LAST:event_substractActionPerformed
-
-    private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
-        /* operator == 0 (nothing)
-        operator == 1 (addition)
-        operator  == 2 (substraction)
-        operator == 3 (multiplication)
-        operator == 4 (dividing)*/
-        number2 = Double.parseDouble(String.valueOf(display.getText()));
-        if (operator == 0) {
-            result = number2;
-            display2.setText(String.valueOf(number2));
-        }
-
-        if (operator == 1) {
-            result = number1 + number2;
-            display2.setText(display2.getText() + String.valueOf(number2));
-            display.setText(String.valueOf(result));
-        }
-
-        if (operator == 2) {
-            result = number1 - number2;
-            display2.setText(display2.getText() + String.valueOf(number2));
-            display.setText(String.valueOf(result));
-        }
-
-        if (operator == 3) {
-            result = number1 * number2;
-            display2.setText(display2.getText() + String.valueOf(number2));
-            display.setText(String.valueOf(result));
-        }
-
-        if (operator == 4) {
-            result = number1 / number2;
-            display2.setText(display2.getText() + String.valueOf(number2));
-            display.setText(String.valueOf(result));
-        }
-
-        if (result > -100000000 && result < 100000000) {
-            display.setText(String.valueOf(result));
-        }
-        else {
-            display.setText("Error");
-        }
-
-        number1 = 0;
-        number2 = 0;
-        result = 0;
-        operator = 0;
-        having_decpoint = false;
-        beginning_zero = false;
-    }//GEN-LAST:event_equalActionPerformed
-
-    private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-        if(operator == 0) {
-            number1 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        else {
-            number2 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-
-        display2.setText(String.valueOf(number1) + " / ");
-        operator = 4;
-        having_decpoint = false;
-        beginning_zero = false;
-    }//GEN-LAST:event_divideActionPerformed
+    }//GEN-LAST:event_decimal_pointActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
         if(operator == 0) {
@@ -850,32 +858,511 @@ public class ScientificCalculator extends javax.swing.JFrame {
         beginning_zero = false;
     }//GEN-LAST:event_multiplyActionPerformed
 
-    private void decimal_pointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decimal_pointActionPerformed
-        if(!having_decpoint) {
-            display.setText(display.getText() + ".");
-            having_decpoint = true;
+    private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
+        if(operator == 0) {
+            number1 = Double.parseDouble(String.valueOf(display.getText()));
         }
-    }//GEN-LAST:event_decimal_pointActionPerformed
+        else {
+            number2 = Double.parseDouble(String.valueOf(display.getText()));
+        }
 
-    private void number_sevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sevenActionPerformed
+        if (operator == 1) {
+            number1 = number1 + number2;
+        }
+
+        if (operator == 2) {
+            number1 = number1 - number2;
+        }
+
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
+
+        display2.setText(String.valueOf(number1) + " / ");
+        operator = 4;
+        having_decpoint = false;
+        beginning_zero = false;
+    }//GEN-LAST:event_divideActionPerformed
+
+    private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
+        /* operator == 0 (nothing)
+        operator == 1 (addition)
+        operator  == 2 (substraction)
+        operator == 3 (multiplication)
+        operator == 4 (dividing)
+        operator == 5 (percentage)*/
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        if (operator == 0) {
+            result = number2;
+            display2.setText(String.valueOf(number2));
+        }
+
+        if (operator == 1) {
+            result = number1 + number2;
+            display2.setText(display2.getText() + String.valueOf(number2));
+            display.setText(String.valueOf(result));
+        }
+
+        if (operator == 2) {
+            result = number1 - number2;
+            display2.setText(display2.getText() + String.valueOf(number2));
+            display.setText(String.valueOf(result));
+        }
+
+        if (operator == 3) {
+            result = number1 * number2;
+            display2.setText(display2.getText() + String.valueOf(number2));
+            display.setText(String.valueOf(result));
+        }
+
+        if (operator == 4) {
+            result = number1 / number2;
+            display2.setText(display2.getText() + String.valueOf(number2));
+            display.setText(String.valueOf(result));
+        }
+        
+        if (operator == 5) {
+            result = number1 * number2 / 100;
+            display2.setText(display2.getText() + String.valueOf(number2) + ")");
+        }
+
+        if (result > -100000000 && result < 100000000) {
+            display.setText(String.valueOf(result));
+        }
+        else {
+            display.setText("Error");
+        }
+
+        number1 = 0;
+        number2 = 0;
+        result = 0;
+        operator = 0;
+        having_decpoint = false;
+        beginning_zero = false;
+    }//GEN-LAST:event_equalActionPerformed
+
+    private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
+        if(operator == 0) {
+            number1 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        else {
+            number2 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+
+        if (operator == 1) {
+            number1 = number1 + number2;
+        }
+
+        if (operator == 2) {
+            number1 = number1 - number2;
+        }
+
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
+
+        display2.setText(String.valueOf(number1) + " - ");
+        operator = 2;
+        having_decpoint = false;
+        beginning_zero = false;
+    }//GEN-LAST:event_substractActionPerformed
+
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+        if(operator == 0) {
+            number1 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        else {
+            number2 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+
+        if (operator == 1) {
+            number1 = number1 + number2;
+        }
+
+        if (operator == 2) {
+            number1 = number1 - number2;
+        }
+
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
+
+        display2.setText(String.valueOf(number1) + " + ");
+        operator = 1;
+        having_decpoint = false;
+        beginning_zero = false;
+    }//GEN-LAST:event_addActionPerformed
+
+    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
+        display.setText("0");
+        display2.setText(null);
+        having_decpoint = false;
+        beginning_zero = false;
+        number1 = 0;
+        number2 = 0;
+        result = 0;
+    }//GEN-LAST:event_resetActionPerformed
+
+    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
+        display.setText("0");
+        display2.setText(null);
+        having_decpoint = false;
+        beginning_zero = false;
+    }//GEN-LAST:event_clearActionPerformed
+
+    private void number_eightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_eightActionPerformed
         if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
-        display.setText(display.getText() + "7");
+        display.setText(display.getText() + "8");
         beginning_zero = true;
-    }//GEN-LAST:event_number_sevenActionPerformed
+    }//GEN-LAST:event_number_eightActionPerformed
 
-    private void number_fourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fourActionPerformed
+    private void number_fiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fiveActionPerformed
         if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
-        display.setText(display.getText() + "4");
+        display.setText(display.getText() + "5");
         beginning_zero = true;
-    }//GEN-LAST:event_number_fourActionPerformed
+    }//GEN-LAST:event_number_fiveActionPerformed
+
+    private void number_twoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_twoActionPerformed
+        if(!beginning_zero && !having_decpoint) {
+            display.setText(null);
+        }
+        display.setText(display.getText() + "2");
+        beginning_zero = true;
+    }//GEN-LAST:event_number_twoActionPerformed
+
+    private void number_zeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_zeroActionPerformed
+        if(!beginning_zero && !having_decpoint) {
+            display.setText(null);
+        }
+        display.setText(display.getText() + "0");
+    }//GEN-LAST:event_number_zeroActionPerformed
+
+    private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
+        /*String s[] = new String[];
+        String display_string = String.valueOf(display.getText());
+        for (int i = 0; i < display_string.length() - 1 ; i++)
+        s += display_string[i];*/
+        /*double value = Double.parseDouble(String.valueOf(display.getText()));
+        double value1 = (int)value/10 + value - (int)value;
+        display.setText(String.valueOf(value1));*/
+        if(display.getText().length() > 0){
+            display.setText(display.getText().substring(0,display.getText().length() - 1));
+        }
+    }//GEN-LAST:event_backspaceActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Calculator simpleCalculator = new Calculator();
+        simpleCalculator.setVisible(true);
+
+        ScientificCalculator scientificCalc = new ScientificCalculator();
+        scientificCalc.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void number_nineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_nineActionPerformed
+        if(!beginning_zero && !having_decpoint) {
+            display.setText(null);
+        }
+        display.setText(display.getText() + "9");
+        beginning_zero = true;
+    }//GEN-LAST:event_number_nineActionPerformed
+
+    private void memory_displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memory_displayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_memory_displayActionPerformed
+
+    private void number_sixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sixActionPerformed
+        if(!beginning_zero && !having_decpoint) {
+            display.setText(null);
+        }
+        display.setText(display.getText() + "6");
+        beginning_zero = true;
+    }//GEN-LAST:event_number_sixActionPerformed
+
+    private void display2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_display2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_display2ActionPerformed
+
+    private void number_threeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_threeActionPerformed
+        if(!beginning_zero && !having_decpoint) {
+            display.setText(null);
+        }
+        display.setText(display.getText() + "3");
+        beginning_zero = true;
+    }//GEN-LAST:event_number_threeActionPerformed
+
+    private void displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_displayActionPerformed
+
+    private void sqrtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sqrtActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        result = Math.sqrt(number2);
+
+        if (result > -100000000 && result < 100000000) {
+            display.setText(String.valueOf(result));
+        }
+        else {
+            display.setText("Error");
+        }
+        display2.setText("√" + String.valueOf(number2));
+        result = 0;
+    }//GEN-LAST:event_sqrtActionPerformed
+
+    private void plus_minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plus_minusActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        result = number2 * (-1);
+
+        if (result > -100000000 && result < 100000000) {
+            display.setText(String.valueOf(result));
+        }
+        else {
+            display.setText("Error");
+        }
+        having_decpoint = true;
+        result = 0;
+    }//GEN-LAST:event_plus_minusActionPerformed
+
+    private void one_divide_xActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_one_divide_xActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        result = 1/number2;
+
+        if (result > -100000000 && result < 100000000) {
+            display.setText(String.valueOf(result));
+        }
+        else {
+            display.setText("Error");
+        }
+
+        display2.setText("1/" + String.valueOf(number2));
+        result = 0;
+    }//GEN-LAST:event_one_divide_xActionPerformed
+
+    private void msActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msActionPerformed
+        memory_display.setText(String.valueOf(display.getText()));
+    }//GEN-LAST:event_msActionPerformed
+
+    private void mcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mcActionPerformed
+        memory_display.setText(null);
+    }//GEN-LAST:event_mcActionPerformed
 
     private void mrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mrActionPerformed
         display.setText(String.valueOf(memory_display.getText()));
     }//GEN-LAST:event_mrActionPerformed
+
+    private void number_oneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_oneActionPerformed
+        if(!beginning_zero && !having_decpoint) {
+            display.setText(null);
+        }
+        display.setText(display.getText() + "1");
+        beginning_zero = true;
+    }//GEN-LAST:event_number_oneActionPerformed
+
+    private void sinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sinusActionPerformed
+        //Java performs trigonometric functions in radians, so if degrees will be selected
+        //it will be converted from degrees to radians
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText("sin(" + String.valueOf(number2) + ")");
+        if (!radians_checked) {
+            number2 = number2 * 0.0174532925;
+        }
+        result = Math.sin(number2);
+        display.setText(String.valueOf(result));
+        result = 0;
+    }//GEN-LAST:event_sinusActionPerformed
+
+    private void cosinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cosinusActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText("cos(" + String.valueOf(number2) + ")");
+        if (!radians_checked) {
+            number2 = number2 * 0.0174532925;
+        }
+        result = Math.cos(number2);
+        display.setText(String.valueOf(result));
+        result = 0;
+    }//GEN-LAST:event_cosinusActionPerformed
+
+    private void tanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tanhActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText("tanh(" + String.valueOf(number2) + ")");
+        result = Math.tanh(number2);
+        display.setText(String.valueOf(result));
+        result = 0; 
+    }//GEN-LAST:event_tanhActionPerformed
+
+    private void tangensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tangensActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText("tan(" + String.valueOf(number2) + ")");
+        if (!radians_checked) {
+            number2 = number2 * 0.0174532925;
+        }
+        result = Math.tan(number2);
+        display.setText(String.valueOf(result));
+        result = 0;
+    }//GEN-LAST:event_tangensActionPerformed
+
+    private void coshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coshActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText("cosh(" + String.valueOf(number2) + ")");
+        result = Math.cosh(number2);
+        display.setText(String.valueOf(result));
+        result = 0; 
+    }//GEN-LAST:event_coshActionPerformed
+
+    private void sinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sinhActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText("sinh(" + String.valueOf(number2) + ")");
+        result = Math.sinh(number2);
+        display.setText(String.valueOf(result));
+        result = 0;        
+    }//GEN-LAST:event_sinhActionPerformed
+
+    private void cuberootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuberootActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        result = Math.cbrt(number2);
+
+        if (result > -100000000 && result < 100000000) {
+            display.setText(String.valueOf(result));
+        }
+        else {
+            display.setText("Error");
+        }
+        display2.setText("3√" + String.valueOf(number2));
+        result = 0;
+    }//GEN-LAST:event_cuberootActionPerformed
+
+    private void cubedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cubedActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        result = number2 * number2 * number2;
+
+        if (result > -100000000 && result < 100000000) {
+            display.setText(String.valueOf(result));
+        }
+        else {
+            display.setText("Error");
+        }
+        display2.setText(String.valueOf(number2) + "^3");
+        result = 0;
+    }//GEN-LAST:event_cubedActionPerformed
+
+    private void squaredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squaredActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        result = number2 * number2;
+
+        if (result > -100000000 && result < 100000000) {
+            display.setText(String.valueOf(result));
+        }
+        else {
+            display.setText("Error");
+        }
+        display2.setText(String.valueOf(number2) + "^2");
+        result = 0;
+    }//GEN-LAST:event_squaredActionPerformed
+
+    private void piActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_piActionPerformed
+        display.setText(String.valueOf(Math.PI));
+    }//GEN-LAST:event_piActionPerformed
+
+    private void expActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText("e^(" + String.valueOf(number2) + ")");
+        result = Math.exp(number2);
+        display.setText(String.valueOf(result));
+        result = 0; 
+    }//GEN-LAST:event_expActionPerformed
+
+    private void percentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_percentActionPerformed
+        number1 = Double.parseDouble(String.valueOf(display.getText()));
+        display.setText("0");
+        display2.setText(String.valueOf(number1) + "%(");
+        having_decpoint = false;
+        beginning_zero = false;
+        operator = 5;
+    }//GEN-LAST:event_percentActionPerformed
+
+    private void degreesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_degreesActionPerformed
+        radians_checked = false;
+    }//GEN-LAST:event_degreesActionPerformed
+
+    private void radiansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiansActionPerformed
+        radians_checked = true;
+    }//GEN-LAST:event_radiansActionPerformed
+
+    private void arctanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arctanActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText("arctan(" + String.valueOf(number2) + ")");
+        if (!radians_checked) {
+            result = Math.toDegrees(Math.atan(number2));
+            display.setText(String.valueOf(result));
+            result = 0;
+        }
+        else{
+            result = Math.atan(number2);
+            display.setText(String.valueOf(result));
+            result = 0;
+        }
+    }//GEN-LAST:event_arctanActionPerformed
+
+    private void arccosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arccosActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText("arccos(" + String.valueOf(number2) + ")");
+        if (!radians_checked) {
+            result = Math.toDegrees(Math.acos(number2));
+            display.setText(String.valueOf(result));
+            result = 0;
+        }
+        else{
+            result = Math.acos(number2);
+            display.setText(String.valueOf(result));
+            result = 0;
+        }
+    }//GEN-LAST:event_arccosActionPerformed
+
+    private void arcsinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arcsinActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText("arcsin(" + String.valueOf(number2) + ")");
+        if (!radians_checked) {
+            result = Math.toDegrees(Math.asin(number2));
+            display.setText(String.valueOf(result));
+            result = 0;
+        }
+        else{
+            result = Math.asin(number2);
+            display.setText(String.valueOf(result));
+            result = 0;
+        }
+    }//GEN-LAST:event_arcsinActionPerformed
+
+    private void logarithmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logarithmActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText("log(" + String.valueOf(number2) + ")");
+        result = Math.log10(number2);
+        display.setText(String.valueOf(result));
+        result = 0; 
+    }//GEN-LAST:event_logarithmActionPerformed
+
+    private void nlogarithmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nlogarithmActionPerformed
+        number2 = Double.parseDouble(String.valueOf(display.getText()));
+        display2.setText("ln(" + String.valueOf(number2) + ")");
+        result = Math.log(number2);
+        display.setText(String.valueOf(result));
+        result = 0; 
+    }//GEN-LAST:event_nlogarithmActionPerformed
 
     /**
      * @param args the command line arguments
@@ -914,20 +1401,32 @@ public class ScientificCalculator extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add;
+    private javax.swing.JButton arccos;
+    private javax.swing.JButton arcsin;
+    private javax.swing.JButton arctan;
     private javax.swing.JButton backspace;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton clear;
+    private javax.swing.JButton cosh;
+    private javax.swing.JButton cosinus;
+    private javax.swing.JButton cubed;
+    private javax.swing.JButton cuberoot;
     private javax.swing.JButton decimal_point;
+    private javax.swing.JRadioButton degrees;
     private javax.swing.JTextField display;
     private javax.swing.JTextField display2;
     private javax.swing.JButton divide;
     private javax.swing.JButton equal;
+    private javax.swing.JButton exp;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton logarithm;
     private javax.swing.JButton mc;
     private javax.swing.JTextField memory_display;
     private javax.swing.JButton mr;
     private javax.swing.JButton ms;
     private javax.swing.JButton multiply;
+    private javax.swing.JButton nlogarithm;
     private javax.swing.JButton number_eight;
     private javax.swing.JButton number_five;
     private javax.swing.JButton number_four;
@@ -939,10 +1438,18 @@ public class ScientificCalculator extends javax.swing.JFrame {
     private javax.swing.JButton number_two;
     private javax.swing.JButton number_zero;
     private javax.swing.JButton one_divide_x;
+    private javax.swing.JButton percent;
+    private javax.swing.JButton pi;
     private javax.swing.JButton plus_minus;
+    private javax.swing.JRadioButton radians;
     private javax.swing.JButton reset;
     private javax.swing.JLabel simple;
+    private javax.swing.JButton sinh;
+    private javax.swing.JButton sinus;
     private javax.swing.JButton sqrt;
+    private javax.swing.JButton squared;
     private javax.swing.JButton substract;
+    private javax.swing.JButton tangens;
+    private javax.swing.JButton tanh;
     // End of variables declaration//GEN-END:variables
 }
