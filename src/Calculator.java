@@ -1,4 +1,7 @@
 
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+import java.awt.*;
 import java.math.*;
 
 public class Calculator extends javax.swing.JFrame {
@@ -872,13 +875,19 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_mrActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Calculator simpleCalculator = new Calculator();
-        simpleCalculator.setVisible(false);
+        //Calculator simpleCalculator = new Calculator();
+        //simpleCalculator.setVisible(false);
+        this.dispose();
         ScientificCalculator scientificCalc = new ScientificCalculator();
         scientificCalc.setVisible(true);
         scientificCalc.setLocation(295, 96);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public void close() {
+        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
+    }
+    
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
