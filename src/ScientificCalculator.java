@@ -962,7 +962,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
 
         if (operator == 3) {
             number1 = number1 * number2;
-        }
+        } 
 
         if (operator == 4) {
             number1 = number1 / number2;
