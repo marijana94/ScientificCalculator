@@ -54,6 +54,7 @@ public class Calculator extends javax.swing.JFrame {
         display2 = new javax.swing.JTextField();
         memory_display = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        programmerMode = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -61,10 +62,11 @@ public class Calculator extends javax.swing.JFrame {
         setForeground(new java.awt.Color(0, 0, 0));
         setLocation(new java.awt.Point(300, 100));
         setResizable(false);
-        setSize(new java.awt.Dimension(743, 507));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setName("simpleCalculator"); // NOI18N
+        jPanel1.setRequestFocusEnabled(false);
+        jPanel1.setVerifyInputWhenFocusTarget(false);
 
         add.setBackground(new java.awt.Color(51, 51, 51));
         add.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -373,6 +375,15 @@ public class Calculator extends javax.swing.JFrame {
             }
         });
 
+        programmerMode.setBackground(new java.awt.Color(51, 51, 51));
+        programmerMode.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        programmerMode.setText("Programmer");
+        programmerMode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                programmerModeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -443,6 +454,8 @@ public class Calculator extends javax.swing.JFrame {
                                 .addComponent(memory_display, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(programmerMode, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(30, 30, 30))
         );
@@ -452,7 +465,8 @@ public class Calculator extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(simple, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(programmerMode))
                 .addGap(5, 5, 5)
                 .addComponent(memory_display, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -520,6 +534,7 @@ public class Calculator extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void number_threeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_threeActionPerformed
         if(!beginning_zero && !having_decpoint) {
             display.setText(null);
@@ -880,8 +895,15 @@ public class Calculator extends javax.swing.JFrame {
         this.dispose();
         ScientificCalculator scientificCalc = new ScientificCalculator();
         scientificCalc.setVisible(true);
-        scientificCalc.setLocation(295, 96);
+        scientificCalc.setLocation(300, 100);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void programmerModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programmerModeActionPerformed
+        this.dispose();
+        ProgrammerMode progMode = new ProgrammerMode();
+        progMode.setVisible(true);
+        progMode.setLocation(300, 100);
+    }//GEN-LAST:event_programmerModeActionPerformed
 
     public void close() {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
@@ -947,6 +969,7 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JButton number_zero;
     private javax.swing.JButton one_divide_x;
     private javax.swing.JButton plus_minus;
+    private javax.swing.JButton programmerMode;
     private javax.swing.JButton reset;
     private javax.swing.JLabel simple;
     private javax.swing.JButton sqrt;

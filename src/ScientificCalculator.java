@@ -71,6 +71,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         arcsin = new javax.swing.JButton();
         logarithm = new javax.swing.JButton();
         nlogarithm = new javax.swing.JButton();
+        prgrammerMode = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -578,6 +579,15 @@ public class ScientificCalculator extends javax.swing.JFrame {
             }
         });
 
+        prgrammerMode.setBackground(new java.awt.Color(51, 51, 51));
+        prgrammerMode.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        prgrammerMode.setText("Programmer");
+        prgrammerMode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prgrammerModeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -594,6 +604,8 @@ public class ScientificCalculator extends javax.swing.JFrame {
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(simple, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(prgrammerMode)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(display2)
                             .addComponent(display, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -693,7 +705,8 @@ public class ScientificCalculator extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(simple, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(prgrammerMode))
                 .addGap(5, 5, 5)
                 .addComponent(memory_display, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1069,7 +1082,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         this.dispose();
         Calculator calc = new Calculator();
         calc.setVisible(true);
-        calc.setLocation(295, 96);
+        calc.setLocation(300, 100);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void number_nineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_nineActionPerformed
@@ -1362,6 +1375,13 @@ public class ScientificCalculator extends javax.swing.JFrame {
         result = 0; 
     }//GEN-LAST:event_nlogarithmActionPerformed
 
+    private void prgrammerModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prgrammerModeActionPerformed
+        this.dispose();
+        ProgrammerMode progMode = new ProgrammerMode();
+        progMode.setVisible(true);
+        progMode.setLocation(300, 100);
+    }//GEN-LAST:event_prgrammerModeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1439,6 +1459,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
     private javax.swing.JButton percent;
     private javax.swing.JButton pi;
     private javax.swing.JButton plus_minus;
+    private javax.swing.JButton prgrammerMode;
     private javax.swing.JRadioButton radians;
     private javax.swing.JButton reset;
     private javax.swing.JLabel simple;
