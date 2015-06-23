@@ -498,7 +498,7 @@ public class ProgrammerMode extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(b, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(c, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(d, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                                        .addComponent(d, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(a, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(f, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
@@ -629,15 +629,16 @@ public class ProgrammerMode extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(e, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(decimal_point, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(number_zero, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(plus_minus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(f, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(ms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)))
+                        .addGap(1, 1, 1))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(decimal_point, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(number_zero, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(plus_minus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(f, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -702,27 +703,53 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_msActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        if(operator == 0) {
-            number1 = Integer.parseInt(String.valueOf(display.getText()));
+ 
+        if (binar_checked) {
+            if (operator == 0) {
+                number1 = Byte.parseByte(String.valueOf(display.getText()));
+            } else {
+                number2 = Byte.parseByte(String.valueOf(display.getText()));
+            }
+
+            if (operator == 1) {
+                number1 = number1 + number2;
+            }
+
+            if (operator == 2) {
+                number1 = number1 - number2;
+            }
+
+            if (operator == 3) {
+                number1 = number1 * number2;
+            }
+
+            if (operator == 4) {
+                number1 = number1 / number2;
+            }
         }
+
         else {
-            number2 = Integer.parseInt(String.valueOf(display.getText()));
-        }
-        
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
+            if (operator == 0) {
+                number1 = Integer.parseInt(String.valueOf(display.getText()));
+            } else {
+                number2 = Integer.parseInt(String.valueOf(display.getText()));
+            }
 
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
+            if (operator == 1) {
+                number1 = number1 + number2;
+            }
 
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
+            if (operator == 2) {
+                number1 = number1 - number2;
+            }
 
-        if (operator == 4) {
-            number1 = number1 / number2;
+            if (operator == 3) {
+                number1 = number1 * number2;
+            }
+
+            if (operator == 4) {
+                number1 = number1 / number2;
+            }
         }
 
         display2.setText(String.valueOf(number1) + " + ");
@@ -785,46 +812,83 @@ public class ProgrammerMode extends javax.swing.JFrame {
 
     private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
         /* operator == 0 (nothing)
-        operator == 1 (addition)
-        operator  == 2 (substraction)
-        operator == 3 (multiplication)
-        operator == 4 (dividing)*/
-        number2 = Integer.parseInt(String.valueOf(display.getText()));
+         operator == 1 (addition)
+         operator  == 2 (substraction)
+         operator == 3 (multiplication)
+         operator == 4 (dividing)*/
 
-        if (operator == 0) { 
-            result = number2;
-            display2.setText(String.valueOf(number2));
-        }
 
-        if (operator == 1) {
-            result = number1 + number2;
-            display2.setText(display2.getText() + String.valueOf(number2));
-            display.setText(String.valueOf(result));
-        }
+        if (binar_checked) {
+            number2 = Byte.parseByte(String.valueOf(display.getText()));
+            if (operator == 0) {
+                result = number2;
+                display2.setText(String.valueOf(number2));
+            }
+            if (operator == 1) {
 
-        if (operator == 2) {
-            result = number1 - number2;
-            display2.setText(display2.getText() + String.valueOf(number2));
-            display.setText(String.valueOf(result));
-        }
+                result = Integer.parseInt(String.valueOf(number1), 2) + Integer.parseInt(String.valueOf(number2), 2);
+                display2.setText(display2.getText() + String.valueOf(number2)); 
+                //display.setText(Integer.toBinaryString(result));
+                display.setText(String.valueOf(result));
+                System.out.println(Integer.toBinaryString(result));
+            }
+            if (operator == 2) {
+                result = number1 - number2;
+                display2.setText(display2.getText() + String.valueOf(number2)); 
+                display.setText(String.valueOf(result));
+            }
+            if (operator == 3) {
+                result = number1 * number2;
+                display2.setText(display2.getText() + String.valueOf(number2)); 
+                display.setText(String.valueOf(result));
+            }
+            if (operator == 4) {
+                result = number1 / number2;
+                display2.setText(display2.getText() + String.valueOf(number2)); 
+                display.setText(String.valueOf(result));
+            }
+            if (result > -100000000 && result < 100000000) {
+                display.setText(String.valueOf(result));
+            } else {
+                display.setText("Error");
+            }
+        } else {
+            number2 = Integer.parseInt(String.valueOf(display.getText()));
+            if (operator == 0) {
+                result = number2;
+                display2.setText(String.valueOf(number2));
+            }
 
-        if (operator == 3) {
-            result = number1 * number2;
-            display2.setText(display2.getText() + String.valueOf(number2));
-            display.setText(String.valueOf(result));
-        }
+            if (operator == 1) {
+                result = number1 + number2;
+                display2.setText(display2.getText() + String.valueOf(number2)); 
+                display.setText(String.valueOf(result));
 
-        if (operator == 4) {
-            result = number1 / number2;
-            display2.setText(display2.getText() + String.valueOf(number2));
-            display.setText(String.valueOf(result));
-        }
+            }
 
-        if (result > -100000000 && result < 100000000) {
-            display.setText(String.valueOf(result));
-        }
-        else {
-            display.setText("Error");
+            if (operator == 2) {
+                result = number1 - number2;
+                display2.setText(display2.getText() + String.valueOf(number2)); 
+                display.setText(String.valueOf(result));
+            }
+
+            if (operator == 3) {
+                result = number1 * number2;
+                display2.setText(display2.getText() + String.valueOf(number2)); 
+                display.setText(String.valueOf(result));
+            }
+
+            if (operator == 4) {
+                result = number1 / number2;
+                display2.setText(display2.getText() + String.valueOf(number2)); 
+                display.setText(String.valueOf(result));
+            }
+
+            if (result > -100000000 && result < 100000000) {
+                display.setText(String.valueOf(result));
+            } else {
+                display.setText("Error");
+            }
         }
 
         number1 = 0;
@@ -1061,6 +1125,9 @@ public class ProgrammerMode extends javax.swing.JFrame {
         number_five.setEnabled(true);
         number_six.setEnabled(true);
         number_seven.setEnabled(true);
+        display.setText("0");
+        display2.setText(null);
+
     }//GEN-LAST:event_decActionPerformed
 
     private void binActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binActionPerformed
@@ -1079,6 +1146,10 @@ public class ProgrammerMode extends javax.swing.JFrame {
         number_five.setEnabled(false);
         number_six.setEnabled(false);
         number_seven.setEnabled(false);
+        //display.setText(Integer.parseInt(String.valueOf(display.getText()), 2));
+        //display.setText(Integer.toBinaryString(String.valueOf(display.getText()));
+        display.setText("0");
+        display2.setText(null);
     }//GEN-LAST:event_binActionPerformed
 
     private void octActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_octActionPerformed
@@ -1097,6 +1168,8 @@ public class ProgrammerMode extends javax.swing.JFrame {
         number_five.setEnabled(true);
         number_six.setEnabled(true);
         number_seven.setEnabled(true);
+        display.setText("0");
+        display2.setText(null);
     }//GEN-LAST:event_octActionPerformed
 
     private void hexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexActionPerformed
@@ -1115,6 +1188,8 @@ public class ProgrammerMode extends javax.swing.JFrame {
         number_five.setEnabled(true);
         number_six.setEnabled(true);
         number_seven.setEnabled(true);
+        display.setText("0");
+        display2.setText(null);
     }//GEN-LAST:event_hexActionPerformed
 
     /**

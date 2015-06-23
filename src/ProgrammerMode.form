@@ -62,7 +62,7 @@
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="b" alignment="0" max="32767" attributes="0"/>
                                           <Component id="c" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="d" pref="56" max="32767" attributes="0"/>
+                                          <Component id="d" max="32767" attributes="0"/>
                                           <Component id="a" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
@@ -230,15 +230,17 @@
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="decimal_point" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                      <Component id="number_zero" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                      <Component id="plus_minus" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="f" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="equal" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="ms" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="decimal_point" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="number_zero" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="plus_minus" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="f" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="equal" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
