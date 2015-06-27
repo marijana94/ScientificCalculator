@@ -2,9 +2,11 @@
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.math.*;
 
-public class Calculator extends javax.swing.JFrame {
+public class Calculator extends javax.swing.JFrame implements KeyListener{
     
     private boolean beginning_zero;
     private boolean having_decpoint;
@@ -17,6 +19,7 @@ public class Calculator extends javax.swing.JFrame {
 
     public Calculator() {
         initComponents();
+        addKeyListener(this);
     }
 
     @SuppressWarnings("unchecked")
@@ -639,25 +642,26 @@ public class Calculator extends javax.swing.JFrame {
         
         if (operator == 1) {
             result = number1 + number2;
-            display2.setText(display2.getText() + String.valueOf(number2));
+            display2.setText(display2.getText() + String.valueOf(number2)); 
             display.setText(String.valueOf(result));
+            //System.out.print(result);
         }
         
         if (operator == 2) {
             result = number1 - number2;
-            display2.setText(display2.getText() + String.valueOf(number2));
+            display2.setText(display2.getText() + String.valueOf(number2)); 
             display.setText(String.valueOf(result));
         }
         
         if (operator == 3) {
             result = number1 * number2;
-            display2.setText(display2.getText() + String.valueOf(number2));
+            display2.setText(display2.getText() + String.valueOf(number2)); 
             display.setText(String.valueOf(result));
         }
         
         if (operator == 4) {
             result = number1 / number2;
-            display2.setText(display2.getText() + String.valueOf(number2));
+            display2.setText(display2.getText() + String.valueOf(number2)); 
             display.setText(String.valueOf(result));
         }
         
@@ -975,4 +979,21 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JButton sqrt;
     private javax.swing.JButton substract;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void keyTyped(KeyEvent ke) {
+        if(ke.getKeyChar() <= '9' && ke.getKeyChar() >= '0')
+        {
+            System.out.println(ke.getKeyChar());
+            display.setText("" + ke.getKeyChar());
+        }
+    }
+
+    @Override
+    public void keyPressed(KeyEvent ke) {
+    }
+
+    @Override
+    public void keyReleased(KeyEvent ke) {
+    }
 }
