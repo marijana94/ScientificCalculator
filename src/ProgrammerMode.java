@@ -777,28 +777,21 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_msActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-
         if (binar_checked) {
             if (operator == 0) {
-                number1 = toInteger(display1.getText());
+                number1 = Integer.parseInt(String.valueOf(display1.getText()),2);
             } else {
-                number2 = toInteger(display1.getText());
-
+                number2 = Integer.parseInt(String.valueOf(display1.getText()),2);
             }
-
             if (operator == 1) {
                 number1 = number1 + number2;
-
             }
-
             if (operator == 2) {
                 number1 = number1 - number2;
             }
-
             if (operator == 3) {
                 number1 = number1 * number2;
             }
-
             if (operator == 4) {
                 number1 = number1 / number2;
             }
@@ -810,17 +803,17 @@ public class ProgrammerMode extends javax.swing.JFrame {
             } else {
                 number2 = Integer.parseInt(String.valueOf(display1.getText()));
             }
-
             if (operator == 1) {
                 number1 = number1 + number2;
             }
-
             if (operator == 2) {
                 number1 = number1 - number2;
             }
-
             if (operator == 3) {
                 number1 = number1 * number2;
+            }
+            if (operator == 4) {
+                number1 = number1 / number2;
             }
         }
         
@@ -830,17 +823,17 @@ public class ProgrammerMode extends javax.swing.JFrame {
             } else {
                 number2 = Integer.parseInt(String.valueOf(display1.getText()),8);
             }
-
             if (operator == 1) {
                 number1 = number1 + number2;
             }
-
             if (operator == 2) {
                 number1 = number1 - number2;
             }
-
             if (operator == 3) {
                 number1 = number1 * number2;
+            }
+            if (operator == 4) {
+                number1 = number1 / number2;
             }
         }
         
@@ -850,17 +843,17 @@ public class ProgrammerMode extends javax.swing.JFrame {
             } else {
                 number2 = Integer.parseInt(String.valueOf(display1.getText()),16);
             }
-
             if (operator == 1) {
                 number1 = number1 + number2;
             }
-
             if (operator == 2) {
                 number1 = number1 - number2;
             }
-
             if (operator == 3) {
                 number1 = number1 * number2;
+            }
+            if (operator == 4) {
+                number1 = number1 / number2;
             }
         }
         
@@ -881,6 +874,9 @@ public class ProgrammerMode extends javax.swing.JFrame {
 
             if (operator == 3) {
                 number1 = number1 * number2;
+            }
+            if (operator == 4) {
+                number1 = number1 / number2;
             }
         }
 
@@ -901,25 +897,19 @@ public class ProgrammerMode extends javax.swing.JFrame {
     private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
         if (binar_checked) {
             if (operator == 0) {
-                number1 = toInteger(display1.getText());
+                number1 = Integer.parseInt(String.valueOf(display1.getText()),2);
             } else {
-                number2 = toInteger(display1.getText());
-
+                number2 = Integer.parseInt(String.valueOf(display1.getText()),2);
             }
-
             if (operator == 1) {
                 number1 = number1 + number2;
-
             }
-
             if (operator == 2) {
                 number1 = number1 - number2;
             }
-
             if (operator == 3) {
                 number1 = number1 * number2;
             }
-
             if (operator == 4) {
                 number1 = number1 / number2;
             }
@@ -931,17 +921,17 @@ public class ProgrammerMode extends javax.swing.JFrame {
             } else {
                 number2 = Integer.parseInt(String.valueOf(display1.getText()));
             }
-
             if (operator == 1) {
                 number1 = number1 + number2;
             }
-
             if (operator == 2) {
                 number1 = number1 - number2;
             }
-
             if (operator == 3) {
                 number1 = number1 * number2;
+            }
+            if (operator == 4) {
+                number1 = number1 / number2;
             }
         }
         
@@ -951,17 +941,17 @@ public class ProgrammerMode extends javax.swing.JFrame {
             } else {
                 number2 = Integer.parseInt(String.valueOf(display1.getText()),8);
             }
-
             if (operator == 1) {
                 number1 = number1 + number2;
             }
-
             if (operator == 2) {
                 number1 = number1 - number2;
             }
-
             if (operator == 3) {
                 number1 = number1 * number2;
+            }
+            if (operator == 4) {
+                number1 = number1 / number2;
             }
         }
         
@@ -971,17 +961,17 @@ public class ProgrammerMode extends javax.swing.JFrame {
             } else {
                 number2 = Integer.parseInt(String.valueOf(display1.getText()),16);
             }
-
             if (operator == 1) {
                 number1 = number1 + number2;
             }
-
             if (operator == 2) {
                 number1 = number1 - number2;
             }
-
             if (operator == 3) {
                 number1 = number1 * number2;
+            }
+            if (operator == 4) {
+                number1 = number1 / number2;
             }
         }
         
@@ -991,17 +981,17 @@ public class ProgrammerMode extends javax.swing.JFrame {
             } else {
                 number2 = Integer.parseInt(String.valueOf(display1.getText()));
             }
-
             if (operator == 1) {
                 number1 = number1 + number2;
             }
-
             if (operator == 2) {
                 number1 = number1 - number2;
             }
-
             if (operator == 3) {
                 number1 = number1 * number2;
+            }
+            if (operator == 4) {
+                number1 = number1 / number2;
             }
         }
 
@@ -1033,41 +1023,32 @@ public class ProgrammerMode extends javax.swing.JFrame {
          operator == 4 (dividing)*/
 
         if (binar_checked) {
-            //number1 = toInteger(display1.getText());
-            number2 = toInteger(display1.getText());
+            number2 = Integer.parseInt(String.valueOf(display1.getText()),2);
             if (operator == 0) {
                 result = number2;
                 display2.setText(String.valueOf(number2));
-                //display2.setText(Integer.toBinaryString(number2));
             }
             if (operator == 1) {
-
-                result = number1 + toInteger(display1.getText());
+                result = number1 + Integer.parseInt(display1.getText(), 2);
                 display2.setText(display2.getText() + String.valueOf(number2));
-                //display2.setText(Integer.toBinaryString(Integer.parseInt(display2.getText())+number2));
-                //System.out.println(Integer.toBinaryString(result));
                 display1.setText(String.valueOf(result));
-                //display2.setText(Integer.toBinaryString(result));
-                //display1.setText(Integer.toBinaryString(result));
             }
             if (operator == 2) {
-                result = number1 - toInteger(display1.getText());
+                result = number1 - Integer.parseInt(display1.getText(), 2);
                 display2.setText(display2.getText() + String.valueOf(number2));
                 display1.setText(String.valueOf(result));
             }
             if (operator == 3) {
-                result = number1 * toInteger(display1.getText());
+                result = number1 * Integer.parseInt(display1.getText(), 2);
                 display2.setText(display2.getText() + String.valueOf(number2));
                 display1.setText(String.valueOf(result));
             }
             if (operator == 4) {
-                result = number1 / toInteger(display1.getText());
+                result = number1 / Integer.parseInt(display1.getText(), 2);
                 display2.setText(display2.getText() + String.valueOf(number2));
                 display1.setText(String.valueOf(result));
             }
             if (result > -100000000 && result < 100000000) {
-                //display1.setText(String.valueOf(result));
-                //display1.setText(toBinary(result));
                 display1.setText(toBinary(result));
             } else {
                 display1.setText("Error");
@@ -1248,25 +1229,19 @@ public class ProgrammerMode extends javax.swing.JFrame {
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
         if (binar_checked) {
             if (operator == 0) {
-                number1 = toInteger(display1.getText());
+                number1 = Integer.parseInt(String.valueOf(display1.getText()),2);
             } else {
-                number2 = toInteger(display1.getText());
-
+                number2 = Integer.parseInt(String.valueOf(display1.getText()),2);
             }
-
             if (operator == 1) {
                 number1 = number1 + number2;
-
             }
-
             if (operator == 2) {
                 number1 = number1 - number2;
             }
-
             if (operator == 3) {
                 number1 = number1 * number2;
             }
-
             if (operator == 4) {
                 number1 = number1 / number2;
             }
@@ -1290,6 +1265,9 @@ public class ProgrammerMode extends javax.swing.JFrame {
             if (operator == 3) {
                 number1 = number1 * number2;
             }
+            if (operator == 4) {
+                number1 = number1 / number2;
+            }
         }
         
         else if(octal_checked) {
@@ -1309,6 +1287,9 @@ public class ProgrammerMode extends javax.swing.JFrame {
 
             if (operator == 3) {
                 number1 = number1 * number2;
+            }
+            if (operator == 4) {
+                number1 = number1 / number2;
             }
         }
         
@@ -1330,6 +1311,9 @@ public class ProgrammerMode extends javax.swing.JFrame {
             if (operator == 3) {
                 number1 = number1 * number2;
             }
+            if (operator == 4) {
+                number1 = number1 / number2;
+            }      
         }
         
         else {
@@ -1350,6 +1334,9 @@ public class ProgrammerMode extends javax.swing.JFrame {
             if (operator == 3) {
                 number1 = number1 * number2;
             }
+            if (operator == 4) {
+                number1 = number1 / number2;
+            }            
         }
 
 
@@ -1362,25 +1349,19 @@ public class ProgrammerMode extends javax.swing.JFrame {
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
         if (binar_checked) {
             if (operator == 0) {
-                number1 = toInteger(display1.getText());
+                number1 = Integer.parseInt(String.valueOf(display1.getText()),2);
             } else {
-                number2 = toInteger(display1.getText());
-
+                number2 = Integer.parseInt(String.valueOf(display1.getText()),2);
             }
-
             if (operator == 1) {
                 number1 = number1 + number2;
-
             }
-
             if (operator == 2) {
                 number1 = number1 - number2;
             }
-
             if (operator == 3) {
                 number1 = number1 * number2;
             }
-
             if (operator == 4) {
                 number1 = number1 / number2;
             }
@@ -1404,6 +1385,9 @@ public class ProgrammerMode extends javax.swing.JFrame {
             if (operator == 3) {
                 number1 = number1 * number2;
             }
+            if (operator == 4) {
+                number1 = number1 / number2;
+            }
         }
         
         else if(octal_checked) {
@@ -1424,6 +1408,9 @@ public class ProgrammerMode extends javax.swing.JFrame {
             if (operator == 3) {
                 number1 = number1 * number2;
             }
+            if (operator == 4) {
+                number1 = number1 / number2;
+            }
         }
         
         else if(hexadecimal_checked) {
@@ -1432,17 +1419,17 @@ public class ProgrammerMode extends javax.swing.JFrame {
             } else {
                 number2 = Integer.parseInt(String.valueOf(display1.getText()),16);
             }
-
             if (operator == 1) {
                 number1 = number1 + number2;
             }
-
             if (operator == 2) {
                 number1 = number1 - number2;
             }
-
             if (operator == 3) {
                 number1 = number1 * number2;
+            }
+            if (operator == 4) {
+                number1 = number1 / number2;
             }
         }
         
@@ -1463,6 +1450,9 @@ public class ProgrammerMode extends javax.swing.JFrame {
 
             if (operator == 3) {
                 number1 = number1 * number2;
+            }
+            if (operator == 4) {
+                number1 = number1 / number2;
             }
         }
 
