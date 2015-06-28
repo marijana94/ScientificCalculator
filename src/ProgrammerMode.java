@@ -1,7 +1,4 @@
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 public class ProgrammerMode extends javax.swing.JFrame {
 
     private boolean beginning_zero;
@@ -659,8 +656,6 @@ public class ProgrammerMode extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
     public void printBinaryFormat(int number) {
         int binary[] = new int[25];
         int index = 0;
@@ -673,34 +668,33 @@ public class ProgrammerMode extends javax.swing.JFrame {
             display1.setText(String.valueOf(binary[i]));
         }
     }
-    
-         public static int OctToDec(String oct) {
-         int i= 0;  
-         for(int j = 0; j < oct.length(); j++) { 
-                char num = oct.charAt(j);           
-                num -= '0';     
-                if(num<0||num>7) {          
-                    System.out.print("invalid number");
-                    return -1;
-                }
-                i *= 8;                          
-                i += num;                      
-            }
-            return i;
-        }
-         
-         public static int DecToOct(int OctalNumber){
-   int counter=0;
-   int result = 0;
-   while(OctalNumber !=0) {
-        int temp = (int) ((OctalNumber%8) * Math.pow(10, counter));
-        counter++;
-        result += temp;
-        OctalNumber /= 8;
-    }
-    return result;
-}
 
+    public static int OctToDec(String oct) {
+        int i = 0;
+        for (int j = 0; j < oct.length(); j++) {
+            char num = oct.charAt(j);
+            num -= '0';
+            if (num < 0 || num > 7) {
+                System.out.print("invalid number");
+                return -1;
+            }
+            i *= 8;
+            i += num;
+        }
+        return i;
+    }
+
+    public static int DecToOct(int OctalNumber) {
+        int counter = 0;
+        int result = 0;
+        while (OctalNumber != 0) {
+            int temp = (int) ((OctalNumber % 8) * Math.pow(10, counter));
+            counter++;
+            result += temp;
+            OctalNumber /= 8;
+        }
+        return result;
+    }
 
     private int ToByte(String input) {
         int resultt = 0;
@@ -778,126 +772,23 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_msActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        /*if (binar_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),2);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),2);
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
-        } 
-        
-        else if(decimal_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()));
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()));
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
+        if (operator == 0) {
+            number1 = Integer.parseInt(String.valueOf(display1.getText()), base);
+        } else {
+            number2 = Integer.parseInt(String.valueOf(display1.getText()), base);
         }
-        
-        else if(octal_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),8);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),8);
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
+        if (operator == 1) {
+            number1 = number1 + number2;
         }
-        
-        else if(hexadecimal_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),16);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),16);
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
+        if (operator == 2) {
+            number1 = number1 - number2;
         }
-        
-        else {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()));
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()));
-            }
-
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
-        }*/
-        
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),base);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),base);
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
         display2.setText(String.valueOf(number1) + " + ");
         operator = 1;
         having_decpoint = false;
@@ -913,123 +804,23 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_eActionPerformed
 
     private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
-       /* if (binar_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),2);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),2);
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
-        } 
-        
-        else if(decimal_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()));
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()));
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
+        if (operator == 0) {
+            number1 = Integer.parseInt(String.valueOf(display1.getText()), base);
+        } else {
+            number2 = Integer.parseInt(String.valueOf(display1.getText()), base);
         }
-        
-        else if(octal_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),8);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),8);
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
+        if (operator == 1) {
+            number1 = number1 + number2;
         }
-        
-        else if(hexadecimal_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),16);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),16);
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
+        if (operator == 2) {
+            number1 = number1 - number2;
         }
-        
-        else {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()));
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()));
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
-        }*/
-                    if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),base);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),base);
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
-
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
 
         display2.setText(String.valueOf(number1) + " - ");
         operator = 2;
@@ -1051,230 +842,37 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_plus_minusActionPerformed
 
     private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
-        /* operator == 0 (nothing)
-         operator == 1 (addition)
-         operator  == 2 (substraction)
-         operator == 3 (multiplication)
-         operator == 4 (dividing)*/
 
-        /*if (binar_checked) {
-            number2 = Integer.parseInt(String.valueOf(display1.getText()),2);
-            if (operator == 0) {
-                result = number2;
-                display2.setText(String.valueOf(number2));
-            }
-            if (operator == 1) {
-                result = number1 + Integer.parseInt(display1.getText(), 2);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-            if (operator == 2) {
-                result = number1 - Integer.parseInt(display1.getText(), 2);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-            if (operator == 3) {
-                result = number1 * Integer.parseInt(display1.getText(), 2);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-            if (operator == 4) {
-                result = number1 / Integer.parseInt(display1.getText(), 2);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-            if (result > -100000000 && result < 100000000) {
-                display1.setText(Integer.toBinaryString(result));
-            } else {
-                display1.setText("Error");
-            }
-        } 
-        else if(decimal_checked) {
-            number2 = Integer.parseInt(String.valueOf(display1.getText()));
-            if (operator == 0) {
-                result = number2;
-                display2.setText(String.valueOf(number2));
-            }
-
-            if (operator == 1) {
-                result = number1 + number2;
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-
-            }
-
-            if (operator == 2) {
-                result = number1 - number2;
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-
-            if (operator == 3) {
-                result = number1 * number2;
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-
-            if (operator == 4) {
-                result = number1 / number2;
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-
-            if (result > -100000000 && result < 100000000) {
-                display1.setText(String.valueOf(result));
-            } else {
-                display1.setText("Error");
-            }
+        number2 = Integer.parseInt(String.valueOf(display1.getText()), base);
+        if (operator == 0) {
+            result = number2;
+            display2.setText(String.valueOf(number2));
         }
-        
-        else if(octal_checked) {
-            number2 = Integer.parseInt(String.valueOf(display1.getText()),8);
-            if (operator == 0) {
-                result = number2;
-                display2.setText(String.valueOf(number2));
-            }
-
-            if (operator == 1) {
-                result = number1 + Integer.parseInt(display1.getText(), 8);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-
-            }
-
-            if (operator == 2) {
-                result = number1 - Integer.parseInt(display1.getText(), 8);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-
-            if (operator == 3) {
-                result = number1 * Integer.parseInt(display1.getText(), 8);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-
-            if (operator == 4) {
-                result = number1 / Integer.parseInt(display1.getText(), 8);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-
-            if (result > -100000000 && result < 100000000) {
-                display1.setText(Integer.toOctalString(result));
-            } else {
-                display1.setText("Error");
-            }
+        if (operator == 1) {
+            result = number1 + Integer.parseInt(display1.getText(), base);
+            display2.setText(display2.getText() + String.valueOf(number2));
+            display1.setText(String.valueOf(result));
         }
-        
-        else if(hexadecimal_checked) {
-            number2 = Integer.parseInt(String.valueOf(display1.getText()),16);
-            if (operator == 0) {
-                result = number2;
-                display2.setText(String.valueOf(number2));
-            }
-
-            if (operator == 1) {
-                result = number1 + Integer.parseInt(display1.getText(), 16);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-
-            }
-
-            if (operator == 2) {
-                result = number1 - Integer.parseInt(display1.getText(), 16);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-
-            if (operator == 3) {
-                result = number1 * Integer.parseInt(display1.getText(), 16);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-
-            if (operator == 4) {
-                result = number1 / Integer.parseInt(display1.getText(), 16);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-
-            if (result > -100000000 && result < 100000000) {
-                display1.setText(Integer.toHexString(result));
-            } else {
-                display1.setText("Error");
-            }
+        if (operator == 2) {
+            result = number1 - Integer.parseInt(display1.getText(), base);
+            display2.setText(display2.getText() + String.valueOf(number2));
+            display1.setText(String.valueOf(result));
         }
-        
-        else {
-            number2 = Integer.parseInt(String.valueOf(display1.getText()));
-            if (operator == 0) {
-                result = number2;
-                display2.setText(String.valueOf(number2));
-            }
-
-            if (operator == 1) {
-                result = number1 + number2;
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-
-            }
-
-            if (operator == 2) {
-                result = number1 - number2;
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-
-            if (operator == 3) {
-                result = number1 * number2;
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-
-            if (operator == 4) {
-                result = number1 / number2;
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-
-            if (result > -100000000 && result < 100000000) {
-                display1.setText(String.valueOf(result));
-            } else {
-                display1.setText("Error");
-            }
-        }*/
-        
-          number2 = Integer.parseInt(String.valueOf(display1.getText()),base);
-            if (operator == 0) {
-                result = number2;
-                display2.setText(String.valueOf(number2));
-            }
-            if (operator == 1) {
-                result = number1 + Integer.parseInt(display1.getText(), base);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-            if (operator == 2) {
-                result = number1 - Integer.parseInt(display1.getText(), base);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-            if (operator == 3) {
-                result = number1 * Integer.parseInt(display1.getText(), base);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-            if (operator == 4) {
-                result = number1 / Integer.parseInt(display1.getText(), base);
-                display2.setText(display2.getText() + String.valueOf(number2));
-                display1.setText(String.valueOf(result));
-            }
-            if (result > -100000000 && result < 100000000) {
-                display1.setText(Integer.toString(result, base));
-            } else {
-                display1.setText("Error");
-            }
+        if (operator == 3) {
+            result = number1 * Integer.parseInt(display1.getText(), base);
+            display2.setText(display2.getText() + String.valueOf(number2));
+            display1.setText(String.valueOf(result));
+        }
+        if (operator == 4) {
+            result = number1 / Integer.parseInt(display1.getText(), base);
+            display2.setText(display2.getText() + String.valueOf(number2));
+            display1.setText(String.valueOf(result));
+        }
+        if (result > -100000000 && result < 100000000) {
+            display1.setText(Integer.toString(result, base));
+        } else {
+            display1.setText("Error");
+        }
 
         number1 = 0;
         number2 = 0;
@@ -1293,135 +891,23 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_fActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-        /*if (binar_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),2);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),2);
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
-        } 
-        
-        else if(decimal_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()));
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()));
-            }
-
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
+        if (operator == 0) {
+            number1 = Integer.parseInt(String.valueOf(display1.getText()), base);
+        } else {
+            number2 = Integer.parseInt(String.valueOf(display1.getText()), base);
         }
-        
-        else if(octal_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),8);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),8);
-            }
-
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
+        if (operator == 1) {
+            number1 = number1 + number2;
         }
-        
-        else if(hexadecimal_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),16);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),16);
-            }
-
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }      
+        if (operator == 2) {
+            number1 = number1 - number2;
         }
-        
-        else {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()));
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()));
-            }
-
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }            
-        }*/
-                    if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),base);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),base);
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
-
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
 
         display2.setText(String.valueOf(number1) + " / ");
         operator = 4;
@@ -1430,132 +916,23 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_divideActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
-        /*if (binar_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),2);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),2);
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
-        } 
-        
-        else if(decimal_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()));
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()));
-            }
-
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
+        if (operator == 0) {
+            number1 = Integer.parseInt(String.valueOf(display1.getText()), base);
+        } else {
+            number2 = Integer.parseInt(String.valueOf(display1.getText()), base);
         }
-        
-        else if(octal_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),8);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),8);
-            }
-
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
+        if (operator == 1) {
+            number1 = number1 + number2;
         }
-        
-        else if(hexadecimal_checked) {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),16);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),16);
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
+        if (operator == 2) {
+            number1 = number1 - number2;
         }
-        
-        else {
-            if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()));
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()));
-            }
-
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
-        }*/
-                    if (operator == 0) {
-                number1 = Integer.parseInt(String.valueOf(display1.getText()),base);
-            } else {
-                number2 = Integer.parseInt(String.valueOf(display1.getText()),base);
-            }
-            if (operator == 1) {
-                number1 = number1 + number2;
-            }
-            if (operator == 2) {
-                number1 = number1 - number2;
-            }
-            if (operator == 3) {
-                number1 = number1 * number2;
-            }
-            if (operator == 4) {
-                number1 = number1 / number2;
-            }
-
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
 
         display2.setText(String.valueOf(number1) + " * ");
         operator = 3;
@@ -1616,13 +993,7 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_number_nineActionPerformed
 
     private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
-        /*String s[] = new String[];
-         String display_string = String.valueOf(display.getText());
-         for (int i = 0; i < display_string.length() - 1 ; i++)
-         s += display_string[i];*/
-        /*double value = Double.parseDouble(String.valueOf(display.getText()));
-         double value1 = (int)value/10 + value - (int)value;
-         display.setText(String.valueOf(value1));*/
+
         if (display1.getText().length() > 0) {
             display1.setText(display1.getText().substring(0, display1.getText().length() - 1));
         }
@@ -1743,8 +1114,6 @@ public class ProgrammerMode extends javax.swing.JFrame {
         number_six.setEnabled(false);
         number_seven.setEnabled(false);
         plus_minus.setEnabled(false);
-        //display.setText(Integer.parseInt(String.valueOf(display.getText()), 2));
-        //display.setText(Integer.toBinaryString(String.valueOf(display.getText()));
         display1.setText("0");
         display2.setText(null);
         base = 2;
