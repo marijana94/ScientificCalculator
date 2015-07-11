@@ -1,4 +1,7 @@
 
+import java.text.DecimalFormat;
+
+
 public class ScientificCalculator extends javax.swing.JFrame {
 
     private boolean beginning_zero;
@@ -17,6 +20,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
 
     
     @SuppressWarnings("unchecked")
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -817,20 +821,41 @@ public class ScientificCalculator extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void number_fourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fourActionPerformed
+    public static double round(double value, int places) {
+        if (places < 0) {
+            throw new IllegalArgumentException();
+        }
+        long factor = (long) Math.pow(10, places);
+        value = value * factor;
+        long tmp = Math.round(value);
+        return (double) tmp / factor;
+    }
+    
+    public void write_number(String num){
         if(!beginning_zero && !having_decpoint) {
+            display.setText(null);
+        }
+        display.setText(display.getText() + num);
+        beginning_zero = true;        
+    }
+
+    
+    private void number_fourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fourActionPerformed
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "4");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("4");
     }//GEN-LAST:event_number_fourActionPerformed
 
     private void number_sevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sevenActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "7");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("7");
     }//GEN-LAST:event_number_sevenActionPerformed
 
     private void decimal_pointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decimal_pointActionPerformed
@@ -941,9 +966,14 @@ public class ScientificCalculator extends javax.swing.JFrame {
             result = number1 * number2 / 100;
             display2.setText(display2.getText() + String.valueOf(number2) + ")");
         }
+        
+        DecimalFormat format = new DecimalFormat("#.##");
+        double doubleFromTextField = Double.parseDouble(display.getText());
+        System.out.println(format.format(doubleFromTextField));
 
         if (result > -100000000 && result < 100000000) {
-            display.setText(String.valueOf(result));
+            //display.setText(String.valueOf(result));
+            display.setText(format.format(doubleFromTextField));
         }
         else {
             display.setText("Error");
@@ -1035,27 +1065,30 @@ public class ScientificCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_clearActionPerformed
 
     private void number_eightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_eightActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "8");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("8");
     }//GEN-LAST:event_number_eightActionPerformed
 
     private void number_fiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fiveActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "5");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("5");
     }//GEN-LAST:event_number_fiveActionPerformed
 
     private void number_twoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_twoActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "2");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("2");
     }//GEN-LAST:event_number_twoActionPerformed
 
     private void number_zeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_zeroActionPerformed
@@ -1086,11 +1119,12 @@ public class ScientificCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void number_nineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_nineActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "9");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("9");
     }//GEN-LAST:event_number_nineActionPerformed
 
     private void memory_displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memory_displayActionPerformed
@@ -1098,11 +1132,12 @@ public class ScientificCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_memory_displayActionPerformed
 
     private void number_sixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sixActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "6");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("6");
     }//GEN-LAST:event_number_sixActionPerformed
 
     private void display2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_display2ActionPerformed
@@ -1110,11 +1145,12 @@ public class ScientificCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_display2ActionPerformed
 
     private void number_threeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_threeActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "3");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("3");
     }//GEN-LAST:event_number_threeActionPerformed
 
     private void displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayActionPerformed
@@ -1138,9 +1174,14 @@ public class ScientificCalculator extends javax.swing.JFrame {
     private void plus_minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plus_minusActionPerformed
         number2 = Double.parseDouble(String.valueOf(display.getText()));
         result = number2 * (-1);
+        
+        DecimalFormat format = new DecimalFormat("#.##");
+        double doubleFromTextField = Double.parseDouble(Double.toString(result));
+        System.out.println(format.format(doubleFromTextField));
 
         if (result > -100000000 && result < 100000000) {
-            display.setText(String.valueOf(result));
+            //display.setText(String.valueOf(result));
+            display.setText(format.format(doubleFromTextField));
         }
         else {
             display.setText("Error");
@@ -1165,15 +1206,21 @@ public class ScientificCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_one_divide_xActionPerformed
 
     private void msActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msActionPerformed
-        memory_display.setText(String.valueOf(display.getText()));
+        //memory_display.setText(String.valueOf(display.getText()));
+        CalcClass cc = new CalcClass();
+        cc.ms(display, memory_display);
     }//GEN-LAST:event_msActionPerformed
 
     private void mcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mcActionPerformed
-        memory_display.setText(null);
+        //memory_display.setText(null);
+        CalcClass cc = new CalcClass();
+        cc.mc(memory_display);
     }//GEN-LAST:event_mcActionPerformed
 
     private void mrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mrActionPerformed
-        display.setText(String.valueOf(memory_display.getText()));
+        //display.setText(String.valueOf(memory_display.getText()));
+        CalcClass cc = new CalcClass();
+        cc.mr(display, memory_display);
     }//GEN-LAST:event_mrActionPerformed
 
     private void number_oneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_oneActionPerformed
@@ -1203,7 +1250,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         if (!radians_checked) {
             number2 = number2 * 0.0174532925;
         }
-        result = Math.cos(number2);
+        result = round( Math.cos(number2), 8);
         display.setText(String.valueOf(result));
         result = 0;
     }//GEN-LAST:event_cosinusActionPerformed

@@ -35,13 +35,11 @@ public class ProgrammerMode extends javax.swing.JFrame {
         add = new javax.swing.JButton();
         e = new javax.swing.JButton();
         substract = new javax.swing.JButton();
-        plus_minus = new javax.swing.JButton();
         equal = new javax.swing.JButton();
         f = new javax.swing.JButton();
         divide = new javax.swing.JButton();
         multiply = new javax.swing.JButton();
         display1 = new javax.swing.JTextField();
-        decimal_point = new javax.swing.JButton();
         display2 = new javax.swing.JTextField();
         number_three = new javax.swing.JButton();
         memory_display = new javax.swing.JTextField();
@@ -174,17 +172,6 @@ public class ProgrammerMode extends javax.swing.JFrame {
             }
         });
 
-        plus_minus.setBackground(new java.awt.Color(51, 51, 51));
-        plus_minus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        plus_minus.setForeground(new java.awt.Color(204, 204, 204));
-        plus_minus.setText("±");
-        plus_minus.setPreferredSize(new java.awt.Dimension(61, 40));
-        plus_minus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                plus_minusActionPerformed(evt);
-            }
-        });
-
         equal.setBackground(new java.awt.Color(153, 0, 153));
         equal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         equal.setForeground(new java.awt.Color(204, 204, 204));
@@ -238,17 +225,6 @@ public class ProgrammerMode extends javax.swing.JFrame {
         display1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 display1ActionPerformed(evt);
-            }
-        });
-
-        decimal_point.setBackground(new java.awt.Color(51, 51, 51));
-        decimal_point.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        decimal_point.setForeground(new java.awt.Color(204, 204, 204));
-        decimal_point.setText(",");
-        decimal_point.setEnabled(false);
-        decimal_point.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                decimal_pointActionPerformed(evt);
             }
         });
 
@@ -503,16 +479,6 @@ public class ProgrammerMode extends javax.swing.JFrame {
                                         .addComponent(f, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                                         .addComponent(e, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(ms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(mr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(27, 27, 27)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(mc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(plus_minus, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -520,7 +486,18 @@ public class ProgrammerMode extends javax.swing.JFrame {
                                             .addComponent(oct, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(bin, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(dec, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addGap(46, 46, 46)))
+                                        .addGap(46, 46, 46))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(mr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(27, 27, 27)
+                                                .addComponent(mc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(61, 61, 61)
+                                                .addComponent(ms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(20, 20, 20)))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(reset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -539,23 +516,23 @@ public class ProgrammerMode extends javax.swing.JFrame {
                                                 .addComponent(number_five, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                         .addComponent(number_zero, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(number_three, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(number_six, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(number_nine, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(backspace, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                                    .addComponent(decimal_point, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(divide, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(number_three, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(number_six, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(number_nine, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(backspace, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGap(2, 2, 2)))
-                                    .addComponent(substract, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(multiply, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(divide, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(2, 2, 2)))
+                                            .addComponent(substract, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(multiply, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(display1)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -629,16 +606,11 @@ public class ProgrammerMode extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(e, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(ms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(decimal_point, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(number_zero, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(plus_minus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(f, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(number_zero, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(f, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -724,6 +696,14 @@ public class ProgrammerMode extends javax.swing.JFrame {
         }
         return result;
     }
+    
+    public void write_number(String num){
+        if(!beginning_zero && !having_decpoint) {
+            display1.setText(null);
+        }
+        display1.setText(display1.getText() + num);
+        beginning_zero = true;        
+    }
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         display1.setText("0");
@@ -736,39 +716,48 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_resetActionPerformed
 
     private void number_sevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sevenActionPerformed
-        if (!beginning_zero && !having_decpoint) {
+        /*if (!beginning_zero && !having_decpoint) {
             display1.setText(null);
         }
         display1.setText(display1.getText() + "7");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("7");
     }//GEN-LAST:event_number_sevenActionPerformed
 
     private void number_fourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fourActionPerformed
-        if (!beginning_zero && !having_decpoint) {
+        /*if (!beginning_zero && !having_decpoint) {
             display1.setText(null);
         }
         display1.setText(display1.getText() + "4");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("4");
     }//GEN-LAST:event_number_fourActionPerformed
 
     private void number_oneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_oneActionPerformed
-        if (!beginning_zero && !having_decpoint) {
+        /*if (!beginning_zero && !having_decpoint) {
             display1.setText(null);
         }
         display1.setText(display1.getText() + "1");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("1");
     }//GEN-LAST:event_number_oneActionPerformed
 
     private void mrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mrActionPerformed
-        display1.setText(String.valueOf(memory_display.getText()));
+        //display1.setText(String.valueOf(memory_display.getText()));
+        CalcClass cc = new CalcClass();
+        cc.mr(display1, memory_display);
     }//GEN-LAST:event_mrActionPerformed
 
     private void mcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mcActionPerformed
-        memory_display.setText(null);
+        //memory_display.setText(null);
+        CalcClass cc = new CalcClass();
+        cc.mc(memory_display);
     }//GEN-LAST:event_mcActionPerformed
 
     private void msActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msActionPerformed
-        memory_display.setText(String.valueOf(display1.getText()));
+        //memory_display.setText(String.valueOf(display1.getText()));
+        CalcClass cc = new CalcClass();
+        cc.ms(display1, memory_display);
     }//GEN-LAST:event_msActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
@@ -827,19 +816,6 @@ public class ProgrammerMode extends javax.swing.JFrame {
         having_decpoint = false;
         beginning_zero = false;
     }//GEN-LAST:event_substractActionPerformed
-
-    private void plus_minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plus_minusActionPerformed
-        number2 = Integer.parseInt(String.valueOf(display1.getText()));
-        result = number2 * (-1);
-
-        if (result > -100000000 && result < 100000000) {
-            display1.setText(String.valueOf(result));
-        } else {
-            display1.setText("Error");
-        }
-        having_decpoint = true;
-        result = 0;
-    }//GEN-LAST:event_plus_minusActionPerformed
 
     private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
 
@@ -944,23 +920,17 @@ public class ProgrammerMode extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_display1ActionPerformed
 
-    private void decimal_pointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decimal_pointActionPerformed
-        if (!having_decpoint) {
-            display1.setText(display1.getText() + ".");
-            having_decpoint = true;
-        }
-    }//GEN-LAST:event_decimal_pointActionPerformed
-
     private void display2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_display2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_display2ActionPerformed
 
     private void number_threeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_threeActionPerformed
-        if (!beginning_zero && !having_decpoint) {
+        /*if (!beginning_zero && !having_decpoint) {
             display1.setText(null);
         }
         display1.setText(display1.getText() + "3");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("3");
     }//GEN-LAST:event_number_threeActionPerformed
 
     private void memory_displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memory_displayActionPerformed
@@ -968,11 +938,12 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_memory_displayActionPerformed
 
     private void number_sixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sixActionPerformed
-        if (!beginning_zero && !having_decpoint) {
+        /*if (!beginning_zero && !having_decpoint) {
             display1.setText(null);
         }
         display1.setText(display1.getText() + "6");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("6");
     }//GEN-LAST:event_number_sixActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -985,11 +956,12 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void number_nineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_nineActionPerformed
-        if (!beginning_zero && !having_decpoint) {
+        /*if (!beginning_zero && !having_decpoint) {
             display1.setText(null);
         }
         display1.setText(display1.getText() + "9");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("9");
     }//GEN-LAST:event_number_nineActionPerformed
 
     private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
@@ -1007,27 +979,30 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_number_zeroActionPerformed
 
     private void number_twoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_twoActionPerformed
-        if (!beginning_zero && !having_decpoint) {
+        /*if (!beginning_zero && !having_decpoint) {
             display1.setText(null);
         }
         display1.setText(display1.getText() + "2");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("2");
     }//GEN-LAST:event_number_twoActionPerformed
 
     private void number_fiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fiveActionPerformed
-        if (!beginning_zero && !having_decpoint) {
+        /*if (!beginning_zero && !having_decpoint) {
             display1.setText(null);
         }
         display1.setText(display1.getText() + "5");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("5");
     }//GEN-LAST:event_number_fiveActionPerformed
 
     private void number_eightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_eightActionPerformed
-        if (!beginning_zero && !having_decpoint) {
+        /*if (!beginning_zero && !having_decpoint) {
             display1.setText(null);
         }
         display1.setText(display1.getText() + "8");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("8");
     }//GEN-LAST:event_number_eightActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
@@ -1115,7 +1090,7 @@ public class ProgrammerMode extends javax.swing.JFrame {
         number_five.setEnabled(false);
         number_six.setEnabled(false);
         number_seven.setEnabled(false);
-        plus_minus.setEnabled(false);
+        //plus_minus.setEnabled(false);
         //display1.setText("0");
         int number = Integer.parseInt(String.valueOf(display1.getText()), base);
         display1.setText(Integer.toBinaryString(number));
@@ -1139,7 +1114,7 @@ public class ProgrammerMode extends javax.swing.JFrame {
         number_five.setEnabled(true);
         number_six.setEnabled(true);
         number_seven.setEnabled(true);
-        plus_minus.setEnabled(false);
+        //plus_minus.setEnabled(false);
         int number = Integer.parseInt(String.valueOf(display1.getText()), base);
         display1.setText(Integer.toOctalString(number));
         display2.setText(null);
@@ -1163,7 +1138,7 @@ public class ProgrammerMode extends javax.swing.JFrame {
         number_five.setEnabled(true);
         number_six.setEnabled(true);
         number_seven.setEnabled(true);
-        plus_minus.setEnabled(false);
+        //plus_minus.setEnabled(false);
         int number = Integer.parseInt(String.valueOf(display1.getText()), base);
         display1.setText(Integer.toHexString(number));
         display2.setText(null);
@@ -1217,7 +1192,6 @@ public class ProgrammerMode extends javax.swing.JFrame {
     private javax.swing.JButton clear;
     private javax.swing.JButton d;
     private javax.swing.JRadioButton dec;
-    private javax.swing.JButton decimal_point;
     private javax.swing.JTextField display1;
     private javax.swing.JTextField display2;
     private javax.swing.JButton divide;
@@ -1243,7 +1217,6 @@ public class ProgrammerMode extends javax.swing.JFrame {
     private javax.swing.JButton number_two;
     private javax.swing.JButton number_zero;
     private javax.swing.JRadioButton oct;
-    private javax.swing.JButton plus_minus;
     private javax.swing.JButton reset;
     private javax.swing.JLabel simple1;
     private javax.swing.JButton simpleCalc;

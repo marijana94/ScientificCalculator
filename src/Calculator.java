@@ -551,6 +551,14 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
         // TODO add your handling code here:
     }//GEN-LAST:event_displayActionPerformed
 
+    public void write_number(String num){
+        if(!beginning_zero && !having_decpoint) {
+            display.setText(null);
+        }
+        display.setText(display.getText() + num);
+        beginning_zero = true;        
+    }
+    
     private void number_zeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_zeroActionPerformed
         if(!beginning_zero && !having_decpoint) {
             display.setText(null);
@@ -559,27 +567,30 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_number_zeroActionPerformed
 
     private void number_oneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_oneActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "1");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("1");
     }//GEN-LAST:event_number_oneActionPerformed
 
     private void number_twoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_twoActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "2");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("2");
     }//GEN-LAST:event_number_twoActionPerformed
 
     private void number_fourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fourActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "4");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("4");
     }//GEN-LAST:event_number_fourActionPerformed
 
     private void number_fiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fiveActionPerformed
@@ -591,35 +602,39 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_number_fiveActionPerformed
 
     private void number_sixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sixActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "6");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("6");
     }//GEN-LAST:event_number_sixActionPerformed
 
     private void number_sevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sevenActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "7");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("7");
     }//GEN-LAST:event_number_sevenActionPerformed
 
     private void number_eightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_eightActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "8");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("8");
     }//GEN-LAST:event_number_eightActionPerformed
 
     private void number_nineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_nineActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+        /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "9");
-        beginning_zero = true;
+        beginning_zero = true;*/
+        write_number("9");
     }//GEN-LAST:event_number_nineActionPerformed
 
     private void decimal_pointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decimal_pointActionPerformed
@@ -876,9 +891,15 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
     private void plus_minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plus_minusActionPerformed
         number2 = Double.parseDouble(String.valueOf(display.getText()));
         result = number2 * (-1);
+        
+        
+        DecimalFormat format = new DecimalFormat("#.##");
+        double doubleFromTextField = Double.parseDouble(Double.toString(result));
+        System.out.println(format.format(doubleFromTextField));
 
         if (result > -100000000 && result < 100000000) {
-            display.setText(String.valueOf(result));
+            //display.setText(String.valueOf(result));
+            display.setText(format.format(doubleFromTextField));
         }
         else {
             display.setText("Error");
@@ -888,15 +909,21 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_plus_minusActionPerformed
 
     private void msActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msActionPerformed
-        memory_display.setText(String.valueOf(display.getText()));
+        //memory_display.setText(String.valueOf(display.getText()));
+        CalcClass cc = new CalcClass();
+        cc.ms(display, memory_display);
     }//GEN-LAST:event_msActionPerformed
 
     private void mcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mcActionPerformed
-        memory_display.setText(null);
+        //memory_display.setText(null);
+        CalcClass cc = new CalcClass();
+        cc.mc(memory_display);
     }//GEN-LAST:event_mcActionPerformed
 
     private void mrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mrActionPerformed
-        display.setText(String.valueOf(memory_display.getText()));
+        //display.setText(String.valueOf(memory_display.getText()));
+        CalcClass cc = new CalcClass();
+        cc.mr(display, memory_display);
     }//GEN-LAST:event_mrActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
