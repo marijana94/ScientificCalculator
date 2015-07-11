@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.math.*;
+import java.text.DecimalFormat;
 
 public class Calculator extends javax.swing.JFrame implements KeyListener{
     
@@ -665,8 +666,13 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
             display.setText(String.valueOf(result));
         }
         
+        DecimalFormat format = new DecimalFormat("#.##");
+        double doubleFromTextField = Double.parseDouble(display.getText());
+        System.out.println(format.format(doubleFromTextField));
+        
         if (result > -100000000 && result < 100000000) {
-            display.setText(String.valueOf(result));
+            //display.setText(String.valueOf(result));
+            display.setText(format.format(doubleFromTextField));
         }
         else {
             display.setText("Error");
