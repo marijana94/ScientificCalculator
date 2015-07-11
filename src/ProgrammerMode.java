@@ -1092,7 +1092,9 @@ public class ProgrammerMode extends javax.swing.JFrame {
         number_five.setEnabled(true);
         number_six.setEnabled(true);
         number_seven.setEnabled(true);
-        display1.setText("0");
+        int number = Integer.parseInt(String.valueOf(display1.getText()), base);
+        display1.setText(Integer.toString(number));
+        display2.setText(null);
         display2.setText(null);
         base = 10;
     }//GEN-LAST:event_decActionPerformed
@@ -1114,7 +1116,9 @@ public class ProgrammerMode extends javax.swing.JFrame {
         number_six.setEnabled(false);
         number_seven.setEnabled(false);
         plus_minus.setEnabled(false);
-        display1.setText("0");
+        //display1.setText("0");
+        int number = Integer.parseInt(String.valueOf(display1.getText()), base);
+        display1.setText(Integer.toBinaryString(number));
         display2.setText(null);
         base = 2;
     }//GEN-LAST:event_binActionPerformed
@@ -1136,7 +1140,9 @@ public class ProgrammerMode extends javax.swing.JFrame {
         number_six.setEnabled(true);
         number_seven.setEnabled(true);
         plus_minus.setEnabled(false);
-        display1.setText("0");
+        int number = Integer.parseInt(String.valueOf(display1.getText()), base);
+        display1.setText(Integer.toOctalString(number));
+        display2.setText(null);
         display2.setText(null);
         base = 8;
     }//GEN-LAST:event_octActionPerformed
@@ -1158,7 +1164,9 @@ public class ProgrammerMode extends javax.swing.JFrame {
         number_six.setEnabled(true);
         number_seven.setEnabled(true);
         plus_minus.setEnabled(false);
-        display1.setText("0");
+        int number = Integer.parseInt(String.valueOf(display1.getText()), base);
+        display1.setText(Integer.toHexString(number));
+        display2.setText(null);
         display2.setText(null);
         base = 16;
     }//GEN-LAST:event_hexActionPerformed
