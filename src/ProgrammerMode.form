@@ -516,9 +516,6 @@
               <Color id="Default Cursor"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="display1ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="display2">
           <Properties>
@@ -541,9 +538,6 @@
               <Color id="Default Cursor"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="display2ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="number_three">
           <Properties>
@@ -583,9 +577,6 @@
               <Color id="Default Cursor"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="memory_displayActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="number_six">
           <Properties>

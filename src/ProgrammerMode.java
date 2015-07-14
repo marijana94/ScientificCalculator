@@ -222,11 +222,6 @@ public class ProgrammerMode extends javax.swing.JFrame {
         display1.setAutoscrolls(false);
         display1.setBorder(null);
         display1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        display1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                display1ActionPerformed(evt);
-            }
-        });
 
         display2.setEditable(false);
         display2.setBackground(new java.awt.Color(102, 102, 102));
@@ -236,11 +231,6 @@ public class ProgrammerMode extends javax.swing.JFrame {
         display2.setAutoscrolls(false);
         display2.setBorder(null);
         display2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        display2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                display2ActionPerformed(evt);
-            }
-        });
 
         number_three.setBackground(new java.awt.Color(51, 51, 51));
         number_three.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -260,11 +250,6 @@ public class ProgrammerMode extends javax.swing.JFrame {
         memory_display.setAutoscrolls(false);
         memory_display.setBorder(null);
         memory_display.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        memory_display.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                memory_displayActionPerformed(evt);
-            }
-        });
 
         number_six.setBackground(new java.awt.Color(51, 51, 51));
         number_six.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -716,29 +701,14 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_resetActionPerformed
 
     private void number_sevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sevenActionPerformed
-        /*if (!beginning_zero && !having_decpoint) {
-            display1.setText(null);
-        }
-        display1.setText(display1.getText() + "7");
-        beginning_zero = true;*/
         write_number("7");
     }//GEN-LAST:event_number_sevenActionPerformed
 
     private void number_fourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fourActionPerformed
-        /*if (!beginning_zero && !having_decpoint) {
-            display1.setText(null);
-        }
-        display1.setText(display1.getText() + "4");
-        beginning_zero = true;*/
         write_number("4");
     }//GEN-LAST:event_number_fourActionPerformed
 
     private void number_oneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_oneActionPerformed
-        /*if (!beginning_zero && !having_decpoint) {
-            display1.setText(null);
-        }
-        display1.setText(display1.getText() + "1");
-        beginning_zero = true;*/
         write_number("1");
     }//GEN-LAST:event_number_oneActionPerformed
 
@@ -916,33 +886,11 @@ public class ProgrammerMode extends javax.swing.JFrame {
         beginning_zero = false;
     }//GEN-LAST:event_multiplyActionPerformed
 
-    private void display1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_display1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_display1ActionPerformed
-
-    private void display2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_display2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_display2ActionPerformed
-
     private void number_threeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_threeActionPerformed
-        /*if (!beginning_zero && !having_decpoint) {
-            display1.setText(null);
-        }
-        display1.setText(display1.getText() + "3");
-        beginning_zero = true;*/
         write_number("3");
     }//GEN-LAST:event_number_threeActionPerformed
 
-    private void memory_displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memory_displayActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_memory_displayActionPerformed
-
     private void number_sixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sixActionPerformed
-        /*if (!beginning_zero && !having_decpoint) {
-            display1.setText(null);
-        }
-        display1.setText(display1.getText() + "6");
-        beginning_zero = true;*/
         write_number("6");
     }//GEN-LAST:event_number_sixActionPerformed
 
@@ -956,11 +904,6 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void number_nineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_nineActionPerformed
-        /*if (!beginning_zero && !having_decpoint) {
-            display1.setText(null);
-        }
-        display1.setText(display1.getText() + "9");
-        beginning_zero = true;*/
         write_number("9");
     }//GEN-LAST:event_number_nineActionPerformed
 
@@ -979,29 +922,14 @@ public class ProgrammerMode extends javax.swing.JFrame {
     }//GEN-LAST:event_number_zeroActionPerformed
 
     private void number_twoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_twoActionPerformed
-        /*if (!beginning_zero && !having_decpoint) {
-            display1.setText(null);
-        }
-        display1.setText(display1.getText() + "2");
-        beginning_zero = true;*/
         write_number("2");
     }//GEN-LAST:event_number_twoActionPerformed
 
     private void number_fiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fiveActionPerformed
-        /*if (!beginning_zero && !having_decpoint) {
-            display1.setText(null);
-        }
-        display1.setText(display1.getText() + "5");
-        beginning_zero = true;*/
         write_number("5");
     }//GEN-LAST:event_number_fiveActionPerformed
 
     private void number_eightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_eightActionPerformed
-        /*if (!beginning_zero && !having_decpoint) {
-            display1.setText(null);
-        }
-        display1.setText(display1.getText() + "8");
-        beginning_zero = true;*/
         write_number("8");
     }//GEN-LAST:event_number_eightActionPerformed
 

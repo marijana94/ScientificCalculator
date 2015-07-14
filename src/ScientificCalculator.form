@@ -478,9 +478,6 @@
               <Color id="Default Cursor"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="displayActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="number_three">
           <Properties>
@@ -520,9 +517,6 @@
               <Color id="Default Cursor"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="display2ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="number_six">
           <Properties>
@@ -562,9 +556,6 @@
               <Color id="Default Cursor"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="memory_displayActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="number_nine">
           <Properties>

@@ -336,11 +336,6 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
         display.setAutoscrolls(false);
         display.setBorder(null);
         display.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        display.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                displayActionPerformed(evt);
-            }
-        });
 
         display2.setEditable(false);
         display2.setBackground(new java.awt.Color(102, 102, 102));
@@ -350,11 +345,6 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
         display2.setAutoscrolls(false);
         display2.setBorder(null);
         display2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        display2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                display2ActionPerformed(evt);
-            }
-        });
 
         memory_display.setEditable(false);
         memory_display.setBackground(new java.awt.Color(102, 102, 102));
@@ -364,11 +354,6 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
         memory_display.setAutoscrolls(false);
         memory_display.setBorder(null);
         memory_display.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        memory_display.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                memory_displayActionPerformed(evt);
-            }
-        });
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
@@ -539,25 +524,19 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
     }// </editor-fold>//GEN-END:initComponents
 
     
-    private void number_threeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_threeActionPerformed
-        if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "3");
-        beginning_zero = true;
-    }//GEN-LAST:event_number_threeActionPerformed
-
-    private void displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_displayActionPerformed
-
-    public void write_number(String num){
+        public void write_number(String num){
         if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + num);
         beginning_zero = true;        
     }
+    
+    private void number_threeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_threeActionPerformed
+        write_number ("3");
+    }//GEN-LAST:event_number_threeActionPerformed
+
+
     
     private void number_zeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_zeroActionPerformed
         if(!beginning_zero && !having_decpoint) {
@@ -567,73 +546,39 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_number_zeroActionPerformed
 
     private void number_oneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_oneActionPerformed
-        /*if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "1");
-        beginning_zero = true;*/
         write_number("1");
     }//GEN-LAST:event_number_oneActionPerformed
 
     private void number_twoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_twoActionPerformed
-        /*if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "2");
-        beginning_zero = true;*/
         write_number("2");
     }//GEN-LAST:event_number_twoActionPerformed
 
     private void number_fourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fourActionPerformed
-        /*if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "4");
-        beginning_zero = true;*/
         write_number("4");
     }//GEN-LAST:event_number_fourActionPerformed
 
     private void number_fiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fiveActionPerformed
-        if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "5");
-        beginning_zero = true;
-    }//GEN-LAST:event_number_fiveActionPerformed
-
-    private void number_sixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sixActionPerformed
         /*if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
-        display.setText(display.getText() + "6");
+        display.setText(display.getText() + "5");
         beginning_zero = true;*/
+        write_number("5");
+    }//GEN-LAST:event_number_fiveActionPerformed
+
+    private void number_sixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sixActionPerformed
         write_number("6");
     }//GEN-LAST:event_number_sixActionPerformed
 
     private void number_sevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sevenActionPerformed
-        /*if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "7");
-        beginning_zero = true;*/
         write_number("7");
     }//GEN-LAST:event_number_sevenActionPerformed
 
     private void number_eightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_eightActionPerformed
-        /*if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "8");
-        beginning_zero = true;*/
         write_number("8");
     }//GEN-LAST:event_number_eightActionPerformed
 
     private void number_nineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_nineActionPerformed
-        /*if(!beginning_zero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "9");
-        beginning_zero = true;*/
         write_number("9");
     }//GEN-LAST:event_number_nineActionPerformed
 
@@ -660,7 +605,6 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
             result = number1 + number2;
             display2.setText(display2.getText() + String.valueOf(number2)); 
             display.setText(String.valueOf(result));
-            //System.out.print(result);
         }
         
         if (operator == 2) {
@@ -681,7 +625,7 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
             display.setText(String.valueOf(result));
         }
         
-        DecimalFormat format = new DecimalFormat("#.##");
+        DecimalFormat format = new DecimalFormat("#.##########");
         double doubleFromTextField = Double.parseDouble(display.getText());
         System.out.println(format.format(doubleFromTextField));
         
@@ -690,14 +634,20 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
             display.setText(format.format(doubleFromTextField));
         }
         else {
-            display.setText("Error");
+            display.setText("0");
+            display2.setText("Error!");
         }
         
         number1 = 0;
         number2 = 0;
         result = 0;
         operator = 0;
-        having_decpoint = false;
+        if(display.getText().contains(".")){
+            having_decpoint = true;
+        }
+        else{
+            having_decpoint = false;
+        }
         beginning_zero = false;
     }//GEN-LAST:event_equalActionPerformed
 
@@ -822,23 +772,25 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_divideActionPerformed
 
     private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
-        /*String s[] = new String[];
-        String display_string = String.valueOf(display.getText());
-        for (int i = 0; i < display_string.length() - 1 ; i++)
-            s += display_string[i];*/
-        /*double value = Double.parseDouble(String.valueOf(display.getText()));
-        double value1 = (int)value/10 + value - (int)value;
-        display.setText(String.valueOf(value1));*/
-        if(display.getText().length() > 0){
-       display.setText(display.getText().substring(0,display.getText().length() - 1));
+    if(display.getText().length() > 0){
+            display.setText(display.getText().substring(0,display.getText().length() - 1));
      }
+        if(display.getText().contains(".")){
+            having_decpoint = true;
+        }
+        else{
+            having_decpoint = false;
+        }
     }//GEN-LAST:event_backspaceActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
-        display.setText("0");
-        display2.setText(null);
+        /*display.setText("0");
+        display2.setText(null);*/
+        CalcClass cc = new CalcClass();
+        cc.clear(display, display2);
         having_decpoint = false;
         beginning_zero = false;
+        
     }//GEN-LAST:event_clearActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
@@ -852,40 +804,51 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_resetActionPerformed
 
     private void one_divide_xActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_one_divide_xActionPerformed
-        number2 = Double.parseDouble(String.valueOf(display.getText()));
-        result = 1/number2;
+        CalcClass cc = new CalcClass();
+        cc.one_divide_x(number2, result, display, display2);
+        DecimalFormat format = new DecimalFormat("#.##########");
+        double doubleFromTextField = Double.parseDouble(display.getText());
+        System.out.println(format.format(doubleFromTextField));
         
-                if (result > -100000000 && result < 100000000) {
-            display.setText(String.valueOf(result));
+        if (result > -100000000 && result < 100000000) {
+            //display.setText(String.valueOf(result));
+            display.setText(format.format(doubleFromTextField));
         }
         else {
-            display.setText("Error");
+            display.setText("0");
+            display2.setText("Error!");
         }
-                
-        display2.setText("1/" + String.valueOf(number2));
-        result = 0;
+        
+        if(display.getText().contains(".")){
+            having_decpoint = true;
+        }
+        else{
+            having_decpoint = false;
+        }
     }//GEN-LAST:event_one_divide_xActionPerformed
 
-    private void display2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_display2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_display2ActionPerformed
-
-    private void memory_displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memory_displayActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_memory_displayActionPerformed
-
     private void sqrtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sqrtActionPerformed
-        number2 = Double.parseDouble(String.valueOf(display.getText()));
-        result = Math.sqrt(number2);
-
+        CalcClass cc = new CalcClass();
+        cc.sqrt(number2, result, display, display2);
+        
+        DecimalFormat format = new DecimalFormat("#.##########");
+        double doubleFromTextField = Double.parseDouble(display.getText());
+        System.out.println(format.format(doubleFromTextField));
+        
         if (result > -100000000 && result < 100000000) {
-            display.setText(String.valueOf(result));
+            display.setText(format.format(doubleFromTextField));
         }
         else {
-            display.setText("Error");
+            display.setText("0");
+            display2.setText("Error!");
         }
-        display2.setText("√" + String.valueOf(number2));
-        result = 0;
+        
+        if(display.getText().contains(".")){
+            having_decpoint = true;
+        }
+        else{
+            having_decpoint = false;
+        }
     }//GEN-LAST:event_sqrtActionPerformed
 
     private void plus_minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plus_minusActionPerformed
@@ -893,18 +856,17 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
         result = number2 * (-1);
         
         
-        DecimalFormat format = new DecimalFormat("#.##");
+        DecimalFormat format = new DecimalFormat("#.##########");
         double doubleFromTextField = Double.parseDouble(Double.toString(result));
         System.out.println(format.format(doubleFromTextField));
 
         if (result > -100000000 && result < 100000000) {
-            //display.setText(String.valueOf(result));
             display.setText(format.format(doubleFromTextField));
         }
         else {
-            display.setText("Error");
+            display.setText("0");
+            display2.setText("Error!");
         }
-        having_decpoint = true;
         result = 0;
     }//GEN-LAST:event_plus_minusActionPerformed
 
