@@ -2,13 +2,13 @@
 import javax.swing.JTextField;
 
 
-public class CalcClass {
+public class Claculator {
     
     public boolean beginning_zero;
     public boolean having_decpoint;
    
     
-    public void write_number (String num, JTextField display) {
+    public void writeNumber (String num, JTextField display) {
         if(!beginning_zero && !having_decpoint) {
             display.setText(null);
         }
@@ -33,7 +33,7 @@ public class CalcClass {
         display2.setText(null);
     }
     
-    public void one_divide_x (double number2, double result, JTextField display, JTextField display2){
+    public void oneDivideX (double number2, double result, JTextField display, JTextField display2){
         number2 = Double.parseDouble(String.valueOf(display.getText()));
         result = 1/number2;
         

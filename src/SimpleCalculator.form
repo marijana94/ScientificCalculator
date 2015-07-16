@@ -80,41 +80,41 @@
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="one_divide_x" min="-2" pref="112" max="-2" attributes="0"/>
+                                              <Component id="oneDivideX" min="-2" pref="112" max="-2" attributes="0"/>
                                               <Component id="ms" min="-2" pref="112" max="-2" attributes="0"/>
                                               <Component id="mc" min="-2" pref="112" max="-2" attributes="0"/>
-                                              <Component id="plus_minus" min="-2" pref="112" max="-2" attributes="0"/>
+                                              <Component id="plusMinus" min="-2" pref="112" max="-2" attributes="0"/>
                                               <Component id="sqrt" min="-2" pref="112" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                                                   <Group type="102" attributes="0">
-                                                      <Component id="number_zero" max="32767" attributes="0"/>
+                                                      <Component id="numberZero" max="32767" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="decimal_point" min="-2" pref="112" max="-2" attributes="0"/>
+                                                      <Component id="decimalPoint" min="-2" pref="112" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="number_one" min="-2" pref="112" max="-2" attributes="0"/>
+                                                      <Component id="numberOne" min="-2" pref="112" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="number_two" min="-2" pref="112" max="-2" attributes="0"/>
+                                                      <Component id="numberTwo" min="-2" pref="112" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="number_three" min="-2" pref="112" max="-2" attributes="0"/>
+                                                      <Component id="numberThree" min="-2" pref="112" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="number_four" min="-2" pref="112" max="-2" attributes="0"/>
+                                                  <Component id="numberFour" min="-2" pref="112" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="number_five" min="-2" pref="112" max="-2" attributes="0"/>
+                                                  <Component id="numberFive" min="-2" pref="112" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="number_six" min="-2" pref="112" max="-2" attributes="0"/>
+                                                  <Component id="numberSix" min="-2" pref="112" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="number_seven" min="-2" pref="112" max="-2" attributes="0"/>
+                                                  <Component id="numberSeven" min="-2" pref="112" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="number_eight" min="-2" pref="112" max="-2" attributes="0"/>
+                                                  <Component id="numberEight" min="-2" pref="112" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="number_nine" min="-2" pref="112" max="-2" attributes="0"/>
+                                                  <Component id="numberNine" min="-2" pref="112" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -180,23 +180,23 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="multiply" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="number_nine" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="number_eight" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="number_seven" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="numberNine" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="numberEight" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="numberSeven" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="substract" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="number_six" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="number_five" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="number_four" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="numberSix" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="numberFive" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="numberFour" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="add" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="number_three" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="number_two" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="number_one" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="numberThree" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="numberTwo" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="numberOne" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -205,7 +205,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="ms" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="plus_minus" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="plusMinus" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="sqrt" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
@@ -213,9 +213,9 @@
                   </Group>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="equal" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                      <Component id="decimal_point" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                      <Component id="number_zero" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                      <Component id="one_divide_x" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="decimalPoint" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="numberZero" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="oneDivideX" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
@@ -308,7 +308,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="multiplyActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="decimal_point">
+        <Component class="javax.swing.JButton" name="decimalPoint">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -322,10 +322,10 @@
             <Property name="text" type="java.lang.String" value=","/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="decimal_pointActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="decimalPointActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="number_three">
+        <Component class="javax.swing.JButton" name="numberThree">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -339,10 +339,10 @@
             <Property name="text" type="java.lang.String" value="3"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="number_threeActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numberThreeActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="number_six">
+        <Component class="javax.swing.JButton" name="numberSix">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -356,10 +356,10 @@
             <Property name="text" type="java.lang.String" value="6"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="number_sixActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numberSixActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="number_nine">
+        <Component class="javax.swing.JButton" name="numberNine">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -373,7 +373,7 @@
             <Property name="text" type="java.lang.String" value="9"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="number_nineActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numberNineActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="backspace">
@@ -393,7 +393,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backspaceActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="number_zero">
+        <Component class="javax.swing.JButton" name="numberZero">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -407,10 +407,10 @@
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="number_zeroActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numberZeroActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="number_two">
+        <Component class="javax.swing.JButton" name="numberTwo">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -424,10 +424,10 @@
             <Property name="text" type="java.lang.String" value="2"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="number_twoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numberTwoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="number_five">
+        <Component class="javax.swing.JButton" name="numberFive">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -441,10 +441,10 @@
             <Property name="text" type="java.lang.String" value="5"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="number_fiveActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numberFiveActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="number_eight">
+        <Component class="javax.swing.JButton" name="numberEight">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -458,7 +458,7 @@
             <Property name="text" type="java.lang.String" value="8"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="number_eightActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numberEightActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="clear">
@@ -495,7 +495,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="resetActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="number_seven">
+        <Component class="javax.swing.JButton" name="numberSeven">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -509,10 +509,10 @@
             <Property name="text" type="java.lang.String" value="7"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="number_sevenActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numberSevenActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="number_four">
+        <Component class="javax.swing.JButton" name="numberFour">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -526,10 +526,10 @@
             <Property name="text" type="java.lang.String" value="4"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="number_fourActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numberFourActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="number_one">
+        <Component class="javax.swing.JButton" name="numberOne">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -543,7 +543,7 @@
             <Property name="text" type="java.lang.String" value="1"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="number_oneActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numberOneActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="mr">
@@ -597,7 +597,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="msActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="one_divide_x">
+        <Component class="javax.swing.JButton" name="oneDivideX">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -611,10 +611,10 @@
             <Property name="text" type="java.lang.String" value="1&#x2044;x"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="one_divide_xActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="oneDivideXActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="plus_minus">
+        <Component class="javax.swing.JButton" name="plusMinus">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -628,7 +628,7 @@
             <Property name="text" type="java.lang.String" value="&#xb1;"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plus_minusActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plusMinusActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="sqrt">

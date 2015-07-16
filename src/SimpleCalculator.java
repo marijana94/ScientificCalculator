@@ -1,16 +1,14 @@
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
-import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.math.*;
 import java.text.DecimalFormat;
 
-public class Calculator extends javax.swing.JFrame implements KeyListener{
+public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     
-    private boolean beginning_zero;
-    private boolean having_decpoint;
+    private boolean beginsWithZero;
+    private boolean hasDecimalPoint;
     
     private byte operator;
     
@@ -18,7 +16,7 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
     private double number2;
     private double result;
 
-    public Calculator() {
+    public SimpleCalculator() {
         initComponents();
         addKeyListener(this);
     }
@@ -33,25 +31,25 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
         equal = new javax.swing.JButton();
         divide = new javax.swing.JButton();
         multiply = new javax.swing.JButton();
-        decimal_point = new javax.swing.JButton();
-        number_three = new javax.swing.JButton();
-        number_six = new javax.swing.JButton();
-        number_nine = new javax.swing.JButton();
+        decimalPoint = new javax.swing.JButton();
+        numberThree = new javax.swing.JButton();
+        numberSix = new javax.swing.JButton();
+        numberNine = new javax.swing.JButton();
         backspace = new javax.swing.JButton();
-        number_zero = new javax.swing.JButton();
-        number_two = new javax.swing.JButton();
-        number_five = new javax.swing.JButton();
-        number_eight = new javax.swing.JButton();
+        numberZero = new javax.swing.JButton();
+        numberTwo = new javax.swing.JButton();
+        numberFive = new javax.swing.JButton();
+        numberEight = new javax.swing.JButton();
         clear = new javax.swing.JButton();
         reset = new javax.swing.JButton();
-        number_seven = new javax.swing.JButton();
-        number_four = new javax.swing.JButton();
-        number_one = new javax.swing.JButton();
+        numberSeven = new javax.swing.JButton();
+        numberFour = new javax.swing.JButton();
+        numberOne = new javax.swing.JButton();
         mr = new javax.swing.JButton();
         mc = new javax.swing.JButton();
         ms = new javax.swing.JButton();
-        one_divide_x = new javax.swing.JButton();
-        plus_minus = new javax.swing.JButton();
+        oneDivideX = new javax.swing.JButton();
+        plusMinus = new javax.swing.JButton();
         sqrt = new javax.swing.JButton();
         simple = new javax.swing.JLabel();
         display = new javax.swing.JTextField();
@@ -122,43 +120,43 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
             }
         });
 
-        decimal_point.setBackground(new java.awt.Color(51, 51, 51));
-        decimal_point.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        decimal_point.setForeground(new java.awt.Color(204, 204, 204));
-        decimal_point.setText(",");
-        decimal_point.addActionListener(new java.awt.event.ActionListener() {
+        decimalPoint.setBackground(new java.awt.Color(51, 51, 51));
+        decimalPoint.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        decimalPoint.setForeground(new java.awt.Color(204, 204, 204));
+        decimalPoint.setText(",");
+        decimalPoint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                decimal_pointActionPerformed(evt);
+                decimalPointActionPerformed(evt);
             }
         });
 
-        number_three.setBackground(new java.awt.Color(51, 51, 51));
-        number_three.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        number_three.setForeground(new java.awt.Color(204, 204, 204));
-        number_three.setText("3");
-        number_three.addActionListener(new java.awt.event.ActionListener() {
+        numberThree.setBackground(new java.awt.Color(51, 51, 51));
+        numberThree.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        numberThree.setForeground(new java.awt.Color(204, 204, 204));
+        numberThree.setText("3");
+        numberThree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                number_threeActionPerformed(evt);
+                numberThreeActionPerformed(evt);
             }
         });
 
-        number_six.setBackground(new java.awt.Color(51, 51, 51));
-        number_six.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        number_six.setForeground(new java.awt.Color(204, 204, 204));
-        number_six.setText("6");
-        number_six.addActionListener(new java.awt.event.ActionListener() {
+        numberSix.setBackground(new java.awt.Color(51, 51, 51));
+        numberSix.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        numberSix.setForeground(new java.awt.Color(204, 204, 204));
+        numberSix.setText("6");
+        numberSix.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                number_sixActionPerformed(evt);
+                numberSixActionPerformed(evt);
             }
         });
 
-        number_nine.setBackground(new java.awt.Color(51, 51, 51));
-        number_nine.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        number_nine.setForeground(new java.awt.Color(204, 204, 204));
-        number_nine.setText("9");
-        number_nine.addActionListener(new java.awt.event.ActionListener() {
+        numberNine.setBackground(new java.awt.Color(51, 51, 51));
+        numberNine.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        numberNine.setForeground(new java.awt.Color(204, 204, 204));
+        numberNine.setText("9");
+        numberNine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                number_nineActionPerformed(evt);
+                numberNineActionPerformed(evt);
             }
         });
 
@@ -172,43 +170,43 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
             }
         });
 
-        number_zero.setBackground(new java.awt.Color(51, 51, 51));
-        number_zero.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        number_zero.setForeground(new java.awt.Color(204, 204, 204));
-        number_zero.setText("0");
-        number_zero.addActionListener(new java.awt.event.ActionListener() {
+        numberZero.setBackground(new java.awt.Color(51, 51, 51));
+        numberZero.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        numberZero.setForeground(new java.awt.Color(204, 204, 204));
+        numberZero.setText("0");
+        numberZero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                number_zeroActionPerformed(evt);
+                numberZeroActionPerformed(evt);
             }
         });
 
-        number_two.setBackground(new java.awt.Color(51, 51, 51));
-        number_two.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        number_two.setForeground(new java.awt.Color(204, 204, 204));
-        number_two.setText("2");
-        number_two.addActionListener(new java.awt.event.ActionListener() {
+        numberTwo.setBackground(new java.awt.Color(51, 51, 51));
+        numberTwo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        numberTwo.setForeground(new java.awt.Color(204, 204, 204));
+        numberTwo.setText("2");
+        numberTwo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                number_twoActionPerformed(evt);
+                numberTwoActionPerformed(evt);
             }
         });
 
-        number_five.setBackground(new java.awt.Color(51, 51, 51));
-        number_five.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        number_five.setForeground(new java.awt.Color(204, 204, 204));
-        number_five.setText("5");
-        number_five.addActionListener(new java.awt.event.ActionListener() {
+        numberFive.setBackground(new java.awt.Color(51, 51, 51));
+        numberFive.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        numberFive.setForeground(new java.awt.Color(204, 204, 204));
+        numberFive.setText("5");
+        numberFive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                number_fiveActionPerformed(evt);
+                numberFiveActionPerformed(evt);
             }
         });
 
-        number_eight.setBackground(new java.awt.Color(51, 51, 51));
-        number_eight.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        number_eight.setForeground(new java.awt.Color(204, 204, 204));
-        number_eight.setText("8");
-        number_eight.addActionListener(new java.awt.event.ActionListener() {
+        numberEight.setBackground(new java.awt.Color(51, 51, 51));
+        numberEight.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        numberEight.setForeground(new java.awt.Color(204, 204, 204));
+        numberEight.setText("8");
+        numberEight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                number_eightActionPerformed(evt);
+                numberEightActionPerformed(evt);
             }
         });
 
@@ -232,33 +230,33 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
             }
         });
 
-        number_seven.setBackground(new java.awt.Color(51, 51, 51));
-        number_seven.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        number_seven.setForeground(new java.awt.Color(204, 204, 204));
-        number_seven.setText("7");
-        number_seven.addActionListener(new java.awt.event.ActionListener() {
+        numberSeven.setBackground(new java.awt.Color(51, 51, 51));
+        numberSeven.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        numberSeven.setForeground(new java.awt.Color(204, 204, 204));
+        numberSeven.setText("7");
+        numberSeven.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                number_sevenActionPerformed(evt);
+                numberSevenActionPerformed(evt);
             }
         });
 
-        number_four.setBackground(new java.awt.Color(51, 51, 51));
-        number_four.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        number_four.setForeground(new java.awt.Color(204, 204, 204));
-        number_four.setText("4");
-        number_four.addActionListener(new java.awt.event.ActionListener() {
+        numberFour.setBackground(new java.awt.Color(51, 51, 51));
+        numberFour.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        numberFour.setForeground(new java.awt.Color(204, 204, 204));
+        numberFour.setText("4");
+        numberFour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                number_fourActionPerformed(evt);
+                numberFourActionPerformed(evt);
             }
         });
 
-        number_one.setBackground(new java.awt.Color(51, 51, 51));
-        number_one.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        number_one.setForeground(new java.awt.Color(204, 204, 204));
-        number_one.setText("1");
-        number_one.addActionListener(new java.awt.event.ActionListener() {
+        numberOne.setBackground(new java.awt.Color(51, 51, 51));
+        numberOne.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        numberOne.setForeground(new java.awt.Color(204, 204, 204));
+        numberOne.setText("1");
+        numberOne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                number_oneActionPerformed(evt);
+                numberOneActionPerformed(evt);
             }
         });
 
@@ -292,23 +290,23 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
             }
         });
 
-        one_divide_x.setBackground(new java.awt.Color(51, 51, 51));
-        one_divide_x.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        one_divide_x.setForeground(new java.awt.Color(204, 204, 204));
-        one_divide_x.setText("1⁄x");
-        one_divide_x.addActionListener(new java.awt.event.ActionListener() {
+        oneDivideX.setBackground(new java.awt.Color(51, 51, 51));
+        oneDivideX.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        oneDivideX.setForeground(new java.awt.Color(204, 204, 204));
+        oneDivideX.setText("1⁄x");
+        oneDivideX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                one_divide_xActionPerformed(evt);
+                oneDivideXActionPerformed(evt);
             }
         });
 
-        plus_minus.setBackground(new java.awt.Color(51, 51, 51));
-        plus_minus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        plus_minus.setForeground(new java.awt.Color(204, 204, 204));
-        plus_minus.setText("±");
-        plus_minus.addActionListener(new java.awt.event.ActionListener() {
+        plusMinus.setBackground(new java.awt.Color(51, 51, 51));
+        plusMinus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        plusMinus.setForeground(new java.awt.Color(204, 204, 204));
+        plusMinus.setText("±");
+        plusMinus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                plus_minusActionPerformed(evt);
+                plusMinusActionPerformed(evt);
             }
         });
 
@@ -396,36 +394,36 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
                                         .addComponent(backspace, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(one_divide_x, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(oneDivideX, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(ms, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(mc, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(plus_minus, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(plusMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(sqrt, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(number_zero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(numberZero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(decimal_point, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(decimalPoint, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(number_one, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(numberOne, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(number_two, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(numberTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(number_three, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                    .addComponent(numberThree, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(number_four, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(numberFour, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(number_five, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(numberFive, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(number_six, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(numberSix, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(number_seven, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(numberSeven, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(number_eight, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(numberEight, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(number_nine, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                .addComponent(numberNine, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(divide, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -474,36 +472,36 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(multiply, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number_nine, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number_eight, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number_seven, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(numberNine, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(numberEight, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(numberSeven, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(substract, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number_six, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number_five, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number_four, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(numberSix, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(numberFive, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(numberFour, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number_three, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number_two, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(number_one, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(numberThree, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(numberTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(numberOne, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(mc, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ms, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(plus_minus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(plusMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(sqrt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(decimal_point, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(number_zero, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(one_divide_x, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(decimalPoint, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numberZero, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(oneDivideX, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26))
         );
 
@@ -524,70 +522,70 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
     }// </editor-fold>//GEN-END:initComponents
 
     
-        public void write_number(String num){
-        if(!beginning_zero && !having_decpoint) {
+        public void writeNumber(String num){
+        if(!beginsWithZero && !hasDecimalPoint) {
             display.setText(null);
         }
         display.setText(display.getText() + num);
-        beginning_zero = true;        
+        beginsWithZero = true;        
     }
     
-    private void number_threeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_threeActionPerformed
-        write_number ("3");
-    }//GEN-LAST:event_number_threeActionPerformed
+    private void numberThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberThreeActionPerformed
+        writeNumber ("3");
+    }//GEN-LAST:event_numberThreeActionPerformed
 
 
     
-    private void number_zeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_zeroActionPerformed
-        if(!beginning_zero && !having_decpoint) {
+    private void numberZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberZeroActionPerformed
+        if(!beginsWithZero && !hasDecimalPoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "0");
-    }//GEN-LAST:event_number_zeroActionPerformed
+    }//GEN-LAST:event_numberZeroActionPerformed
 
-    private void number_oneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_oneActionPerformed
-        write_number("1");
-    }//GEN-LAST:event_number_oneActionPerformed
+    private void numberOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberOneActionPerformed
+        writeNumber("1");
+    }//GEN-LAST:event_numberOneActionPerformed
 
-    private void number_twoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_twoActionPerformed
-        write_number("2");
-    }//GEN-LAST:event_number_twoActionPerformed
+    private void numberTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberTwoActionPerformed
+        writeNumber("2");
+    }//GEN-LAST:event_numberTwoActionPerformed
 
-    private void number_fourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fourActionPerformed
-        write_number("4");
-    }//GEN-LAST:event_number_fourActionPerformed
+    private void numberFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberFourActionPerformed
+        writeNumber("4");
+    }//GEN-LAST:event_numberFourActionPerformed
 
-    private void number_fiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_fiveActionPerformed
-        /*if(!beginning_zero && !having_decpoint) {
+    private void numberFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberFiveActionPerformed
+        /*if(!beginsWithZero && !having_decpoint) {
             display.setText(null);
         }
         display.setText(display.getText() + "5");
-        beginning_zero = true;*/
-        write_number("5");
-    }//GEN-LAST:event_number_fiveActionPerformed
+        beginsWithZero = true;*/
+        writeNumber("5");
+    }//GEN-LAST:event_numberFiveActionPerformed
 
-    private void number_sixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sixActionPerformed
-        write_number("6");
-    }//GEN-LAST:event_number_sixActionPerformed
+    private void numberSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberSixActionPerformed
+        writeNumber("6");
+    }//GEN-LAST:event_numberSixActionPerformed
 
-    private void number_sevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_sevenActionPerformed
-        write_number("7");
-    }//GEN-LAST:event_number_sevenActionPerformed
+    private void numberSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberSevenActionPerformed
+        writeNumber("7");
+    }//GEN-LAST:event_numberSevenActionPerformed
 
-    private void number_eightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_eightActionPerformed
-        write_number("8");
-    }//GEN-LAST:event_number_eightActionPerformed
+    private void numberEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberEightActionPerformed
+        writeNumber("8");
+    }//GEN-LAST:event_numberEightActionPerformed
 
-    private void number_nineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_nineActionPerformed
-        write_number("9");
-    }//GEN-LAST:event_number_nineActionPerformed
+    private void numberNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberNineActionPerformed
+        writeNumber("9");
+    }//GEN-LAST:event_numberNineActionPerformed
 
-    private void decimal_pointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decimal_pointActionPerformed
-        if(!having_decpoint) {
+    private void decimalPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decimalPointActionPerformed
+        if(!hasDecimalPoint) {
             display.setText(display.getText() + ".");
-            having_decpoint = true;
+            hasDecimalPoint = true;
         }
-    }//GEN-LAST:event_decimal_pointActionPerformed
+    }//GEN-LAST:event_decimalPointActionPerformed
 
     private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
         /* operator == 0 (nothing)
@@ -643,12 +641,12 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
         result = 0;
         operator = 0;
         if(display.getText().contains(".")){
-            having_decpoint = true;
+            hasDecimalPoint = true;
         }
         else{
-            having_decpoint = false;
+            hasDecimalPoint = false;
         }
-        beginning_zero = false;
+        beginsWithZero = false;
     }//GEN-LAST:event_equalActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
@@ -677,8 +675,8 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
         
         display2.setText(String.valueOf(number1) + " + ");
         operator = 1;
-        having_decpoint = false;
-        beginning_zero = false;
+        hasDecimalPoint = false;
+        beginsWithZero = false;
     }//GEN-LAST:event_addActionPerformed
 
     private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
@@ -707,8 +705,8 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
         
         display2.setText(String.valueOf(number1) + " - ");
         operator = 2;
-        having_decpoint = false;
-        beginning_zero = false;
+        hasDecimalPoint = false;
+        beginsWithZero = false;
     }//GEN-LAST:event_substractActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
@@ -737,8 +735,8 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
         
         display2.setText(String.valueOf(number1) + " * ");
         operator = 3;
-        having_decpoint = false;
-        beginning_zero = false;
+        hasDecimalPoint = false;
+        beginsWithZero = false;
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
@@ -767,8 +765,8 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
         
         display2.setText(String.valueOf(number1) + " / ");
         operator = 4;
-        having_decpoint = false;
-        beginning_zero = false;
+        hasDecimalPoint = false;
+        beginsWithZero = false;
     }//GEN-LAST:event_divideActionPerformed
 
     private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
@@ -776,36 +774,36 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
             display.setText(display.getText().substring(0,display.getText().length() - 1));
      }
         if(display.getText().contains(".")){
-            having_decpoint = true;
+            hasDecimalPoint = true;
         }
         else{
-            having_decpoint = false;
+            hasDecimalPoint = false;
         }
     }//GEN-LAST:event_backspaceActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         /*display.setText("0");
         display2.setText(null);*/
-        CalcClass cc = new CalcClass();
+        Claculator cc = new Claculator();
         cc.clear(display, display2);
-        having_decpoint = false;
-        beginning_zero = false;
+        hasDecimalPoint = false;
+        beginsWithZero = false;
         
     }//GEN-LAST:event_clearActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         display.setText("0");
         display2.setText(null);
-        having_decpoint = false;
-        beginning_zero = false;
+        hasDecimalPoint = false;
+        beginsWithZero = false;
         number1 = 0;
         number2 = 0;
         result = 0;
     }//GEN-LAST:event_resetActionPerformed
 
-    private void one_divide_xActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_one_divide_xActionPerformed
-        CalcClass cc = new CalcClass();
-        cc.one_divide_x(number2, result, display, display2);
+    private void oneDivideXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneDivideXActionPerformed
+        Claculator cc = new Claculator();
+        cc.oneDivideX(number2, result, display, display2);
         DecimalFormat format = new DecimalFormat("#.##########");
         double doubleFromTextField = Double.parseDouble(display.getText());
         System.out.println(format.format(doubleFromTextField));
@@ -820,15 +818,15 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
         }
         
         if(display.getText().contains(".")){
-            having_decpoint = true;
+            hasDecimalPoint = true;
         }
         else{
-            having_decpoint = false;
+            hasDecimalPoint = false;
         }
-    }//GEN-LAST:event_one_divide_xActionPerformed
+    }//GEN-LAST:event_oneDivideXActionPerformed
 
     private void sqrtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sqrtActionPerformed
-        CalcClass cc = new CalcClass();
+        Claculator cc = new Claculator();
         cc.sqrt(number2, result, display, display2);
         
         DecimalFormat format = new DecimalFormat("#.##########");
@@ -844,14 +842,14 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
         }
         
         if(display.getText().contains(".")){
-            having_decpoint = true;
+            hasDecimalPoint = true;
         }
         else{
-            having_decpoint = false;
+            hasDecimalPoint = false;
         }
     }//GEN-LAST:event_sqrtActionPerformed
 
-    private void plus_minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plus_minusActionPerformed
+    private void plusMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusMinusActionPerformed
         number2 = Double.parseDouble(String.valueOf(display.getText()));
         result = number2 * (-1);
         
@@ -868,28 +866,28 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
             display2.setText("Error!");
         }
         result = 0;
-    }//GEN-LAST:event_plus_minusActionPerformed
+    }//GEN-LAST:event_plusMinusActionPerformed
 
     private void msActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msActionPerformed
         //memory_display.setText(String.valueOf(display.getText()));
-        CalcClass cc = new CalcClass();
+        Claculator cc = new Claculator();
         cc.ms(display, memory_display);
     }//GEN-LAST:event_msActionPerformed
 
     private void mcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mcActionPerformed
         //memory_display.setText(null);
-        CalcClass cc = new CalcClass();
+        Claculator cc = new Claculator();
         cc.mc(memory_display);
     }//GEN-LAST:event_mcActionPerformed
 
     private void mrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mrActionPerformed
         //display.setText(String.valueOf(memory_display.getText()));
-        CalcClass cc = new CalcClass();
+        Claculator cc = new Claculator();
         cc.mr(display, memory_display);
     }//GEN-LAST:event_mrActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //Calculator simpleCalculator = new Calculator();
+        //Calculator simpleCalculator = new SimpleCalculator();
         //simpleCalculator.setVisible(false);
         this.dispose();
         ScientificCalculator scientificCalc = new ScientificCalculator();
@@ -899,7 +897,7 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
 
     private void programmerModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programmerModeActionPerformed
         this.dispose();
-        ProgrammerMode progMode = new ProgrammerMode();
+        ProgrammerCalculator progMode = new ProgrammerCalculator();
         progMode.setVisible(true);
         progMode.setLocation(300, 100);
     }//GEN-LAST:event_programmerModeActionPerformed
@@ -922,20 +920,23 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Calculator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SimpleCalculator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Calculator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SimpleCalculator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Calculator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SimpleCalculator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Calculator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SimpleCalculator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Calculator().setVisible(true);
+                new SimpleCalculator().setVisible(true);
             }
         });
     }
@@ -944,7 +945,7 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
     private javax.swing.JButton add;
     private javax.swing.JButton backspace;
     private javax.swing.JButton clear;
-    private javax.swing.JButton decimal_point;
+    private javax.swing.JButton decimalPoint;
     private javax.swing.JTextField display;
     private javax.swing.JTextField display2;
     private javax.swing.JButton divide;
@@ -956,18 +957,18 @@ public class Calculator extends javax.swing.JFrame implements KeyListener{
     private javax.swing.JButton mr;
     private javax.swing.JButton ms;
     private javax.swing.JButton multiply;
-    private javax.swing.JButton number_eight;
-    private javax.swing.JButton number_five;
-    private javax.swing.JButton number_four;
-    private javax.swing.JButton number_nine;
-    private javax.swing.JButton number_one;
-    private javax.swing.JButton number_seven;
-    private javax.swing.JButton number_six;
-    private javax.swing.JButton number_three;
-    private javax.swing.JButton number_two;
-    private javax.swing.JButton number_zero;
-    private javax.swing.JButton one_divide_x;
-    private javax.swing.JButton plus_minus;
+    private javax.swing.JButton numberEight;
+    private javax.swing.JButton numberFive;
+    private javax.swing.JButton numberFour;
+    private javax.swing.JButton numberNine;
+    private javax.swing.JButton numberOne;
+    private javax.swing.JButton numberSeven;
+    private javax.swing.JButton numberSix;
+    private javax.swing.JButton numberThree;
+    private javax.swing.JButton numberTwo;
+    private javax.swing.JButton numberZero;
+    private javax.swing.JButton oneDivideX;
+    private javax.swing.JButton plusMinus;
     private javax.swing.JButton programmerMode;
     private javax.swing.JButton reset;
     private javax.swing.JLabel simple;
