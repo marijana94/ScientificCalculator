@@ -3,20 +3,20 @@ import java.text.DecimalFormat;
 
 
 public class ScientificCalculator extends javax.swing.JFrame {
-
-    private boolean beginsWithZero;
-    private boolean hasDecimalPoint;
+    
     private boolean radians_checked;
-    
-    private byte operator;
-    
-    private double number1;
-    private double number2;
-    private double result;
     
     public ScientificCalculator() {
         initComponents();
     }
+    
+    Calculator c = new Calculator();
+    boolean beginsWithZero = c.beginsWithZero;
+    boolean hasDecimalPoint = c.hasDecimalPoint;
+    byte operator = c.operator;
+    double number1 = c.number1;
+    double number2 = c.number2;
+    double result = c.result;
 
     
     @SuppressWarnings("unchecked")
@@ -33,14 +33,14 @@ public class ScientificCalculator extends javax.swing.JFrame {
         oneDivideX = new javax.swing.JButton();
         plusMinus = new javax.swing.JButton();
         sqrt = new javax.swing.JButton();
-        simple = new javax.swing.JLabel();
+        scientificMode = new javax.swing.JLabel();
         display = new javax.swing.JTextField();
         numberThree = new javax.swing.JButton();
         display2 = new javax.swing.JTextField();
         numberSix = new javax.swing.JButton();
         memory_display = new javax.swing.JTextField();
         numberNine = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        simpleMode = new javax.swing.JButton();
         backspace = new javax.swing.JButton();
         numberZero = new javax.swing.JButton();
         numberTwo = new javax.swing.JButton();
@@ -153,10 +153,10 @@ public class ScientificCalculator extends javax.swing.JFrame {
             }
         });
 
-        simple.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
-        simple.setForeground(new java.awt.Color(204, 204, 204));
-        simple.setText("Scientific");
-        simple.setName("simple"); // NOI18N
+        scientificMode.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        scientificMode.setForeground(new java.awt.Color(204, 204, 204));
+        scientificMode.setText("Scientific");
+        scientificMode.setName("scientificMode"); // NOI18N
 
         display.setEditable(false);
         display.setBackground(new java.awt.Color(102, 102, 102));
@@ -216,12 +216,12 @@ public class ScientificCalculator extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jButton1.setText("Simple");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        simpleMode.setBackground(new java.awt.Color(51, 51, 51));
+        simpleMode.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        simpleMode.setText("Simple");
+        simpleMode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                simpleModeActionPerformed(evt);
             }
         });
 
@@ -590,9 +590,9 @@ public class ScientificCalculator extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(simpleMode, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(simple, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(scientificMode, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(prgrammerMode)
                                 .addGap(0, 0, Short.MAX_VALUE))
@@ -693,8 +693,8 @@ public class ScientificCalculator extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(simple, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
+                    .addComponent(scientificMode, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(simpleMode)
                     .addComponent(prgrammerMode))
                 .addGap(5, 5, 5)
                 .addComponent(memory_display, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -824,6 +824,30 @@ public class ScientificCalculator extends javax.swing.JFrame {
         beginsWithZero = true;        
     }
 
+    public void checkOperatorValue(){
+        if(operator == 0) {
+            number1 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        else {
+            number2 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        
+        if (operator == 1) {
+            number1 = number1 + number2;
+        }
+        
+        if (operator == 2) {
+            number1 = number1 - number2;
+        }
+        
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+        
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
+    }
     
     private void numberFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberFourActionPerformed
         writeNumber("4");
@@ -841,29 +865,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_decimalPointActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
-        if(operator == 0) {
-            number1 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        else {
-            number2 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-
+        checkOperatorValue();
         display2.setText(String.valueOf(number1) + " * ");
         operator = 3;
         hasDecimalPoint = false;
@@ -871,29 +873,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-        if(operator == 0) {
-            number1 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        else {
-            number2 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-
+        checkOperatorValue();
         display2.setText(String.valueOf(number1) + " / ");
         operator = 4;
         hasDecimalPoint = false;
@@ -960,39 +940,12 @@ public class ScientificCalculator extends javax.swing.JFrame {
         number2 = 0;
         result = 0;
         operator = 0;
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
         beginsWithZero = false;
     }//GEN-LAST:event_equalActionPerformed
 
     private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
-        if(operator == 0) {
-            number1 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        else {
-            number2 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-
-        if (operator == 3) {
-            number1 = number1 * number2;
-        } 
-
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-
+        checkOperatorValue();
         display2.setText(String.valueOf(number1) + " - ");
         operator = 2;
         hasDecimalPoint = false;
@@ -1000,29 +953,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_substractActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        if(operator == 0) {
-            number1 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        else {
-            number2 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-
+        checkOperatorValue();
         display2.setText(String.valueOf(number1) + " + ");
         operator = 1;
         hasDecimalPoint = false;
@@ -1066,23 +997,16 @@ public class ScientificCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_numberZeroActionPerformed
 
     private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
-        if(display.getText().length() > 0){
-            display.setText(display.getText().substring(0,display.getText().length() - 1));
-        }
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        c.backspace(display);
+        hasDecimalPoint = display.getText().contains(".");
     }//GEN-LAST:event_backspaceActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void simpleModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleModeActionPerformed
         this.dispose();
         SimpleCalculator calc = new SimpleCalculator();
         calc.setVisible(true);
         calc.setLocation(300, 100);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_simpleModeActionPerformed
 
     private void numberNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberNineActionPerformed
         writeNumber("9");
@@ -1097,7 +1021,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_numberThreeActionPerformed
 
     private void sqrtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sqrtActionPerformed
-        Claculator cc = new Claculator();
+        Calculator cc = new Calculator();
         cc.sqrt(number2, result, display, display2);
         
         DecimalFormat format = new DecimalFormat("#.##########");
@@ -1111,12 +1035,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display.setText("0");
             display2.setText("Error!");
         }
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
     }//GEN-LAST:event_sqrtActionPerformed
 
     private void plusMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusMinusActionPerformed
@@ -1139,7 +1058,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_plusMinusActionPerformed
 
     private void oneDivideXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneDivideXActionPerformed
-        Claculator cc = new Claculator();
+        Calculator cc = new Calculator();
         cc.oneDivideX(number2, result, display, display2);
         DecimalFormat format = new DecimalFormat("#.##########");
         double doubleFromTextField = Double.parseDouble(display.getText());
@@ -1154,29 +1073,24 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display2.setText("Error!");
         }
         
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
     }//GEN-LAST:event_oneDivideXActionPerformed
 
     private void msActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msActionPerformed
         //memory_display.setText(String.valueOf(display.getText()));
-        Claculator cc = new Claculator();
+        Calculator cc = new Calculator();
         cc.ms(display, memory_display);
     }//GEN-LAST:event_msActionPerformed
 
     private void mcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mcActionPerformed
         //memory_display.setText(null);
-        Claculator cc = new Claculator();
+        Calculator cc = new Calculator();
         cc.mc(memory_display);
     }//GEN-LAST:event_mcActionPerformed
 
     private void mrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mrActionPerformed
         //display.setText(String.valueOf(memory_display.getText()));
-        Claculator cc = new Claculator();
+        Calculator cc = new Calculator();
         cc.mr(display, memory_display);
     }//GEN-LAST:event_mrActionPerformed
 
@@ -1208,12 +1122,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display.setText("0");
             display2.setText("Error!");
         }
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
         result = 0;
     }//GEN-LAST:event_sinusActionPerformed
 
@@ -1234,12 +1143,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display.setText("0");
             display2.setText("Error!");
         }
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
         result = 0;
     }//GEN-LAST:event_cosinusActionPerformed
 
@@ -1257,12 +1161,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display.setText("0");
             display2.setText("Error!");
         }
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
         result = 0; 
     }//GEN-LAST:event_tangensHyperbolicusActionPerformed
 
@@ -1283,12 +1182,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display.setText("0");
             display2.setText("Error!");
         }
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
         result = 0;
     }//GEN-LAST:event_tangensActionPerformed
 
@@ -1306,12 +1200,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display.setText("0");
             display2.setText("Error!");
         }
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
         result = 0; 
     }//GEN-LAST:event_cosinusHyperbolicusActionPerformed
 
@@ -1329,12 +1218,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display.setText("0");
             display2.setText("Error!");
         }
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
         result = 0;        
     }//GEN-LAST:event_sinusHyperbolicusActionPerformed
 
@@ -1353,12 +1237,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         }
         display2.setText("3√" + String.valueOf(number2));
         
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
         result = 0;
     }//GEN-LAST:event_cubeRootActionPerformed
 
@@ -1376,12 +1255,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display2.setText("Error!");
         }
         display2.setText(String.valueOf(number2) + "^3");
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
         result = 0;
     }//GEN-LAST:event_cubedActionPerformed
 
@@ -1399,12 +1273,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display2.setText("Error!");
         }
         display2.setText(String.valueOf(number2) + "^2");
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
         result = 0;
     }//GEN-LAST:event_squaredActionPerformed
 
@@ -1570,7 +1439,6 @@ public class ScientificCalculator extends javax.swing.JFrame {
     private javax.swing.JButton divide;
     private javax.swing.JButton equal;
     private javax.swing.JButton exp;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logarithm;
     private javax.swing.JButton mc;
@@ -1596,7 +1464,8 @@ public class ScientificCalculator extends javax.swing.JFrame {
     private javax.swing.JButton prgrammerMode;
     private javax.swing.JRadioButton radians;
     private javax.swing.JButton reset;
-    private javax.swing.JLabel simple;
+    private javax.swing.JLabel scientificMode;
+    private javax.swing.JButton simpleMode;
     private javax.swing.JButton sinus;
     private javax.swing.JButton sinusHyperbolicus;
     private javax.swing.JButton sqrt;

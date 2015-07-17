@@ -1,24 +1,25 @@
 
 public class ProgrammerCalculator extends javax.swing.JFrame {
 
-    private boolean beginsWithZero;
-    private boolean hasDecimalPoint;
     private boolean decimalChecked;
     private boolean binarChecked;
     private boolean octalChecked;
     private boolean hexadecimalChecked;
-
-    private byte operator;
-
+    private int result;
     private int number1;
     private int number2;
-    private int result;
+
     private int base = 10;
 
     public ProgrammerCalculator() {
         initComponents();
     }
 
+    Calculator cc = new Calculator();
+    boolean beginsWithZero = cc.beginsWithZero;
+    boolean hasDecimalPoint = cc.hasDecimalPoint;
+    byte operator = cc.operator;
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -44,7 +45,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         numberThree = new javax.swing.JButton();
         memory_display = new javax.swing.JTextField();
         numberSix = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        scientificMode = new javax.swing.JButton();
         numberNine = new javax.swing.JButton();
         backspace = new javax.swing.JButton();
         numberZero = new javax.swing.JButton();
@@ -52,8 +53,8 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         numberFive = new javax.swing.JButton();
         numberEight = new javax.swing.JButton();
         clear = new javax.swing.JButton();
-        simple1 = new javax.swing.JLabel();
-        simpleCalc = new javax.swing.JButton();
+        programmerMode = new javax.swing.JLabel();
+        simpleMode = new javax.swing.JButton();
         d = new javax.swing.JButton();
         c = new javax.swing.JButton();
         b = new javax.swing.JButton();
@@ -261,12 +262,12 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jButton1.setText("Scientific");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        scientificMode.setBackground(new java.awt.Color(51, 51, 51));
+        scientificMode.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        scientificMode.setText("Scientific");
+        scientificMode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                scientificModeActionPerformed(evt);
             }
         });
 
@@ -340,17 +341,17 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
             }
         });
 
-        simple1.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
-        simple1.setForeground(new java.awt.Color(204, 204, 204));
-        simple1.setText("Programmer");
-        simple1.setName("simple"); // NOI18N
+        programmerMode.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        programmerMode.setForeground(new java.awt.Color(204, 204, 204));
+        programmerMode.setText("Programmer");
+        programmerMode.setName("simple"); // NOI18N
 
-        simpleCalc.setBackground(new java.awt.Color(51, 51, 51));
-        simpleCalc.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        simpleCalc.setText("Simple");
-        simpleCalc.addActionListener(new java.awt.event.ActionListener() {
+        simpleMode.setBackground(new java.awt.Color(51, 51, 51));
+        simpleMode.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        simpleMode.setText("Simple");
+        simpleMode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simpleCalcActionPerformed(evt);
+                simpleModeActionPerformed(evt);
             }
         });
 
@@ -524,11 +525,11 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
                         .addComponent(memory_display, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addComponent(simpleCalc)
+                        .addComponent(simpleMode)
                         .addGap(19, 19, 19)
-                        .addComponent(jButton1)
+                        .addComponent(scientificMode)
                         .addGap(18, 18, 18)
-                        .addComponent(simple1)
+                        .addComponent(programmerMode)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(24, 24, 24))
         );
@@ -537,9 +538,9 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(simple1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(simpleCalc))
+                    .addComponent(programmerMode, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scientificMode)
+                    .addComponent(simpleMode))
                 .addGap(5, 5, 5)
                 .addComponent(memory_display, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -620,6 +621,26 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         display1.setText(display1.getText() + num);
         beginsWithZero = true;        
     }
+    
+    public void checkOperatorValue(){
+        if (operator == 0) {
+            number1 = Integer.parseInt(String.valueOf(display1.getText()), base);
+        } else {
+            number2 = Integer.parseInt(String.valueOf(display1.getText()), base);
+        }
+        if (operator == 1) {
+            number1 = number1 + number2;
+        }
+        if (operator == 2) {
+            number1 = number1 - number2;
+        }
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
+    }
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         display1.setText("0");
@@ -644,38 +665,19 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_numberOneActionPerformed
 
     private void mrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mrActionPerformed
-        Claculator cc = new Claculator();
-        cc.mr(display1, memory_display);
+            cc.mr(display1, memory_display);
     }//GEN-LAST:event_mrActionPerformed
 
     private void mcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mcActionPerformed
-        Claculator cc = new Claculator();
-        cc.mc(memory_display);
+            cc.mc(memory_display);
     }//GEN-LAST:event_mcActionPerformed
 
     private void msActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msActionPerformed
-        Claculator cc = new Claculator();
-        cc.ms(display1, memory_display);
+            cc.ms(display1, memory_display);
     }//GEN-LAST:event_msActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        if (operator == 0) {
-            number1 = Integer.parseInt(String.valueOf(display1.getText()), base);
-        } else {
-            number2 = Integer.parseInt(String.valueOf(display1.getText()), base);
-        }
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
+        checkOperatorValue();
         display2.setText(String.valueOf(number1) + " + ");
         operator = 1;
         hasDecimalPoint = false;
@@ -686,29 +688,12 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         if (!beginsWithZero) {
             display1.setText(null);
         }
-        display1.setText(display1.getText() + "E");
+        display1.setText(display1.getText() + "e");
         beginsWithZero = true;
     }//GEN-LAST:event_eActionPerformed
 
     private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
-        if (operator == 0) {
-            number1 = Integer.parseInt(String.valueOf(display1.getText()), base);
-        } else {
-            number2 = Integer.parseInt(String.valueOf(display1.getText()), base);
-        }
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-
+        checkOperatorValue();
         display2.setText(String.valueOf(number1) + " - ");
         operator = 2;
         hasDecimalPoint = false;
@@ -716,7 +701,6 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_substractActionPerformed
 
     private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
-
         number2 = Integer.parseInt(String.valueOf(display1.getText()), base);
         if (operator == 0) {
             result = number2;
@@ -760,29 +744,12 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         if (!beginsWithZero) {
             display1.setText(null);
         }
-        display1.setText(display1.getText() + "F");
+        display1.setText(display1.getText() + "f");
         beginsWithZero = true;
     }//GEN-LAST:event_fActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-        if (operator == 0) {
-            number1 = Integer.parseInt(String.valueOf(display1.getText()), base);
-        } else {
-            number2 = Integer.parseInt(String.valueOf(display1.getText()), base);
-        }
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-
+        checkOperatorValue();
         display2.setText(String.valueOf(number1) + " / ");
         operator = 4;
         hasDecimalPoint = false;
@@ -790,24 +757,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_divideActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
-        if (operator == 0) {
-            number1 = Integer.parseInt(String.valueOf(display1.getText()), base);
-        } else {
-            number2 = Integer.parseInt(String.valueOf(display1.getText()), base);
-        }
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-
+        checkOperatorValue();
         display2.setText(String.valueOf(number1) + " * ");
         operator = 3;
         hasDecimalPoint = false;
@@ -822,24 +772,21 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         writeNumber("6");
     }//GEN-LAST:event_numberSixActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void scientificModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scientificModeActionPerformed
         //Calculator simpleCalculator = new SimpleCalculator();
         //simpleCalculator.setVisible(false);
         this.dispose();
         ScientificCalculator scientificCalc = new ScientificCalculator();
         scientificCalc.setVisible(true);
         scientificCalc.setLocation(295, 96);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_scientificModeActionPerformed
 
     private void numberNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberNineActionPerformed
         writeNumber("9");
     }//GEN-LAST:event_numberNineActionPerformed
 
     private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
-
-        if (display1.getText().length() > 0) {
-            display1.setText(display1.getText().substring(0, display1.getText().length() - 1));
-        }
+           cc.backspace(display1);
     }//GEN-LAST:event_backspaceActionPerformed
 
     private void numberZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberZeroActionPerformed
@@ -868,18 +815,18 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         beginsWithZero = false;
     }//GEN-LAST:event_clearActionPerformed
 
-    private void simpleCalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleCalcActionPerformed
+    private void simpleModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleModeActionPerformed
         this.dispose();
         SimpleCalculator calc = new SimpleCalculator();
         calc.setVisible(true);
         calc.setLocation(300, 100);
-    }//GEN-LAST:event_simpleCalcActionPerformed
+    }//GEN-LAST:event_simpleModeActionPerformed
 
     private void dActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dActionPerformed
         if (!beginsWithZero) {
             display1.setText(null);
         }
-        display1.setText(display1.getText() + "D");
+        display1.setText(display1.getText() + "d");
         beginsWithZero = true;
     }//GEN-LAST:event_dActionPerformed
 
@@ -887,7 +834,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         if (!beginsWithZero) {
             display1.setText(null);
         }
-        display1.setText(display1.getText() + "C");
+        display1.setText(display1.getText() + "c");
         beginsWithZero = true;
     }//GEN-LAST:event_cActionPerformed
 
@@ -895,7 +842,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         if (!beginsWithZero) {
             display1.setText(null);
         }
-        display1.setText(display1.getText() + "B");
+        display1.setText(display1.getText() + "b");
         beginsWithZero = true;
     }//GEN-LAST:event_bActionPerformed
 
@@ -903,7 +850,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         if (!beginsWithZero) {
             display1.setText(null);
         }
-        display1.setText(display1.getText() + "A");
+        display1.setText(display1.getText() + "a");
         beginsWithZero = true;
     }//GEN-LAST:event_aActionPerformed
 
@@ -1056,7 +1003,6 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
     private javax.swing.JButton equal;
     private javax.swing.JButton f;
     private javax.swing.JRadioButton hexadecimal;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton mc;
     private javax.swing.JTextField memory_display;
@@ -1074,9 +1020,10 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
     private javax.swing.JButton numberTwo;
     private javax.swing.JButton numberZero;
     private javax.swing.JRadioButton octal;
+    private javax.swing.JLabel programmerMode;
     private javax.swing.JButton reset;
-    private javax.swing.JLabel simple1;
-    private javax.swing.JButton simpleCalc;
+    private javax.swing.JButton scientificMode;
+    private javax.swing.JButton simpleMode;
     private javax.swing.JButton substract;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,20 +6,20 @@ import java.awt.event.KeyListener;
 import java.text.DecimalFormat;
 
 public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
-    
-    private boolean beginsWithZero;
-    private boolean hasDecimalPoint;
-    
-    private byte operator;
-    
-    private double number1;
-    private double number2;
-    private double result;
+
 
     public SimpleCalculator() {
         initComponents();
         addKeyListener(this);
     }
+    
+    Calculator c = new Calculator();
+    boolean beginsWithZero = c.beginsWithZero;
+    boolean hasDecimalPoint = c.hasDecimalPoint;
+    byte operator = c.operator;
+    double number1 = c.number1;
+    double number2 = c.number2;
+    double result = c.result;
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -51,11 +51,11 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         oneDivideX = new javax.swing.JButton();
         plusMinus = new javax.swing.JButton();
         sqrt = new javax.swing.JButton();
-        simple = new javax.swing.JLabel();
+        simpleMode = new javax.swing.JLabel();
         display = new javax.swing.JTextField();
         display2 = new javax.swing.JTextField();
         memory_display = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        scientificMode = new javax.swing.JButton();
         programmerMode = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -320,10 +320,10 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
             }
         });
 
-        simple.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
-        simple.setForeground(new java.awt.Color(204, 204, 204));
-        simple.setText("Simple");
-        simple.setName("simple"); // NOI18N
+        simpleMode.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        simpleMode.setForeground(new java.awt.Color(204, 204, 204));
+        simpleMode.setText("Simple");
+        simpleMode.setName("simpleMode"); // NOI18N
 
         display.setEditable(false);
         display.setBackground(new java.awt.Color(102, 102, 102));
@@ -353,12 +353,12 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         memory_display.setBorder(null);
         memory_display.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jButton1.setText("Scientific");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        scientificMode.setBackground(new java.awt.Color(51, 51, 51));
+        scientificMode.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        scientificMode.setText("Scientific");
+        scientificMode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                scientificModeActionPerformed(evt);
             }
         });
 
@@ -433,14 +433,14 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
                                     .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(51, 51, 51)
-                        .addComponent(simple, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(simpleMode, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(memory_display, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(scientificMode, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(programmerMode, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
@@ -451,8 +451,8 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(simple, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
+                    .addComponent(simpleMode, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scientificMode)
                     .addComponent(programmerMode))
                 .addGap(5, 5, 5)
                 .addComponent(memory_display, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -522,7 +522,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     }// </editor-fold>//GEN-END:initComponents
 
     
-        public void writeNumber(String num){
+    public void writeNumber(String num){
         if(!beginsWithZero && !hasDecimalPoint) {
             display.setText(null);
         }
@@ -530,11 +530,34 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         beginsWithZero = true;        
     }
     
+    public void checkOperatorValue(){
+        if(operator == 0) {
+            number1 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        else {
+            number2 = Double.parseDouble(String.valueOf(display.getText()));
+        }
+        
+        if (operator == 1) {
+            number1 = number1 + number2;
+        }
+        
+        if (operator == 2) {
+            number1 = number1 - number2;
+        }
+        
+        if (operator == 3) {
+            number1 = number1 * number2;
+        }
+        
+        if (operator == 4) {
+            number1 = number1 / number2;
+        }
+    }
+    
     private void numberThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberThreeActionPerformed
         writeNumber ("3");
     }//GEN-LAST:event_numberThreeActionPerformed
-
-
     
     private void numberZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberZeroActionPerformed
         if(!beginsWithZero && !hasDecimalPoint) {
@@ -556,11 +579,6 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_numberFourActionPerformed
 
     private void numberFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberFiveActionPerformed
-        /*if(!beginsWithZero && !having_decpoint) {
-            display.setText(null);
-        }
-        display.setText(display.getText() + "5");
-        beginsWithZero = true;*/
         writeNumber("5");
     }//GEN-LAST:event_numberFiveActionPerformed
 
@@ -640,39 +658,12 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         number2 = 0;
         result = 0;
         operator = 0;
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
         beginsWithZero = false;
     }//GEN-LAST:event_equalActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        if(operator == 0) {
-            number1 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        else {
-            number2 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-        
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-        
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-        
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-        
+        checkOperatorValue();
         display2.setText(String.valueOf(number1) + " + ");
         operator = 1;
         hasDecimalPoint = false;
@@ -680,29 +671,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_addActionPerformed
 
     private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
-        if(operator == 0) {
-            number1 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        else {
-            number2 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-        
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-        
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-        
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-        
+        checkOperatorValue();
         display2.setText(String.valueOf(number1) + " - ");
         operator = 2;
         hasDecimalPoint = false;
@@ -710,29 +679,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_substractActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
-        if(operator == 0) {
-            number1 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        else {
-            number2 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-        
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-        
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-        
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-        
+        checkOperatorValue();
         display2.setText(String.valueOf(number1) + " * ");
         operator = 3;
         hasDecimalPoint = false;
@@ -740,29 +687,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-        if(operator == 0) {
-            number1 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        else {
-            number2 = Double.parseDouble(String.valueOf(display.getText()));
-        }
-        
-        if (operator == 1) {
-            number1 = number1 + number2;
-        }
-        
-        if (operator == 2) {
-            number1 = number1 - number2;
-        }
-        
-        if (operator == 3) {
-            number1 = number1 * number2;
-        }
-        
-        if (operator == 4) {
-            number1 = number1 / number2;
-        }
-        
+        checkOperatorValue();
         display2.setText(String.valueOf(number1) + " / ");
         operator = 4;
         hasDecimalPoint = false;
@@ -770,25 +695,14 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_divideActionPerformed
 
     private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
-    if(display.getText().length() > 0){
-            display.setText(display.getText().substring(0,display.getText().length() - 1));
-     }
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        c.backspace(display);
+        hasDecimalPoint = display.getText().contains(".");
     }//GEN-LAST:event_backspaceActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
-        /*display.setText("0");
-        display2.setText(null);*/
-        Claculator cc = new Claculator();
-        cc.clear(display, display2);
+        c.clear(display, display2);
         hasDecimalPoint = false;
-        beginsWithZero = false;
-        
+        beginsWithZero = false;  
     }//GEN-LAST:event_clearActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
@@ -802,7 +716,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_resetActionPerformed
 
     private void oneDivideXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneDivideXActionPerformed
-        Claculator cc = new Claculator();
+        Calculator cc = new Calculator();
         cc.oneDivideX(number2, result, display, display2);
         DecimalFormat format = new DecimalFormat("#.##########");
         double doubleFromTextField = Double.parseDouble(display.getText());
@@ -817,16 +731,12 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
             display2.setText("Error!");
         }
         
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
+        beginsWithZero = true;
     }//GEN-LAST:event_oneDivideXActionPerformed
 
     private void sqrtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sqrtActionPerformed
-        Claculator cc = new Claculator();
+        Calculator cc = new Calculator();
         cc.sqrt(number2, result, display, display2);
         
         DecimalFormat format = new DecimalFormat("#.##########");
@@ -841,12 +751,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
             display2.setText("Error!");
         }
         
-        if(display.getText().contains(".")){
-            hasDecimalPoint = true;
-        }
-        else{
-            hasDecimalPoint = false;
-        }
+        hasDecimalPoint = display.getText().contains(".");
     }//GEN-LAST:event_sqrtActionPerformed
 
     private void plusMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusMinusActionPerformed
@@ -869,31 +774,25 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_plusMinusActionPerformed
 
     private void msActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msActionPerformed
-        //memory_display.setText(String.valueOf(display.getText()));
-        Claculator cc = new Claculator();
-        cc.ms(display, memory_display);
+        c.ms(display, memory_display);
     }//GEN-LAST:event_msActionPerformed
 
     private void mcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mcActionPerformed
-        //memory_display.setText(null);
-        Claculator cc = new Claculator();
-        cc.mc(memory_display);
+        c.mc(memory_display);
     }//GEN-LAST:event_mcActionPerformed
 
     private void mrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mrActionPerformed
-        //display.setText(String.valueOf(memory_display.getText()));
-        Claculator cc = new Claculator();
-        cc.mr(display, memory_display);
+        c.mr(display, memory_display);
     }//GEN-LAST:event_mrActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void scientificModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scientificModeActionPerformed
         //Calculator simpleCalculator = new SimpleCalculator();
         //simpleCalculator.setVisible(false);
         this.dispose();
         ScientificCalculator scientificCalc = new ScientificCalculator();
         scientificCalc.setVisible(true);
         scientificCalc.setLocation(300, 100);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_scientificModeActionPerformed
 
     private void programmerModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programmerModeActionPerformed
         this.dispose();
@@ -950,7 +849,6 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     private javax.swing.JTextField display2;
     private javax.swing.JButton divide;
     private javax.swing.JButton equal;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton mc;
     private javax.swing.JTextField memory_display;
@@ -971,7 +869,8 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     private javax.swing.JButton plusMinus;
     private javax.swing.JButton programmerMode;
     private javax.swing.JButton reset;
-    private javax.swing.JLabel simple;
+    private javax.swing.JButton scientificMode;
+    private javax.swing.JLabel simpleMode;
     private javax.swing.JButton sqrt;
     private javax.swing.JButton substract;
     // End of variables declaration//GEN-END:variables

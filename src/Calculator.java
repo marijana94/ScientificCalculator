@@ -1,19 +1,26 @@
 
+import java.text.DecimalFormat;
 import javax.swing.JTextField;
 
 
-public class Claculator {
+public class Calculator {
     
-    public boolean beginning_zero;
-    public boolean having_decpoint;
+    public boolean beginsWithZero;
+    public boolean hasDecimalPoint;
+    
+    public byte operator;
+    
+    public double number1;
+    public double number2;
+    public double result;
    
     
     public void writeNumber (String num, JTextField display) {
-        if(!beginning_zero && !having_decpoint) {
+        if(!beginsWithZero && !hasDecimalPoint) {
             display.setText(null);
         }
         display.setText(display.getText() + num);
-        beginning_zero = true; 
+        beginsWithZero = true; 
     }
     
     public void mr (JTextField display, JTextField memory_display) {
@@ -44,6 +51,7 @@ public class Claculator {
             display.setText("0");
             display2.setText("Error!");
         }
+
                 
         display2.setText("1/" + String.valueOf(number2));
         result = 0;
@@ -63,5 +71,13 @@ public class Claculator {
         display2.setText("√" + String.valueOf(number2));
         result = 0;
     }
+ 
+    public void backspace(JTextField display){
+        if(display.getText().length() > 0){
+            display.setText(display.getText().substring(0,display.getText().length() - 1));
+        }
+    }
+    
+ 
  
 }

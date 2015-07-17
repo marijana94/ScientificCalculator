@@ -132,7 +132,7 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                          <Component id="simple" min="-2" pref="76" max="-2" attributes="0"/>
+                          <Component id="simpleMode" min="-2" pref="76" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
@@ -140,7 +140,7 @@
                                   <Component id="memory_display" min="-2" pref="233" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jButton1" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <Component id="scientificMode" min="-2" pref="123" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="programmerMode" min="-2" pref="137" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -157,8 +157,8 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="simple" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="simpleMode" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="scientificMode" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="programmerMode" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
@@ -648,7 +648,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sqrtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="simple">
+        <Component class="javax.swing.JLabel" name="simpleMode">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="24" style="3"/>
@@ -657,7 +657,7 @@
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Simple"/>
-            <Property name="name" type="java.lang.String" value="simple" noResource="true"/>
+            <Property name="name" type="java.lang.String" value="simpleMode" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="display">
@@ -727,7 +727,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="scientificMode">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -738,7 +738,7 @@
             <Property name="text" type="java.lang.String" value="Scientific"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="scientificModeActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="programmerMode">
