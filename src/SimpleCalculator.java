@@ -4,6 +4,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.text.DecimalFormat;
+import javafx.animation.Animation;
 
 public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
 
@@ -788,17 +789,24 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     private void scientificModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scientificModeActionPerformed
         //Calculator simpleCalculator = new SimpleCalculator();
         //simpleCalculator.setVisible(false);
-        this.dispose();
+        
+        //this.dispose();
+        //this.getLocation();
         ScientificCalculator scientificCalc = new ScientificCalculator();
+        //scientificCalc.setLocation(300, 100);
+        scientificCalc.setLocation(this.getLocation());
         scientificCalc.setVisible(true);
-        scientificCalc.setLocation(300, 100);
+        this.dispose();
+        if(scientificCalc.isVisible() == true) {
+                
+        }
     }//GEN-LAST:event_scientificModeActionPerformed
 
     private void programmerModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programmerModeActionPerformed
-        this.dispose();
         ProgrammerCalculator progMode = new ProgrammerCalculator();
+        progMode.setLocation(this.getLocation());
         progMode.setVisible(true);
-        progMode.setLocation(300, 100);
+        this.dispose();
     }//GEN-LAST:event_programmerModeActionPerformed
 
     public void close() {

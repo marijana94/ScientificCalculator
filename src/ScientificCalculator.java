@@ -1002,10 +1002,10 @@ public class ScientificCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_backspaceActionPerformed
 
     private void simpleModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleModeActionPerformed
-        this.dispose();
         SimpleCalculator calc = new SimpleCalculator();
+        calc.setLocation(this.getLocation());
         calc.setVisible(true);
-        calc.setLocation(300, 100);
+        this.dispose();
     }//GEN-LAST:event_simpleModeActionPerformed
 
     private void numberNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberNineActionPerformed
@@ -1379,10 +1379,10 @@ public class ScientificCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_naturalLogarithmActionPerformed
 
     private void prgrammerModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prgrammerModeActionPerformed
-        this.dispose();
         ProgrammerCalculator progMode = new ProgrammerCalculator();
+        progMode.setLocation(this.getLocation());
         progMode.setVisible(true);
-        progMode.setLocation(300, 100);
+        this.dispose();
     }//GEN-LAST:event_prgrammerModeActionPerformed
 
     /**

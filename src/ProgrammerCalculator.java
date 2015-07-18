@@ -773,12 +773,10 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_numberSixActionPerformed
 
     private void scientificModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scientificModeActionPerformed
-        //Calculator simpleCalculator = new SimpleCalculator();
-        //simpleCalculator.setVisible(false);
-        this.dispose();
         ScientificCalculator scientificCalc = new ScientificCalculator();
+        scientificCalc.setLocation(this.getLocation());
         scientificCalc.setVisible(true);
-        scientificCalc.setLocation(295, 96);
+        this.dispose();
     }//GEN-LAST:event_scientificModeActionPerformed
 
     private void numberNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberNineActionPerformed
@@ -816,10 +814,10 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
     }//GEN-LAST:event_clearActionPerformed
 
     private void simpleModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleModeActionPerformed
-        this.dispose();
         SimpleCalculator calc = new SimpleCalculator();
+        calc.setLocation(this.getLocation());
         calc.setVisible(true);
-        calc.setLocation(300, 100);
+        this.dispose();
     }//GEN-LAST:event_simpleModeActionPerformed
 
     private void dActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dActionPerformed
