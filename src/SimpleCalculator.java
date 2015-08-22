@@ -1,10 +1,13 @@
 
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.text.DecimalFormat;
-import javafx.animation.Animation;
+import javax.swing.JButton;
+import javax.swing.KeyStroke;
 
 public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
 
@@ -13,6 +16,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         initComponents();
         addKeyListener(this);
     }
+    
     
     Calculator c = new Calculator();
     boolean beginsWithZero = c.beginsWithZero;
@@ -558,6 +562,8 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     
     private void numberThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberThreeActionPerformed
         writeNumber ("3");
+        //numberThree.getInputMap().put(KeyStroke.getKeyStroke("3"), "three_is_pressed");
+        //numberThree.addActionListener((ActionListener) this);
     }//GEN-LAST:event_numberThreeActionPerformed
     
     private void numberZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberZeroActionPerformed
@@ -787,19 +793,26 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     }//GEN-LAST:event_mrActionPerformed
 
     private void scientificModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scientificModeActionPerformed
-        //Calculator simpleCalculator = new SimpleCalculator();
-        //simpleCalculator.setVisible(false);
-        
-        //this.dispose();
-        //this.getLocation();
+        //System.setProperty("sun.java2d.d3d", "false");
+        //System.setProperty("sun.java2d.opengl", "true");
         ScientificCalculator scientificCalc = new ScientificCalculator();
         //scientificCalc.setLocation(300, 100);
         scientificCalc.setLocation(this.getLocation());
-        scientificCalc.setVisible(true);
+        //scientificCalc.setVisible(true);
         this.dispose();
-        if(scientificCalc.isVisible() == true) {
-                
-        }
+           /*SwingWorker<?,?> worker;
+        worker = new SwingWorker<Void,Integer>(){
+            protected Void doInBackground() throws InterruptedException{
+                for (int x = 0; x <= 100; x+=10)
+                {
+                    publish(x);
+                    Thread.sleep(1);
+                }
+                return null;
+            }
+        };
+        worker.execute();*/
+        scientificCalc.setVisible(true);
     }//GEN-LAST:event_scientificModeActionPerformed
 
     private void programmerModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programmerModeActionPerformed
@@ -883,12 +896,37 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     private javax.swing.JButton substract;
     // End of variables declaration//GEN-END:variables
 
+    
+    
+      private class numberThree implements ActionListener {
+ 
+        private String c;
+ 
+        public numberThree(JButton a) {
+            this.c = a.getText();
+        }
+    public void actionPerformed(ActionEvent e) {
+            if (!display.getText().equals("0.0")) {
+                display.setText(display.getText() + c);
+            } else {
+                display.setText("");
+                actionPerformed(e);
+            }
+        }
+    }
+    
+    
+    
+    
     @Override
     public void keyTyped(KeyEvent ke) {
         if(ke.getKeyChar() <= '9' && ke.getKeyChar() >= '0')
         {
-            System.out.println(ke.getKeyChar());
-            display.setText("" + ke.getKeyChar());
+            //System.out.println(ke.getKeyChar());
+            //display.setText("" + ke.getKeyChar());
+            display.grabFocus();
+            display.requestFocus();
+            writeNumber(""+ke.getKeyChar());
         }
     }
 
@@ -899,4 +937,9 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     @Override
     public void keyReleased(KeyEvent ke) {
     }
-}
+
+        /*@Override
+        public void actionPerformed(ActionEvent ae) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }*/
+    }
