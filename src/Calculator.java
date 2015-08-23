@@ -1,5 +1,7 @@
 
 import javax.swing.JTextField;
+import java.awt.datatransfer.*;
+import java.awt.Toolkit;
 
 
 public class Calculator {
@@ -77,6 +79,11 @@ public class Calculator {
         }
     }
     
- 
+    public void copy(JTextField display){
+        String myString = display.getSelectedText();
+        StringSelection stringSelection = new StringSelection(myString);
+        Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clpbrd.setContents(stringSelection, null);
+    }
  
 }
