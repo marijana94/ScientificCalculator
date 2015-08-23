@@ -5,8 +5,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.WindowAdapter;
 import java.text.DecimalFormat;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 
 public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
@@ -14,7 +16,10 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
 
     public SimpleCalculator() {
         initComponents();
-        addKeyListener(this);
+        display.setFocusable(true);
+        display.grabFocus();
+        display.requestFocus();
+        display.addKeyListener(this);
     }
     
     
@@ -857,6 +862,9 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new SimpleCalculator().setVisible(true);
+                new SimpleCalculator().display.setFocusable(true);
+                new SimpleCalculator().display.grabFocus();
+                new SimpleCalculator().display.requestFocus();
             }
         });
     }
@@ -898,48 +906,42 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
 
     
     
-      private class numberThree implements ActionListener {
- 
-        private String c;
- 
-        public numberThree(JButton a) {
-            this.c = a.getText();
-        }
-    public void actionPerformed(ActionEvent e) {
-            if (!display.getText().equals("0.0")) {
-                display.setText(display.getText() + c);
-            } else {
-                display.setText("");
-                actionPerformed(e);
-            }
-        }
-    }
-    
-    
-    
-    
     @Override
     public void keyTyped(KeyEvent ke) {
-        if(ke.getKeyChar() <= '9' && ke.getKeyChar() >= '0')
-        {
-            //System.out.println(ke.getKeyChar());
-            //display.setText("" + ke.getKeyChar());
-            display.grabFocus();
-            display.requestFocus();
-            writeNumber(""+ke.getKeyChar());
-        }
     }
 
     @Override
     public void keyPressed(KeyEvent ke) {
+        int keyCode = ke.getKeyChar();
+        if(ke.getKeyChar() <= '9' && ke.getKeyChar() >= '0')
+        {
+            writeNumber(""+ke.getKeyChar());
+        }
+        else if(keyCode == KeyEvent.VK_BACK_SPACE){
+            this.backspaceActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_ENTER) {
+            this.equalActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_ADD) {
+            this.addActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_MINUS){
+            this.substractActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_COMMA){
+            this.decimalPointActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_MULTIPLY){
+            this.multiplyActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_DIVIDE){
+            this.divideActionPerformed(null);
+        }
     }
 
     @Override
     public void keyReleased(KeyEvent ke) {
     }
 
-        /*@Override
-        public void actionPerformed(ActionEvent ae) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }*/
     }
