@@ -537,7 +537,8 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
             display.setText(null);
         }
         display.setText(display.getText() + num);
-        beginsWithZero = true;        
+        beginsWithZero = true; 
+        display.grabFocus();
     }
     
     public void checkOperatorValue(){
@@ -576,6 +577,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
             display.setText(null);
         }
         display.setText(display.getText() + "0");
+        display.grabFocus();
     }//GEN-LAST:event_numberZeroActionPerformed
 
     private void numberOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberOneActionPerformed
@@ -615,6 +617,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
             display.setText(display.getText() + ".");
             hasDecimalPoint = true;
         }
+        display.grabFocus();
     }//GEN-LAST:event_decimalPointActionPerformed
 
     private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
@@ -672,6 +675,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         operator = 0;
         hasDecimalPoint = display.getText().contains(".");
         beginsWithZero = false;
+        display.grabFocus();
     }//GEN-LAST:event_equalActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
@@ -680,6 +684,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         operator = 1;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display.grabFocus();
     }//GEN-LAST:event_addActionPerformed
 
     private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
@@ -688,6 +693,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         operator = 2;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display.grabFocus();
     }//GEN-LAST:event_substractActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
@@ -696,6 +702,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         operator = 3;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display.grabFocus();
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
@@ -704,17 +711,20 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         operator = 4;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display.grabFocus();
     }//GEN-LAST:event_divideActionPerformed
 
     private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
         c.backspace(display);
         hasDecimalPoint = display.getText().contains(".");
+        display.grabFocus();
     }//GEN-LAST:event_backspaceActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         c.clear(display, display2);
         hasDecimalPoint = false;
         beginsWithZero = false;  
+        display.grabFocus();
     }//GEN-LAST:event_clearActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
@@ -725,6 +735,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         number1 = 0;
         number2 = 0;
         result = 0;
+        display.grabFocus();
     }//GEN-LAST:event_resetActionPerformed
 
     private void oneDivideXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneDivideXActionPerformed
@@ -745,6 +756,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         
         hasDecimalPoint = display.getText().contains(".");
         beginsWithZero = true;
+        display.grabFocus();
     }//GEN-LAST:event_oneDivideXActionPerformed
 
     private void sqrtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sqrtActionPerformed
@@ -764,6 +776,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         }
         
         hasDecimalPoint = display.getText().contains(".");
+        display.grabFocus();
     }//GEN-LAST:event_sqrtActionPerformed
 
     private void plusMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusMinusActionPerformed
@@ -783,18 +796,22 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
             display2.setText("Error!");
         }
         result = 0;
+        display.grabFocus();
     }//GEN-LAST:event_plusMinusActionPerformed
 
     private void msActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msActionPerformed
         c.ms(display, memory_display);
+        display.grabFocus();
     }//GEN-LAST:event_msActionPerformed
 
     private void mcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mcActionPerformed
         c.mc(memory_display);
+        display.grabFocus();
     }//GEN-LAST:event_mcActionPerformed
 
     private void mrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mrActionPerformed
         c.mr(display, memory_display);
+        display.grabFocus();
     }//GEN-LAST:event_mrActionPerformed
 
     private void scientificModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scientificModeActionPerformed
@@ -864,7 +881,6 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
                 new SimpleCalculator().setVisible(true);
                 new SimpleCalculator().display.setFocusable(true);
                 new SimpleCalculator().display.grabFocus();
-                new SimpleCalculator().display.requestFocus();
             }
         });
     }
@@ -937,6 +953,9 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         }
         else if(keyCode == KeyEvent.VK_DIVIDE){
             this.divideActionPerformed(null);
+        }
+        else if(ke.isControlDown() && ke.getKeyChar() != 'c' && ke.getKeyCode() == 67){
+            c.copy(display);
         }
     }
 
