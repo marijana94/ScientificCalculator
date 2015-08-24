@@ -1,5 +1,9 @@
 
-public class ProgrammerCalculator extends javax.swing.JFrame {
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+
+public class ProgrammerCalculator extends javax.swing.JFrame implements KeyListener{
 
     private boolean decimalChecked;
     private boolean binarChecked;
@@ -13,6 +17,11 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
 
     public ProgrammerCalculator() {
         initComponents();
+        display1.setFocusable(true);
+        display1.grabFocus();
+        display1.requestFocus();
+        display1.requestFocusInWindow();
+        display1.addKeyListener(this);
     }
 
     Calculator cc = new Calculator();
@@ -619,7 +628,8 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
             display1.setText(null);
         }
         display1.setText(display1.getText() + num);
-        beginsWithZero = true;        
+        beginsWithZero = true; 
+        display1.grabFocus();
     }
     
     public void checkOperatorValue(){
@@ -650,6 +660,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         number1 = 0;
         number2 = 0;
         result = 0;
+        display1.grabFocus();
     }//GEN-LAST:event_resetActionPerformed
 
     private void numberSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberSevenActionPerformed
@@ -666,14 +677,17 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
 
     private void mrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mrActionPerformed
             cc.mr(display1, memory_display);
+            display1.grabFocus();
     }//GEN-LAST:event_mrActionPerformed
 
     private void mcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mcActionPerformed
             cc.mc(memory_display);
+            display1.grabFocus();
     }//GEN-LAST:event_mcActionPerformed
 
     private void msActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msActionPerformed
             cc.ms(display1, memory_display);
+            display1.grabFocus();
     }//GEN-LAST:event_msActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
@@ -682,6 +696,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         operator = 1;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display1.grabFocus();
     }//GEN-LAST:event_addActionPerformed
 
     private void eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eActionPerformed
@@ -690,6 +705,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         }
         display1.setText(display1.getText() + "e");
         beginsWithZero = true;
+        display1.grabFocus();
     }//GEN-LAST:event_eActionPerformed
 
     private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
@@ -698,6 +714,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         operator = 2;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display1.grabFocus();
     }//GEN-LAST:event_substractActionPerformed
 
     private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
@@ -738,6 +755,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         operator = 0;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display1.grabFocus();
     }//GEN-LAST:event_equalActionPerformed
 
     private void fActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fActionPerformed
@@ -746,6 +764,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         }
         display1.setText(display1.getText() + "f");
         beginsWithZero = true;
+        display1.grabFocus();
     }//GEN-LAST:event_fActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
@@ -754,6 +773,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         operator = 4;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display1.grabFocus();
     }//GEN-LAST:event_divideActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
@@ -762,6 +782,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         operator = 3;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display1.grabFocus();
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void numberThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberThreeActionPerformed
@@ -777,6 +798,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         scientificCalc.setLocation(this.getLocation());
         scientificCalc.setVisible(true);
         this.dispose();
+        display1.grabFocus();
     }//GEN-LAST:event_scientificModeActionPerformed
 
     private void numberNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberNineActionPerformed
@@ -785,6 +807,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
 
     private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
            cc.backspace(display1);
+           display1.grabFocus();
     }//GEN-LAST:event_backspaceActionPerformed
 
     private void numberZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberZeroActionPerformed
@@ -792,6 +815,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
             display1.setText(null);
         }
         display1.setText(display1.getText() + "0");
+        display1.grabFocus();
     }//GEN-LAST:event_numberZeroActionPerformed
 
     private void numberTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberTwoActionPerformed
@@ -811,6 +835,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         display2.setText(null);
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display1.grabFocus();
     }//GEN-LAST:event_clearActionPerformed
 
     private void simpleModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleModeActionPerformed
@@ -818,6 +843,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         calc.setLocation(this.getLocation());
         calc.setVisible(true);
         this.dispose();
+        display1.grabFocus();
     }//GEN-LAST:event_simpleModeActionPerformed
 
     private void dActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dActionPerformed
@@ -826,6 +852,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         }
         display1.setText(display1.getText() + "d");
         beginsWithZero = true;
+        display1.grabFocus();
     }//GEN-LAST:event_dActionPerformed
 
     private void cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cActionPerformed
@@ -834,6 +861,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         }
         display1.setText(display1.getText() + "c");
         beginsWithZero = true;
+        display1.grabFocus();
     }//GEN-LAST:event_cActionPerformed
 
     private void bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bActionPerformed
@@ -842,6 +870,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         }
         display1.setText(display1.getText() + "b");
         beginsWithZero = true;
+        display1.grabFocus();
     }//GEN-LAST:event_bActionPerformed
 
     private void aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aActionPerformed
@@ -850,6 +879,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         }
         display1.setText(display1.getText() + "a");
         beginsWithZero = true;
+        display1.grabFocus();
     }//GEN-LAST:event_aActionPerformed
 
     private void decimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decimalActionPerformed
@@ -873,6 +903,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         display2.setText(null);
         display2.setText(null);
         base = 10;
+        display1.grabFocus();
     }//GEN-LAST:event_decimalActionPerformed
 
     private void binarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binarActionPerformed
@@ -897,6 +928,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         display1.setText(Integer.toBinaryString(number));
         display2.setText(null);
         base = 2;
+        display1.grabFocus();
     }//GEN-LAST:event_binarActionPerformed
 
     private void octalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_octalActionPerformed
@@ -921,6 +953,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         display2.setText(null);
         display2.setText(null);
         base = 8;
+        display1.grabFocus();
     }//GEN-LAST:event_octalActionPerformed
 
     private void hexadecimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hexadecimalActionPerformed
@@ -945,6 +978,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
         display2.setText(null);
         display2.setText(null);
         base = 16;
+        display1.grabFocus();
     }//GEN-LAST:event_hexadecimalActionPerformed
 
 
@@ -989,4 +1023,47 @@ public class ProgrammerCalculator extends javax.swing.JFrame {
     private javax.swing.JButton simpleMode;
     private javax.swing.JButton substract;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void keyTyped(KeyEvent ke) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent ke) {
+        int keyCode = ke.getKeyCode();
+        while(decimalChecked == true){
+        if(ke.getKeyChar() <= '9' && ke.getKeyChar() >= '1')
+        {
+            writeNumber(""+ke.getKeyChar());
+        }
+        else if(ke.getKeyChar() == KeyEvent.VK_0){
+            this.numberZeroActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_BACK_SPACE){
+            this.backspaceActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_ENTER) {
+            this.equalActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_ADD) {
+            this.addActionPerformed(null);
+        }
+        else if(ke.getKeyChar() == KeyEvent.VK_MINUS){
+            this.substractActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_MULTIPLY){
+            this.multiplyActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_DIVIDE){
+            this.divideActionPerformed(null);
+        }
+        else if(ke.isControlDown() && ke.getKeyChar() != 'c' && ke.getKeyCode() == 67){
+            cc.copy(display1);
+        }
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent ke) {
+    }
 }

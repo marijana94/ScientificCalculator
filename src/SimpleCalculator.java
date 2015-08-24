@@ -1,15 +1,9 @@
 
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.event.WindowAdapter;
 import java.text.DecimalFormat;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.KeyStroke;
 
 public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
 
@@ -19,6 +13,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         display.setFocusable(true);
         display.grabFocus();
         display.requestFocus();
+        display.requestFocusInWindow();
         display.addKeyListener(this);
     }
     
@@ -928,10 +923,13 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent ke) {
-        int keyCode = ke.getKeyChar();
-        if(ke.getKeyChar() <= '9' && ke.getKeyChar() >= '0')
+        int keyCode = ke.getKeyCode();
+        if(ke.getKeyChar() <= '9' && ke.getKeyChar() >= '1')
         {
             writeNumber(""+ke.getKeyChar());
+        }
+        else if(ke.getKeyChar() == KeyEvent.VK_0){
+            this.numberZeroActionPerformed(null);
         }
         else if(keyCode == KeyEvent.VK_BACK_SPACE){
             this.backspaceActionPerformed(null);
@@ -942,10 +940,10 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         else if(keyCode == KeyEvent.VK_ADD) {
             this.addActionPerformed(null);
         }
-        else if(keyCode == KeyEvent.VK_MINUS){
+        else if(ke.getKeyChar() == KeyEvent.VK_MINUS){
             this.substractActionPerformed(null);
         }
-        else if(keyCode == KeyEvent.VK_COMMA){
+        else if(ke.getKeyChar() == KeyEvent.VK_COMMA){
             this.decimalPointActionPerformed(null);
         }
         else if(keyCode == KeyEvent.VK_MULTIPLY){

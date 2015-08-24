@@ -1,13 +1,20 @@
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.text.DecimalFormat;
 
 
-public class ScientificCalculator extends javax.swing.JFrame {
+public class ScientificCalculator extends javax.swing.JFrame implements KeyListener {
     
     private boolean radians_checked;
     
     public ScientificCalculator() {
         initComponents();
+        display.setFocusable(true);
+        display.grabFocus();
+        display.requestFocus();
+        display.requestFocusInWindow();
+        display.addKeyListener(this);
     }
     
     Calculator c = new Calculator();
@@ -821,7 +828,8 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display.setText(null);
         }
         display.setText(display.getText() + num);
-        beginsWithZero = true;        
+        beginsWithZero = true;  
+        display.grabFocus();
     }
 
     public void checkOperatorValue(){
@@ -862,6 +870,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display.setText(display.getText() + ".");
             hasDecimalPoint = true;
         }
+        display.grabFocus();
     }//GEN-LAST:event_decimalPointActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
@@ -870,6 +879,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         operator = 3;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display.grabFocus();
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
@@ -878,6 +888,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         operator = 4;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display.grabFocus();
     }//GEN-LAST:event_divideActionPerformed
 
     private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
@@ -942,6 +953,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         operator = 0;
         hasDecimalPoint = display.getText().contains(".");
         beginsWithZero = false;
+        display.grabFocus();
     }//GEN-LAST:event_equalActionPerformed
 
     private void substractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_substractActionPerformed
@@ -950,6 +962,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         operator = 2;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display.grabFocus();
     }//GEN-LAST:event_substractActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
@@ -958,6 +971,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         operator = 1;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display.grabFocus();
     }//GEN-LAST:event_addActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
@@ -968,6 +982,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         number1 = 0;
         number2 = 0;
         result = 0;
+        display.grabFocus();
     }//GEN-LAST:event_resetActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
@@ -975,6 +990,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         display2.setText(null);
         hasDecimalPoint = false;
         beginsWithZero = false;
+        display.grabFocus();
     }//GEN-LAST:event_clearActionPerformed
 
     private void numberEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberEightActionPerformed
@@ -994,11 +1010,13 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display.setText(null);
         }
         display.setText(display.getText() + "0");
+        display.grabFocus();
     }//GEN-LAST:event_numberZeroActionPerformed
 
     private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
         c.backspace(display);
         hasDecimalPoint = display.getText().contains(".");
+        display.grabFocus();
     }//GEN-LAST:event_backspaceActionPerformed
 
     private void simpleModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleModeActionPerformed
@@ -1006,6 +1024,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         calc.setLocation(this.getLocation());
         calc.setVisible(true);
         this.dispose();
+        display.grabFocus();
     }//GEN-LAST:event_simpleModeActionPerformed
 
     private void numberNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberNineActionPerformed
@@ -1036,6 +1055,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display2.setText("Error!");
         }
         hasDecimalPoint = display.getText().contains(".");
+        display.grabFocus();
     }//GEN-LAST:event_sqrtActionPerformed
 
     private void plusMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusMinusActionPerformed
@@ -1055,6 +1075,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display2.setText("Error!");
         }
         result = 0;
+        display.grabFocus();
     }//GEN-LAST:event_plusMinusActionPerformed
 
     private void oneDivideXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneDivideXActionPerformed
@@ -1074,24 +1095,28 @@ public class ScientificCalculator extends javax.swing.JFrame {
         }
         
         hasDecimalPoint = display.getText().contains(".");
+        display.grabFocus();
     }//GEN-LAST:event_oneDivideXActionPerformed
 
     private void msActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msActionPerformed
         //memory_display.setText(String.valueOf(display.getText()));
         Calculator cc = new Calculator();
         cc.ms(display, memory_display);
+        display.grabFocus();
     }//GEN-LAST:event_msActionPerformed
 
     private void mcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mcActionPerformed
         //memory_display.setText(null);
         Calculator cc = new Calculator();
         cc.mc(memory_display);
+        display.grabFocus();
     }//GEN-LAST:event_mcActionPerformed
 
     private void mrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mrActionPerformed
         //display.setText(String.valueOf(memory_display.getText()));
         Calculator cc = new Calculator();
         cc.mr(display, memory_display);
+        display.grabFocus();
     }//GEN-LAST:event_mrActionPerformed
 
     private void numberOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberOneActionPerformed
@@ -1100,6 +1125,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         }
         display.setText(display.getText() + "1");
         beginsWithZero = true;
+        display.grabFocus();
     }//GEN-LAST:event_numberOneActionPerformed
 
     private void sinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sinusActionPerformed
@@ -1124,6 +1150,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         }
         hasDecimalPoint = display.getText().contains(".");
         result = 0;
+        display.grabFocus();
     }//GEN-LAST:event_sinusActionPerformed
 
     private void cosinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cosinusActionPerformed
@@ -1145,6 +1172,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         }
         hasDecimalPoint = display.getText().contains(".");
         result = 0;
+        display.grabFocus();
     }//GEN-LAST:event_cosinusActionPerformed
 
     private void tangensHyperbolicusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tangensHyperbolicusActionPerformed
@@ -1163,6 +1191,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         }
         hasDecimalPoint = display.getText().contains(".");
         result = 0; 
+        display.grabFocus();
     }//GEN-LAST:event_tangensHyperbolicusActionPerformed
 
     private void tangensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tangensActionPerformed
@@ -1184,6 +1213,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         }
         hasDecimalPoint = display.getText().contains(".");
         result = 0;
+        display.grabFocus();
     }//GEN-LAST:event_tangensActionPerformed
 
     private void cosinusHyperbolicusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cosinusHyperbolicusActionPerformed
@@ -1202,6 +1232,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         }
         hasDecimalPoint = display.getText().contains(".");
         result = 0; 
+        display.grabFocus();
     }//GEN-LAST:event_cosinusHyperbolicusActionPerformed
 
     private void sinusHyperbolicusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sinusHyperbolicusActionPerformed
@@ -1219,7 +1250,8 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display2.setText("Error!");
         }
         hasDecimalPoint = display.getText().contains(".");
-        result = 0;        
+        result = 0;    
+        display.grabFocus();
     }//GEN-LAST:event_sinusHyperbolicusActionPerformed
 
     private void cubeRootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cubeRootActionPerformed
@@ -1239,6 +1271,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         
         hasDecimalPoint = display.getText().contains(".");
         result = 0;
+        display.grabFocus();
     }//GEN-LAST:event_cubeRootActionPerformed
 
     private void cubedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cubedActionPerformed
@@ -1257,6 +1290,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         display2.setText(String.valueOf(number2) + "^3");
         hasDecimalPoint = display.getText().contains(".");
         result = 0;
+        display.grabFocus();
     }//GEN-LAST:event_cubedActionPerformed
 
     private void squaredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squaredActionPerformed
@@ -1275,11 +1309,13 @@ public class ScientificCalculator extends javax.swing.JFrame {
         display2.setText(String.valueOf(number2) + "^2");
         hasDecimalPoint = display.getText().contains(".");
         result = 0;
+        display.grabFocus();
     }//GEN-LAST:event_squaredActionPerformed
 
     private void piActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_piActionPerformed
         display.setText(String.valueOf(Math.PI));
         hasDecimalPoint = true;
+        display.grabFocus();
     }//GEN-LAST:event_piActionPerformed
 
     private void expActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expActionPerformed
@@ -1298,6 +1334,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         }
         hasDecimalPoint = true;
         result = 0; 
+        display.grabFocus();
     }//GEN-LAST:event_expActionPerformed
 
     private void percentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_percentActionPerformed
@@ -1307,14 +1344,17 @@ public class ScientificCalculator extends javax.swing.JFrame {
         hasDecimalPoint = false;
         beginsWithZero = false;
         operator = 5;
+        display.grabFocus();
     }//GEN-LAST:event_percentActionPerformed
 
     private void degreesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_degreesActionPerformed
         radians_checked = false;
+        display.grabFocus();
     }//GEN-LAST:event_degreesActionPerformed
 
     private void radiansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiansActionPerformed
         radians_checked = true;
+        display.grabFocus();
     }//GEN-LAST:event_radiansActionPerformed
 
     private void arcusTangensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arcusTangensActionPerformed
@@ -1330,6 +1370,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display.setText(String.valueOf(result));
             result = 0;
         }
+        display.grabFocus();
     }//GEN-LAST:event_arcusTangensActionPerformed
 
     private void arcusCosinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arcusCosinusActionPerformed
@@ -1345,6 +1386,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display.setText(String.valueOf(result));
             result = 0;
         }
+        display.grabFocus();
     }//GEN-LAST:event_arcusCosinusActionPerformed
 
     private void arcusSinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arcusSinusActionPerformed
@@ -1360,6 +1402,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
             display.setText(String.valueOf(result));
             result = 0;
         }
+        display.grabFocus();
     }//GEN-LAST:event_arcusSinusActionPerformed
 
     private void logarithmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logarithmActionPerformed
@@ -1368,6 +1411,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         result = Math.log10(number2);
         display.setText(String.valueOf(result));
         result = 0; 
+        display.grabFocus();
     }//GEN-LAST:event_logarithmActionPerformed
 
     private void naturalLogarithmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naturalLogarithmActionPerformed
@@ -1376,6 +1420,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         result = Math.log(number2);
         display.setText(String.valueOf(result));
         result = 0; 
+        display.grabFocus();
     }//GEN-LAST:event_naturalLogarithmActionPerformed
 
     private void prgrammerModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prgrammerModeActionPerformed
@@ -1383,6 +1428,7 @@ public class ScientificCalculator extends javax.swing.JFrame {
         progMode.setLocation(this.getLocation());
         progMode.setVisible(true);
         this.dispose();
+        display.grabFocus();
     }//GEN-LAST:event_prgrammerModeActionPerformed
 
 
@@ -1440,4 +1486,48 @@ public class ScientificCalculator extends javax.swing.JFrame {
     private javax.swing.JButton tangens;
     private javax.swing.JButton tangensHyperbolicus;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void keyTyped(KeyEvent ke) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent ke) {
+        int keyCode = ke.getKeyCode();
+        if(ke.getKeyChar() <= '9' && ke.getKeyChar() >= '1')
+        {
+            writeNumber(""+ke.getKeyChar());
+        }
+        else if(ke.getKeyChar() == KeyEvent.VK_0){
+            this.numberZeroActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_BACK_SPACE){
+            this.backspaceActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_ENTER) {
+            this.equalActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_ADD) {
+            this.addActionPerformed(null);
+        }
+        else if(ke.getKeyChar() == KeyEvent.VK_MINUS){
+            this.substractActionPerformed(null);
+        }
+        else if(ke.getKeyChar() == KeyEvent.VK_COMMA){
+            this.decimalPointActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_MULTIPLY){
+            this.multiplyActionPerformed(null);
+        }
+        else if(keyCode == KeyEvent.VK_DIVIDE){
+            this.divideActionPerformed(null);
+        }
+        else if(ke.isControlDown() && ke.getKeyChar() != 'c' && ke.getKeyCode() == 67){
+            c.copy(display);
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent ke) {
+    }
 }
