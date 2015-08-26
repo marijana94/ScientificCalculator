@@ -1,6 +1,7 @@
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.KeyStroke;
 
 
 public class ProgrammerCalculator extends javax.swing.JFrame implements KeyListener{
@@ -1031,13 +1032,85 @@ public class ProgrammerCalculator extends javax.swing.JFrame implements KeyListe
     @Override
     public void keyPressed(KeyEvent ke) {
         int keyCode = ke.getKeyCode();
-        while(decimalChecked == true){
-        if(ke.getKeyChar() <= '9' && ke.getKeyChar() >= '1')
+        /*if(ke.getKeyChar() <= '9' && ke.getKeyChar() >= '1')
         {
             writeNumber(""+ke.getKeyChar());
-        }
-        else if(ke.getKeyChar() == KeyEvent.VK_0){
+        }*/
+        if(ke.getKeyChar() == KeyEvent.VK_0){
             this.numberZeroActionPerformed(null);
+        }
+        else if (ke.getKeyChar() == KeyEvent.VK_1){
+            this.numberOneActionPerformed(null);
+        }
+        else if (ke.getKeyChar() == KeyEvent.VK_2){
+            if(base == 8 || base == 10 || base == 16){
+                this.numberTwoActionPerformed(null);
+            }
+        }
+        else if (ke.getKeyChar() == KeyEvent.VK_3){
+            if(base == 8 || base == 10 || base == 16){
+                this.numberThreeActionPerformed(null);
+            }
+        }
+        else if (ke.getKeyChar() == KeyEvent.VK_4){
+            if(base == 8 || base == 10 || base == 16){
+                this.numberFourActionPerformed(null);
+            }
+        }
+        else if (ke.getKeyChar() == KeyEvent.VK_5){
+            if(base == 8 || base == 10 || base == 16){
+                this.numberFiveActionPerformed(null);
+            }
+        }
+        else if (ke.getKeyChar() == KeyEvent.VK_6){
+            if(base == 8 || base == 10 || base == 16){
+                this.numberSixActionPerformed(null);
+            }
+        }
+        else if (ke.getKeyChar() == KeyEvent.VK_7){
+            if(base == 8 || base == 10 || base == 16){
+                this.numberSevenActionPerformed(null);
+            }
+        }
+        else if (ke.getKeyChar() == KeyEvent.VK_8){
+            if(base == 10 || base == 16){
+                this.numberEightActionPerformed(null);
+            }
+        }
+        else if (ke.getKeyChar() == KeyEvent.VK_9){
+            if(base == 10 || base == 16){
+                this.numberNineActionPerformed(null);
+            }
+        }
+        else if (ke.getKeyChar() == 'a' || ke.getKeyChar() == 'A'){
+            if(base == 16){
+                this.aActionPerformed(null);
+            }
+        }
+        else if (ke.getKeyChar() == 'b' || ke.getKeyChar() == 'B'){
+            if(base == 16){
+                this.bActionPerformed(null);
+            }
+        }
+        else if (ke.getKeyChar() == 'c' || ke.getKeyChar() == 'C'){
+            if(base == 16){
+                this.cActionPerformed(null);
+            }
+        }
+        else if (ke.getKeyChar() == 'd' || ke.getKeyChar() == 'D'){
+            if(base == 16){
+                this.dActionPerformed(null);
+            }
+        }
+        else if (ke.getKeyChar() == 'e' || ke.getKeyChar() == 'E'){
+            if(base == 16){
+                this.eActionPerformed(null);
+            }
+        }
+        else if (ke.getKeyChar() == 'f' || ke.getKeyChar() == 'F'){
+            if(base == 16){
+                this.fActionPerformed(null);
+            }
         }
         else if(keyCode == KeyEvent.VK_BACK_SPACE){
             this.backspaceActionPerformed(null);
@@ -1059,7 +1132,6 @@ public class ProgrammerCalculator extends javax.swing.JFrame implements KeyListe
         }
         else if(ke.isControlDown() && ke.getKeyChar() != 'c' && ke.getKeyCode() == 67){
             cc.copy(display1);
-        }
         }
     }
 

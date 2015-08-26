@@ -874,8 +874,10 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new SimpleCalculator().setVisible(true);
-                new SimpleCalculator().display.setFocusable(true);
-                new SimpleCalculator().display.grabFocus();
+                //new SimpleCalculator().display.setFocusable(true);
+                //new SimpleCalculator().display.grabFocus();
+                new SimpleCalculator().toFront();
+                new SimpleCalculator().requestFocus();
             }
         });
     }
