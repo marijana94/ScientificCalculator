@@ -11,16 +11,12 @@ import javax.swing.JPopupMenu;
 import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
 import javax.swing.text.JTextComponent;
-import javax.swing.undo.UndoManager;
 
 @SuppressWarnings("serial")
 public class RightClickMenu extends JPopupMenu
 {
     public Clipboard clipboard;
 
-    public UndoManager undoManager;
-
-    
     public JMenuItem copy;
     public JMenuItem delete;
     public JMenuItem selectAll;
@@ -29,12 +25,9 @@ public class RightClickMenu extends JPopupMenu
 
     public RightClickMenu()
     {
-        undoManager = new UndoManager();
         clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-
-
+        
         add(new JSeparator());
-
 
         copy = new JMenuItem("Copy");
         copy.setEnabled(false);
@@ -81,8 +74,6 @@ public class RightClickMenu extends JPopupMenu
 
     public void add(JTextComponent jTextComponent)
     {
-        
-
         jTextComponent.addMouseListener(new MouseAdapter()
         {
             @Override
@@ -94,14 +85,12 @@ public class RightClickMenu extends JPopupMenu
                 }
             }
         });
-
     }
 
     private void processClick(MouseEvent event)
     {
         jTextComponent = (JTextComponent) event.getSource();
 
-        
         boolean enableCopy = false;
         boolean enableDelete = false;
         boolean enableSelectAll = false;
@@ -126,7 +115,6 @@ public class RightClickMenu extends JPopupMenu
             }
         }
 
-    
         copy.setEnabled(enableCopy);
         delete.setEnabled(enableDelete);
         selectAll.setEnabled(enableSelectAll);

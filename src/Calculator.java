@@ -91,22 +91,6 @@ public class Calculator {
         clpbrd.setContents(stringSelection, null);
     }
 
-    public void addCutCopyPastePopUp(JTextField textComponent) {
-        ActionMap am = textComponent.getActionMap();
-        Action paste = am.get("paste-from-clipboard");
-        Action copy = am.get("copy-to-clipboard");
-        Action cut = am.get("cut-to-clipboard");
-
-        cut.putValue(Action.NAME, "Cut");
-        copy.putValue(Action.NAME, "Copy");
-        paste.putValue(Action.NAME, "Paste");
-
-        JPopupMenu popup = new JPopupMenu("My Popup");
-        textComponent.setComponentPopupMenu(popup);
-        popup.add(new JMenuItem(cut));
-        popup.add(new JMenuItem(copy));
-        popup.add(new JMenuItem(paste));
-    }
 
     public void checkOperatorValue(JTextField display) {
         if (operator == 0) {

@@ -1,8 +1,5 @@
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import javax.swing.KeyStroke;
-
 
 public class ProgrammerCalculator extends javax.swing.JFrame implements KeyListener{
 
