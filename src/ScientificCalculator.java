@@ -1085,6 +1085,11 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         double doubleFromTextField = Double.parseDouble(display.getText());
         System.out.println(format.format(doubleFromTextField));
         
+        if(number2 == 0){
+            display.setText("0");
+            display2.setText("Error!");
+        }
+        
         if (result > -100000000 && result < 100000000) {
             //display.setText(String.valueOf(result));
             display.setText(format.format(doubleFromTextField));

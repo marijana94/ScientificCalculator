@@ -6,15 +6,16 @@ import java.awt.event.KeyListener;
 import java.text.DecimalFormat;
 
 public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
-
-
+    
     public SimpleCalculator() {
         initComponents();
-        display.setFocusable(true);
-        display.grabFocus();
-        display.requestFocus();
-        display.requestFocusInWindow();
         display.addKeyListener(this);
+        setVisible(true);
+        //display.setVisible(true);
+        //display.setFocusable(true);
+        //display.grabFocus();
+        display.requestFocus();
+        //this.display.requestFocusInWindow();
     }
     
     
@@ -740,6 +741,11 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         double doubleFromTextField = Double.parseDouble(display.getText());
         System.out.println(format.format(doubleFromTextField));
         
+        if(number2 == 0){
+            display.setText("0");
+            display2.setText("Error!");
+        }
+        
         if (result > -100000000 && result < 100000000) {
             //display.setText(String.valueOf(result));
             display.setText(format.format(doubleFromTextField));
@@ -878,6 +884,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
                 //new SimpleCalculator().display.grabFocus();
                 new SimpleCalculator().toFront();
                 new SimpleCalculator().requestFocus();
+                new SimpleCalculator().display.requestFocusInWindow();
             }
         });
     }
@@ -920,8 +927,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     
     
     @Override
-    public void keyTyped(KeyEvent ke) {
-    }
+    public void keyTyped(KeyEvent ke) {}
 
     @Override
     public void keyPressed(KeyEvent ke) {
@@ -960,7 +966,6 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     }
 
     @Override
-    public void keyReleased(KeyEvent ke) {
-    }
+    public void keyReleased(KeyEvent ke) {}
 
     }
