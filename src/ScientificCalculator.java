@@ -15,6 +15,9 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         display.requestFocus();
         display.requestFocusInWindow();
         display.addKeyListener(this);
+        
+        RightClickMenu contextMenu = new RightClickMenu();
+            contextMenu.add(display);
     }
     
     Calculator c = new Calculator();

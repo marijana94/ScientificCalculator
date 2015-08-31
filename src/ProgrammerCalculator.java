@@ -23,6 +23,9 @@ public class ProgrammerCalculator extends javax.swing.JFrame implements KeyListe
         display1.requestFocus();
         display1.requestFocusInWindow();
         display1.addKeyListener(this);
+        
+        RightClickMenu contextMenu = new RightClickMenu();
+            contextMenu.add(display1);
     }
 
     Calculator cc = new Calculator();

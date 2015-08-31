@@ -11,11 +11,10 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         initComponents();
         display.addKeyListener(this);
         setVisible(true);
-        //display.setVisible(true);
-        //display.setFocusable(true);
-        //display.grabFocus();
         display.requestFocus();
-        //this.display.requestFocusInWindow();
+        
+        RightClickMenu contextMenu = new RightClickMenu();
+            contextMenu.add(display);
     }
     
     
@@ -527,7 +526,6 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
     public void writeNumber(String num){
         if(!beginsWithZero && !hasDecimalPoint) {
             display.setText(null);
@@ -564,8 +562,6 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     
     private void numberThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberThreeActionPerformed
         writeNumber ("3");
-        //numberThree.getInputMap().put(KeyStroke.getKeyStroke("3"), "three_is_pressed");
-        //numberThree.addActionListener((ActionListener) this);
     }//GEN-LAST:event_numberThreeActionPerformed
     
     private void numberZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberZeroActionPerformed
@@ -879,11 +875,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SimpleCalculator().setVisible(true);
-                //new SimpleCalculator().display.setFocusable(true);
-                //new SimpleCalculator().display.grabFocus();
-                new SimpleCalculator().toFront();
-                new SimpleCalculator().requestFocus();
+                //new SimpleCalculator().setVisible(true);
                 new SimpleCalculator().display.requestFocusInWindow();
             }
         });
