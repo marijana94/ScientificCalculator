@@ -22,6 +22,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
     Calculator c = new Calculator();
     boolean beginsWithZero = c.beginsWithZero;
     boolean hasDecimalPoint = c.hasDecimalPoint;
+    boolean equalPressed = c.equalPressed;
     byte operator = c.operator;
     double number1 = c.number1;
     double number2 = c.number2;
@@ -829,9 +830,17 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         if(!beginsWithZero && !hasDecimalPoint) {
             display.setText(null);
         }
+        if(equalPressed){
+            display.setText(num);
+            hasDecimalPoint = false;
+            beginsWithZero = true;
+            equalPressed = false;
+        }
+        else {
         display.setText(display.getText() + num);
         beginsWithZero = true;  
         display.grabFocus();
+        }
     }
 
     public void checkOperatorValue(){
@@ -955,6 +964,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         operator = 0;
         hasDecimalPoint = display.getText().contains(".");
         beginsWithZero = false;
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_equalActionPerformed
 
@@ -1011,7 +1021,14 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         if(!beginsWithZero && !hasDecimalPoint) {
             display.setText(null);
         }
-        display.setText(display.getText() + "0");
+        if(equalPressed){
+            display.setText("0");
+            hasDecimalPoint = false;
+            equalPressed = false;
+        }
+        else{
+            display.setText(display.getText() + "0");
+        }
         display.grabFocus();
     }//GEN-LAST:event_numberZeroActionPerformed
 
@@ -1057,6 +1074,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
             display2.setText("Error!");
         }
         hasDecimalPoint = display.getText().contains(".");
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_sqrtActionPerformed
 
@@ -1089,7 +1107,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         
         if(number2 == 0){
             display.setText("0");
-            display2.setText("Error!");
+            //display2.setText("Error!");
         }
         
         if (result > -100000000 && result < 100000000) {
@@ -1098,10 +1116,11 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         }
         else {
             display.setText("0");
-            display2.setText("Error!");
+            //display2.setText("Error!");
         }
         
         hasDecimalPoint = display.getText().contains(".");
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_oneDivideXActionPerformed
 
@@ -1157,6 +1176,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         }
         hasDecimalPoint = display.getText().contains(".");
         result = 0;
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_sinusActionPerformed
 
@@ -1179,6 +1199,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         }
         hasDecimalPoint = display.getText().contains(".");
         result = 0;
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_cosinusActionPerformed
 
@@ -1198,6 +1219,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         }
         hasDecimalPoint = display.getText().contains(".");
         result = 0; 
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_tangensHyperbolicusActionPerformed
 
@@ -1220,6 +1242,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         }
         hasDecimalPoint = display.getText().contains(".");
         result = 0;
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_tangensActionPerformed
 
@@ -1239,6 +1262,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         }
         hasDecimalPoint = display.getText().contains(".");
         result = 0; 
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_cosinusHyperbolicusActionPerformed
 
@@ -1258,6 +1282,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         }
         hasDecimalPoint = display.getText().contains(".");
         result = 0;    
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_sinusHyperbolicusActionPerformed
 
@@ -1278,6 +1303,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         
         hasDecimalPoint = display.getText().contains(".");
         result = 0;
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_cubeRootActionPerformed
 
@@ -1297,6 +1323,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         display2.setText(String.valueOf(number2) + "^3");
         hasDecimalPoint = display.getText().contains(".");
         result = 0;
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_cubedActionPerformed
 
@@ -1316,12 +1343,18 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         display2.setText(String.valueOf(number2) + "^2");
         hasDecimalPoint = display.getText().contains(".");
         result = 0;
+        number1 = 0;
+        number2 = 0;
+        operator = 0;
+        beginsWithZero = false;
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_squaredActionPerformed
 
     private void piActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_piActionPerformed
         display.setText(String.valueOf(Math.PI));
         hasDecimalPoint = true;
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_piActionPerformed
 
@@ -1341,6 +1374,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         }
         hasDecimalPoint = true;
         result = 0; 
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_expActionPerformed
 
@@ -1351,6 +1385,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         hasDecimalPoint = false;
         beginsWithZero = false;
         operator = 5;
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_percentActionPerformed
 
@@ -1377,6 +1412,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
             display.setText(String.valueOf(result));
             result = 0;
         }
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_arcusTangensActionPerformed
 
@@ -1393,6 +1429,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
             display.setText(String.valueOf(result));
             result = 0;
         }
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_arcusCosinusActionPerformed
 
@@ -1409,6 +1446,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
             display.setText(String.valueOf(result));
             result = 0;
         }
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_arcusSinusActionPerformed
 
@@ -1418,6 +1456,7 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         result = Math.log10(number2);
         display.setText(String.valueOf(result));
         result = 0; 
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_logarithmActionPerformed
 
@@ -1426,7 +1465,13 @@ public class ScientificCalculator extends javax.swing.JFrame implements KeyListe
         display2.setText("ln(" + String.valueOf(number2) + ")");
         result = Math.log(number2);
         display.setText(String.valueOf(result));
-        result = 0; 
+        hasDecimalPoint = display.getText().contains(".");
+        result = 0;
+        number1 = 0;
+        number2 = 0;
+        operator = 0;
+        //beginsWithZero = false;
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_naturalLogarithmActionPerformed
 

@@ -20,6 +20,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
     Calculator c = new Calculator();
     boolean beginsWithZero = c.beginsWithZero;
     boolean hasDecimalPoint = c.hasDecimalPoint;
+    boolean equalPressed = c.equalPressed;
     byte operator = c.operator;
     double number1 = c.number1;
     double number2 = c.number2;
@@ -529,9 +530,17 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         if(!beginsWithZero && !hasDecimalPoint) {
             display.setText(null);
         }
-        display.setText(display.getText() + num);
-        beginsWithZero = true; 
-        display.grabFocus();
+        if(equalPressed){
+            display.setText(num);
+            hasDecimalPoint = false;
+            beginsWithZero = true;
+            equalPressed = false;
+        }
+        else{
+            display.setText(display.getText() + num);
+            beginsWithZero = true; 
+            display.grabFocus();
+        }
     }
     
     public void checkOperatorValue(){
@@ -567,7 +576,14 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         if(!beginsWithZero && !hasDecimalPoint) {
             display.setText(null);
         }
-        display.setText(display.getText() + "0");
+        if(equalPressed){
+            display.setText("0");
+            hasDecimalPoint = false;
+            equalPressed = false;
+        }
+        else{
+            display.setText(display.getText() + "0");
+        }
         display.grabFocus();
     }//GEN-LAST:event_numberZeroActionPerformed
 
@@ -666,6 +682,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         operator = 0;
         hasDecimalPoint = display.getText().contains(".");
         beginsWithZero = false;
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_equalActionPerformed
 
@@ -738,7 +755,7 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         
         if(number2 == 0){
             display.setText("0");
-            display2.setText("Error!");
+          //  display2.setText("Error!");
         }
         
         if (result > -100000000 && result < 100000000) {
@@ -747,11 +764,16 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         }
         else {
             display.setText("0");
-            display2.setText("Error!");
+           // display2.setText("Error!");
         }
         
-        hasDecimalPoint = display.getText().contains(".");
+        //hasDecimalPoint = display.getText().contains(".");
         beginsWithZero = true;
+        number1 = 0;
+        number2 = 0;
+        result = 0;
+        operator = 0;
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_oneDivideXActionPerformed
 
@@ -772,6 +794,12 @@ public class SimpleCalculator extends javax.swing.JFrame implements KeyListener{
         }
         
         hasDecimalPoint = display.getText().contains(".");
+        number1 = 0;
+        number2 = 0;
+        result = 0;
+        operator = 0;
+        beginsWithZero = false;
+        equalPressed = true;
         display.grabFocus();
     }//GEN-LAST:event_sqrtActionPerformed
 

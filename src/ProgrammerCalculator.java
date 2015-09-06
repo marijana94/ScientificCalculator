@@ -28,6 +28,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame implements KeyListe
     Calculator cc = new Calculator();
     boolean beginsWithZero = cc.beginsWithZero;
     boolean hasDecimalPoint = cc.hasDecimalPoint;
+    boolean equalPressed = cc.equalPressed;
     byte operator = cc.operator;
     
     @SuppressWarnings("unchecked")
@@ -628,9 +629,16 @@ public class ProgrammerCalculator extends javax.swing.JFrame implements KeyListe
         if(!beginsWithZero && !hasDecimalPoint) {
             display1.setText(null);
         }
-        display1.setText(display1.getText() + num);
-        beginsWithZero = true; 
-        display1.grabFocus();
+        if(equalPressed){
+            display1.setText(num);
+            beginsWithZero = true;
+            equalPressed = false;
+        }
+        else{
+            display1.setText(display1.getText() + num);
+            beginsWithZero = true; 
+            display1.grabFocus();
+        }
     }
     
     public void checkOperatorValue(){
@@ -756,6 +764,7 @@ public class ProgrammerCalculator extends javax.swing.JFrame implements KeyListe
         operator = 0;
         hasDecimalPoint = false;
         beginsWithZero = false;
+        equalPressed = true;
         display1.grabFocus();
     }//GEN-LAST:event_equalActionPerformed
 
@@ -815,7 +824,13 @@ public class ProgrammerCalculator extends javax.swing.JFrame implements KeyListe
         if (!beginsWithZero && !hasDecimalPoint) {
             display1.setText(null);
         }
-        display1.setText(display1.getText() + "0");
+        if(equalPressed){
+            display1.setText("0");
+            equalPressed = false;
+        }
+        else{
+            display1.setText(display1.getText() + "0");
+        }
         display1.grabFocus();
     }//GEN-LAST:event_numberZeroActionPerformed
 

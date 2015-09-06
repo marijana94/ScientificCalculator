@@ -2,15 +2,12 @@
 import javax.swing.JTextField;
 import java.awt.datatransfer.*;
 import java.awt.Toolkit;
-import javax.swing.Action;
-import javax.swing.ActionMap;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
 
 public class Calculator {
 
     public boolean beginsWithZero;
     public boolean hasDecimalPoint;
+    public boolean equalPressed;
 
     public byte operator;
 
@@ -50,14 +47,14 @@ public class Calculator {
 
         if (number2 == 0) {
             display.setText("0");
-            display2.setText("Error!");
+            //display2.setText("Error!");
         }
 
         if (result > -100000000 && result < 100000000) {
             display.setText(String.valueOf(result));
         } else {
             display.setText("0");
-            display2.setText("Error!");
+            //display2.setText("Error!");
         }
 
         display2.setText("1/" + String.valueOf(number2));
@@ -76,6 +73,7 @@ public class Calculator {
         }
         display2.setText("√" + String.valueOf(number2));
         result = 0;
+        number2 = 0;
     }
 
     public void backspace(JTextField display) {
